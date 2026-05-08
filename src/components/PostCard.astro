@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const formattedDate = new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+}).format(post.data.date);
+---
+
+<article class="post-card">
+  <p class="eyebrow">{formattedDate}</p>
+  <h3><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+  <p>{post.data.excerpt}</p>
+  <div class="tag-list" aria-label="Post tags">
+    {post.data.tags.map((tag) => <span>{tag}</span>)}
+  </div>
+</article>

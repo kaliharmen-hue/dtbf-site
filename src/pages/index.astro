@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title="Dare to Break Free | Stories of Living, Learning & Letting Go">
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Southampton, UK</p>
+      <h1>Dare to Break Free</h1>
+      <p class="lede">Stories of living, learning and letting go, written with honesty for anyone finding their way through change.</p>
+      <div class="button-row">
+        <a class="button" href="/share-your-story/">Share Your Story</a>
+        <a class="button secondary" href="/blog/">Read the Blog</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section two-column">
+    <div>
+      <p class="eyebrow">The memoir</p>
+      <h2>A book about the courage to begin again</h2>
+    </div>
+    <p>The forthcoming memoir gathers a lived story of addiction, trauma, recovery, and growth. The site will grow around that release with essays, reflections, and invitations for readers to tell their own stories too.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="eyebrow">Latest writing</p>
+      <h2>From the blog</h2>
+    </div>
+    <div class="post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div>
+      <p class="eyebrow">Stay close to the story</p>
+      <h2>Join the email list</h2>
+      <p>Occasional notes, new posts, and book updates. No noise, no performance.</p>
+    </div>
+    <a class="button" href="/contact/">Subscribe</a>
+  </section>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Dare to Break Free",
+  description = "Stories of Living, Learning & Letting Go"
+} = Astro.props;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/book/", label: "Book" },
+  { href: "/share-your-story/", label: "Share Your Story" },
+  { href: "/about/", label: "About" },
+  { href: "/contact/", label: "Contact" }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Dare to Break Free home">
+        <span>Dare to Break Free</span>
+        <small>Living, Learning & Letting Go</small>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        {navItems.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>Dare to Break Free</p>
+      <p>Stories of Living, Learning & Letting Go</p>
+    </footer>
+  </body>
+</html>

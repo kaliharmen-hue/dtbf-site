@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Blog | Dare to Break Free">
+  <section class="page-hero">
+    <p class="eyebrow">Blog</p>
+    <h1>Stories and reflections</h1>
+    <p class="lede">Writing about recovery, reinvention, memory, and the work of letting go.</p>
+  </section>
+  <section class="section">
+    <div class="post-grid">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>

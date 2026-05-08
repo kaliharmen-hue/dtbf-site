@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const formAction = "https://formspree.io/f/your-form-id";
+---
+
+<BaseLayout title="Share Your Story | Dare to Break Free">
+  <section class="page-hero">
+    <p class="eyebrow">Share Your Story</p>
+    <h1>Your story deserves care, shape and a listening ear.</h1>
+    <p class="lede">A gentle invitation for people who are ready to explore the story they have lived and the meaning they want to make from it.</p>
+  </section>
+
+  <section class="section two-column">
+    <div>
+      <p class="eyebrow">The invitation</p>
+      <h2>Start with the truth. Then find the thread.</h2>
+    </div>
+    <div class="stack">
+      <p>Share Your Story is for people carrying a lived experience they want to understand, preserve, or pass on. It may become a written piece, a keepsake, a talk, a letter, or simply a clearer version of the truth.</p>
+      <p>Bring the raw material. The work is to listen closely, honour what matters, and shape it without sanding away the life in it.</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div>
+      <p class="eyebrow">Enquire</p>
+      <h2>Tell me where you are starting from</h2>
+      <p>Use the form below to send a first note. The Formspree endpoint can be swapped in as soon as it is ready.</p>
+    </div>
+    <form class="contact-form" action={formAction} method="POST">
+      <label>
+        Name
+        <input name="name" type="text" autocomplete="name" required />
+      </label>
+      <label>
+        Email
+        <input name="email" type="email" autocomplete="email" required />
+      </label>
+      <label>
+        What would you like help with?
+        <textarea name="message" rows="7" required></textarea>
+      </label>
+      <input type="hidden" name="form-name" value="share-your-story" />
+      <button class="button" type="submit">Send enquiry</button>
+    </form>
+  </section>
+</BaseLayout>

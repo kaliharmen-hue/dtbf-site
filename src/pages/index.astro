@@ -7,49 +7,83 @@ const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
+
+const themes = [
+  "The pressure to hold it together.",
+  "The identities we outgrow.",
+  "Neurodiversity and feeling different long before you have words for it.",
+  "Addiction in all its forms.",
+  "Burnout.",
+  "Midlife.",
+  "Starting over when you thought you'd already figured life out.",
+  "Wanting more from life while also wanting to disappear from it."
+];
 ---
 
 <BaseLayout title="Dare to Break Free | Stories of Living, Learning & Letting Go">
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">Southampton, UK</p>
+  <section class="home-hero">
+    <div class="home-hero__copy">
+      <p class="eyebrow">Memoir / recovery / reinvention</p>
       <h1>Dare to Break Free</h1>
-      <p class="lede">This isn't a polished success story. It's the messy middle, the wrong turns, and the contradictions that come with trying to build a better life.</p>
+      <p>This isn't a polished success story.</p>
       <div class="button-row">
         <a class="button" href={withBase("blog/")}>Read the blog</a>
-        <a class="button secondary" href={withBase("share-your-story/")}>Share Your Story</a>
       </div>
     </div>
-  </section>
-
-  <section class="section two-column">
-    <div>
-      <p class="eyebrow">The story</p>
-      <h2>The addiction, ambition, survival, self-destruction and reinvention.</h2>
-    </div>
-    <div class="stack">
-      <p>I've spent more than twenty years trying to understand what healing really means for me mentally, physically, and spiritually. Some things helped. Others slowly became another form of escape or self-destruction.</p>
-      <p>This space is where I write about the things we're usually taught to tidy up before we show them to the world.</p>
+    <div class="image-placeholder hero-image">
+      <span>Future hero image</span>
     </div>
   </section>
 
-  <section class="section two-column soft-band">
-    <div>
-      <p class="eyebrow">What lives here</p>
+  <section class="editorial-section intro-panel">
+    <div class="intro-panel__text">
+      <p class="eyebrow">The messy middle</p>
+      <p class="pull-quote">It's the messy middle. The wrong turns. The addiction, ambition, survival, self-destruction, reinvention, and all the contradictions that come with trying to build a better life while dragging your fears, patterns, and resistance behind you.</p>
+    </div>
+    <div class="image-placeholder editorial-image">
+      <span>Editorial image placeholder</span>
+    </div>
+  </section>
+
+  <section class="healing-section">
+    <div class="image-placeholder atmospheric-image">
+      <span>Atmospheric image placeholder</span>
+    </div>
+    <div class="healing-section__copy">
+      <p class="eyebrow">Healing, or something like it</p>
+      <h2>I've spent more than twenty years trying to understand what healing really means for me mentally, physically, and spiritually.</h2>
+      <p>Some things helped. Others slowly became another form of escape or self-destruction.</p>
+    </div>
+  </section>
+
+  <section class="themes-section">
+    <div class="themes-section__heading">
+      <p class="eyebrow">What this space explores</p>
+      <h2>The things we're usually taught to tidy up before we show them to the world.</h2>
+    </div>
+    <div class="theme-lines">
+      {themes.map((theme, index) => (
+        <p class={`theme-line theme-line--${index + 1}`}>{theme}</p>
+      ))}
+    </div>
+    <div class="mini-image-row" aria-label="Future imagery placeholders">
+      <div class="image-placeholder mini-image"><span>Detail image</span></div>
+      <div class="image-placeholder mini-image"><span>Texture image</span></div>
+      <div class="image-placeholder mini-image"><span>Memory image</span></div>
+    </div>
+  </section>
+
+  <section class="bridge-section">
+    <div class="bridge-section__copy">
+      <p>Some of it comes from my memoir. Some of it comes from where life has taken me since.</p>
       <h2>None of it is wrapped up neatly.</h2>
     </div>
-    <div class="stack">
-      <p>The pressure to hold it together. The identities we outgrow. Neurodiversity and feeling different long before you have words for it. Addiction in all its forms. Burnout. Midlife.</p>
-      <p>Starting over when you thought you'd already figured life out. Wanting more from life while also wanting to disappear from it.</p>
-      <p>Some of it comes from my memoir. Some of it comes from where life has taken me since.</p>
-      <p>If you've ever felt trapped by who you were supposed to be, you're probably in the right place.</p>
-      <div class="button-row">
-        <a class="button" href={withBase("blog/")}>Read the blog</a>
-      </div>
+    <div class="image-placeholder bridge-image">
+      <span>Subtle supporting image</span>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section latest-section">
     <div class="section-heading">
       <p class="eyebrow">Latest writing</p>
       <h2>From the blog</h2>
@@ -59,12 +93,13 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
     </div>
   </section>
 
-  <section class="cta-band">
-    <div>
-      <p class="eyebrow">Stay close to the story</p>
-      <h2>Join the email list</h2>
-      <p>Occasional notes, new posts, and book updates. No noise, no performance.</p>
+  <section class="final-cta">
+    <div class="image-placeholder final-image">
+      <span>Final background image placeholder</span>
     </div>
-    <a class="button" href={withBase("contact/")}>Subscribe</a>
+    <div class="final-cta__copy">
+      <p>If you've ever felt trapped by who you were supposed to be, you're probably in the right place.</p>
+      <a class="button" href={withBase("blog/")}>Read the blog</a>
+    </div>
   </section>
 </BaseLayout>

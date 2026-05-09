@@ -116,6 +116,285 @@ main {
   color: var(--accent-dark);
 }
 
+.home-hero,
+.editorial-section,
+.healing-section,
+.themes-section,
+.bridge-section,
+.latest-section,
+.final-cta {
+  color: #f6f2ec;
+}
+
+.home-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.7fr);
+  gap: clamp(2rem, 7vw, 6rem);
+  align-items: center;
+  min-height: calc(100vh - 5.6rem);
+  padding: clamp(3rem, 8vw, 6rem) max(1rem, calc((100vw - 1180px) / 2));
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 15%, rgba(0, 176, 164, 0.26), transparent 32rem),
+    linear-gradient(135deg, #07090b 0%, #121719 48%, #060607 100%);
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -8rem -12rem 25%;
+  height: 22rem;
+  background: linear-gradient(90deg, transparent, rgba(0, 176, 164, 0.16), transparent);
+  transform: rotate(-7deg);
+  pointer-events: none;
+}
+
+.home-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.home-hero h1 {
+  max-width: 760px;
+  color: #f6f2ec;
+  font-size: clamp(4.5rem, 13vw, 10.5rem);
+}
+
+.home-hero p:not(.eyebrow) {
+  max-width: 520px;
+  color: #d7d0c7;
+  font-size: clamp(1.3rem, 2.7vw, 2rem);
+}
+
+.home-hero .eyebrow,
+.editorial-section .eyebrow,
+.healing-section .eyebrow,
+.themes-section .eyebrow {
+  color: #2dd4c5;
+}
+
+.image-placeholder {
+  position: relative;
+  display: grid;
+  place-items: end start;
+  min-height: 16rem;
+  padding: 1rem;
+  border: 1px solid rgba(246, 242, 236, 0.18);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 176, 164, 0.08)),
+    repeating-linear-gradient(135deg, rgba(246, 242, 236, 0.1) 0 1px, transparent 1px 18px);
+}
+
+.image-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 25%, rgba(45, 212, 197, 0.28), transparent 14rem);
+}
+
+.image-placeholder span {
+  position: relative;
+  z-index: 1;
+  color: rgba(246, 242, 236, 0.72);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-image {
+  min-height: min(70vh, 42rem);
+  transform: translateY(2rem);
+}
+
+.editorial-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(240px, 0.55fr);
+  gap: clamp(2rem, 8vw, 7rem);
+  align-items: center;
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1080px) / 2));
+  background: #0f1112;
+}
+
+.intro-panel__text {
+  display: grid;
+  gap: 1rem;
+}
+
+.pull-quote {
+  max-width: 760px;
+  color: #f6f2ec;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5.8vw, 5rem);
+  line-height: 1.05;
+}
+
+.editorial-image {
+  min-height: 30rem;
+}
+
+.healing-section {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.6fr) minmax(0, 1fr);
+  gap: clamp(2rem, 8vw, 6rem);
+  align-items: center;
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1180px) / 2));
+  background: linear-gradient(135deg, #182022, #0b0d0f);
+}
+
+.atmospheric-image {
+  min-height: 24rem;
+}
+
+.healing-section__copy {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 760px;
+}
+
+.healing-section h2,
+.themes-section h2,
+.bridge-section h2 {
+  color: #f6f2ec;
+}
+
+.healing-section__copy p:not(.eyebrow) {
+  max-width: 560px;
+  color: #beb7ad;
+  font-size: 1.2rem;
+}
+
+.themes-section {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1180px) / 2));
+  background: #080a0b;
+}
+
+.themes-section__heading {
+  display: grid;
+  gap: 1rem;
+  max-width: 780px;
+}
+
+.theme-lines {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.theme-line {
+  width: fit-content;
+  max-width: min(100%, 920px);
+  margin: 0;
+  color: #f6f2ec;
+  font-family: var(--font-heading);
+  font-size: clamp(1.65rem, 4.3vw, 4.6rem);
+  line-height: 1;
+}
+
+.theme-line--2,
+.theme-line--5 {
+  margin-left: 10vw;
+  color: #cfd8d5;
+}
+
+.theme-line--3,
+.theme-line--7 {
+  margin-left: 3vw;
+  color: #2dd4c5;
+}
+
+.theme-line--4,
+.theme-line--8 {
+  margin-left: 16vw;
+}
+
+.mini-image-row {
+  display: grid;
+  grid-template-columns: 0.85fr 1.1fr 0.7fr;
+  gap: 1rem;
+  align-items: end;
+}
+
+.mini-image {
+  min-height: 11rem;
+}
+
+.mini-image:nth-child(2) {
+  min-height: 16rem;
+}
+
+.bridge-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.45fr);
+  gap: clamp(2rem, 8vw, 6rem);
+  align-items: end;
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1080px) / 2));
+  background: #14100f;
+}
+
+.bridge-section__copy {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.bridge-section__copy p {
+  max-width: 620px;
+  color: #d8d0c6;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.bridge-image {
+  min-height: 20rem;
+}
+
+.latest-section {
+  background: #f6f2ec;
+  color: var(--ink);
+}
+
+.latest-section h2,
+.latest-section h3 {
+  color: var(--ink);
+}
+
+.final-cta {
+  position: relative;
+  display: grid;
+  min-height: 70vh;
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1180px) / 2));
+  overflow: hidden;
+  background: #050607;
+}
+
+.final-image {
+  position: absolute;
+  inset: 2rem max(1rem, calc((100vw - 1180px) / 2)) 2rem auto;
+  width: min(42vw, 34rem);
+  opacity: 0.48;
+}
+
+.final-cta__copy {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  display: grid;
+  gap: 2rem;
+  max-width: 760px;
+}
+
+.final-cta__copy p {
+  color: #f6f2ec;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 7vw, 6.5rem);
+  line-height: 1.02;
+}
+
 .hero {
   display: grid;
   min-height: 74vh;
@@ -354,6 +633,57 @@ textarea:focus {
 
   .post-card {
     min-height: auto;
+  }
+
+  .home-hero,
+  .editorial-section,
+  .healing-section,
+  .bridge-section {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    min-height: auto;
+    padding-top: 4rem;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(4rem, 18vw, 6rem);
+  }
+
+  .hero-image,
+  .editorial-image,
+  .atmospheric-image,
+  .bridge-image {
+    min-height: 18rem;
+    transform: none;
+  }
+
+  .theme-line,
+  .theme-line--2,
+  .theme-line--3,
+  .theme-line--4,
+  .theme-line--5,
+  .theme-line--7,
+  .theme-line--8 {
+    margin-left: 0;
+  }
+
+  .mini-image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-image,
+  .mini-image:nth-child(2) {
+    min-height: 10rem;
+  }
+
+  .final-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 14rem;
+    margin-bottom: 2rem;
   }
 }
 

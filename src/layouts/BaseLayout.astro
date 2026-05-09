@@ -6,13 +6,14 @@ const {
   description = "Stories of Living, Learning & Letting Go"
 } = Astro.props;
 
+const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/blog/", label: "Blog" },
-  { href: "/book/", label: "Book" },
-  { href: "/share-your-story/", label: "Share Your Story" },
-  { href: "/about/", label: "About" },
-  { href: "/contact/", label: "Contact" }
+  { href: withBase(), label: "Home" },
+  { href: withBase("blog/"), label: "Blog" },
+  { href: withBase("book/"), label: "Book" },
+  { href: withBase("share-your-story/"), label: "Share Your Story" },
+  { href: withBase("about/"), label: "About" },
+  { href: withBase("contact/"), label: "Contact" }
 ];
 ---
 
@@ -29,7 +30,7 @@ const navItems = [
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Dare to Break Free home">
+      <a class="brand" href={withBase()} aria-label="Dare to Break Free home">
         <span>Dare to Break Free</span>
         <small>Living, Learning & Letting Go</small>
       </a>

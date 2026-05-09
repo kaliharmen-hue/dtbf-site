@@ -6,6 +6,7 @@ import { getCollection } from "astro:content";
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
+const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 ---
 
 <BaseLayout title="Dare to Break Free | Stories of Living, Learning & Letting Go">
@@ -15,8 +16,8 @@ const posts = (await getCollection("blog"))
       <h1>Dare to Break Free</h1>
       <p class="lede">This isn't a polished success story. It's the messy middle, the wrong turns, and the contradictions that come with trying to build a better life.</p>
       <div class="button-row">
-        <a class="button" href="/blog/">Read the blog</a>
-        <a class="button secondary" href="/share-your-story/">Share Your Story</a>
+        <a class="button" href={withBase("blog/")}>Read the blog</a>
+        <a class="button secondary" href={withBase("share-your-story/")}>Share Your Story</a>
       </div>
     </div>
   </section>
@@ -43,7 +44,7 @@ const posts = (await getCollection("blog"))
       <p>Some of it comes from my memoir. Some of it comes from where life has taken me since.</p>
       <p>If you've ever felt trapped by who you were supposed to be, you're probably in the right place.</p>
       <div class="button-row">
-        <a class="button" href="/blog/">Read the blog</a>
+        <a class="button" href={withBase("blog/")}>Read the blog</a>
       </div>
     </div>
   </section>
@@ -64,6 +65,6 @@ const posts = (await getCollection("blog"))
       <h2>Join the email list</h2>
       <p>Occasional notes, new posts, and book updates. No noise, no performance.</p>
     </div>
-    <a class="button" href="/contact/">Subscribe</a>
+    <a class="button" href={withBase("contact/")}>Subscribe</a>
   </section>
 </BaseLayout>

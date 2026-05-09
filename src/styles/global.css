@@ -120,9 +120,7 @@ main {
   display: grid;
   min-height: 74vh;
   padding: 5rem 1rem 4rem;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 245, 0.82) 58%, rgba(217, 231, 236, 0.62) 100%),
-    url("/assets/.gitkeep");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 245, 0.82) 58%, rgba(217, 231, 236, 0.62) 100%);
 }
 
 .hero-inner,

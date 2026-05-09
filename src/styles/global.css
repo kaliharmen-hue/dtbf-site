@@ -147,6 +147,14 @@ main {
   font-size: clamp(1.15rem, 2vw, 1.45rem);
 }
 
+.intro-copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
 .button-row {
   display: flex;
   flex-wrap: wrap;

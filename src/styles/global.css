@@ -120,7 +120,7 @@ main {
 .editorial-section,
 .healing-section,
 .themes-section,
-.bridge-section,
+.memoir-section,
 .latest-section,
 .final-cta {
   color: #f6f2ec;
@@ -214,10 +214,10 @@ main {
 
 .editorial-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(240px, 0.55fr);
-  gap: clamp(2rem, 8vw, 7rem);
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.48fr);
+  gap: clamp(2rem, 7vw, 5.5rem);
   align-items: center;
-  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1080px) / 2));
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1180px) / 2));
   background: #0f1112;
 }
 
@@ -226,12 +226,17 @@ main {
   gap: 1rem;
 }
 
-.pull-quote {
-  max-width: 760px;
+.editorial-section h2 {
   color: #f6f2ec;
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5.8vw, 5rem);
-  line-height: 1.05;
+  font-size: clamp(3rem, 7vw, 6rem);
+}
+
+.editorial-copy {
+  max-width: 680px;
+  color: #d8d0c6;
+  font-family: var(--font-body);
+  font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+  line-height: 1.65;
 }
 
 .editorial-image {
@@ -241,7 +246,7 @@ main {
 .healing-section {
   display: grid;
   grid-template-columns: minmax(220px, 0.6fr) minmax(0, 1fr);
-  gap: clamp(2rem, 8vw, 6rem);
+  gap: clamp(2rem, 7vw, 5rem);
   align-items: center;
   padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1180px) / 2));
   background: linear-gradient(135deg, #182022, #0b0d0f);
@@ -259,7 +264,8 @@ main {
 
 .healing-section h2,
 .themes-section h2,
-.bridge-section h2 {
+.memoir-section h2,
+.final-cta h2 {
   color: #f6f2ec;
 }
 
@@ -267,6 +273,14 @@ main {
   max-width: 560px;
   color: #beb7ad;
   font-size: 1.2rem;
+}
+
+.healing-section__copy .editorial-copy {
+  max-width: 680px;
+  color: #f6f2ec;
+  font-family: var(--font-heading);
+  font-size: clamp(1.65rem, 3vw, 2.8rem);
+  line-height: 1.18;
 }
 
 .themes-section {
@@ -279,7 +293,7 @@ main {
 .themes-section__heading {
   display: grid;
   gap: 1rem;
-  max-width: 780px;
+  max-width: 680px;
 }
 
 .theme-lines {
@@ -293,8 +307,8 @@ main {
   margin: 0;
   color: #f6f2ec;
   font-family: var(--font-heading);
-  font-size: clamp(1.65rem, 4.3vw, 4.6rem);
-  line-height: 1;
+  font-size: clamp(1.5rem, 3.7vw, 3.8rem);
+  line-height: 1.06;
 }
 
 .theme-line--2,
@@ -329,18 +343,36 @@ main {
   min-height: 16rem;
 }
 
-.bridge-section {
+.memoir-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.45fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.6fr);
   gap: clamp(2rem, 8vw, 6rem);
-  align-items: end;
+  align-items: center;
   padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1080px) / 2));
-  background: #14100f;
+  background:
+    radial-gradient(circle at 82% 30%, rgba(45, 212, 197, 0.16), transparent 24rem),
+    linear-gradient(135deg, #14100f, #08090a);
 }
 
-.bridge-section__copy {
+.memoir-section__copy {
   display: grid;
-  gap: 1.4rem;
+  gap: 1.6rem;
+}
+
+.memoir-section__copy .stack {
+  max-width: 640px;
+  color: #d8d0c6;
+  font-size: 1.08rem;
+}
+
+.book-image {
+  min-height: 34rem;
+}
+
+.light-button {
+  width: fit-content;
+  color: #f6f2ec;
+  border-color: rgba(246, 242, 236, 0.5);
 }
 
 .bridge-section__copy p {
@@ -388,10 +420,19 @@ main {
   max-width: 760px;
 }
 
+.final-cta__copy h2 {
+  color: #2dd4c5;
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .final-cta__copy p {
   color: #f6f2ec;
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 7vw, 6.5rem);
+  font-size: clamp(2rem, 5vw, 5.2rem);
   line-height: 1.02;
 }
 
@@ -638,7 +679,7 @@ textarea:focus {
   .home-hero,
   .editorial-section,
   .healing-section,
-  .bridge-section {
+  .memoir-section {
     grid-template-columns: 1fr;
   }
 
@@ -654,7 +695,7 @@ textarea:focus {
   .hero-image,
   .editorial-image,
   .atmospheric-image,
-  .bridge-image {
+  .book-image {
     min-height: 18rem;
     transform: none;
   }

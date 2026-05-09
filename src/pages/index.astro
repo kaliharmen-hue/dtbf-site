@@ -37,8 +37,9 @@ const themes = [
 
   <section class="editorial-section intro-panel">
     <div class="intro-panel__text">
-      <p class="eyebrow">The messy middle</p>
-      <p class="pull-quote">It's the messy middle. The wrong turns. The addiction, ambition, survival, self-destruction, reinvention, and all the contradictions that come with trying to build a better life while dragging your fears, patterns, and resistance behind you.</p>
+      <p class="eyebrow">Intro</p>
+      <h2>The Messy Middle</h2>
+      <p class="editorial-copy">It's the messy middle. The wrong turns. The addiction, ambition, survival, self-destruction, reinvention, and all the contradictions that come with trying to build a better life while dragging your fears, patterns, and resistance behind you.</p>
     </div>
     <div class="image-placeholder editorial-image">
       <span>Editorial image placeholder</span>
@@ -50,16 +51,17 @@ const themes = [
       <span>Atmospheric image placeholder</span>
     </div>
     <div class="healing-section__copy">
-      <p class="eyebrow">Healing, or something like it</p>
-      <h2>I've spent more than twenty years trying to understand what healing really means for me mentally, physically, and spiritually.</h2>
+      <p class="eyebrow">Reflection</p>
+      <h2>Healing</h2>
+      <p class="editorial-copy">I've spent more than twenty years trying to understand what healing really means for me mentally, physically, and spiritually.</p>
       <p>Some things helped. Others slowly became another form of escape or self-destruction.</p>
     </div>
   </section>
 
   <section class="themes-section">
     <div class="themes-section__heading">
-      <p class="eyebrow">What this space explores</p>
-      <h2>The things we're usually taught to tidy up before we show them to the world.</h2>
+      <p class="eyebrow">Themes</p>
+      <h2>What This Space Explores</h2>
     </div>
     <div class="theme-lines">
       {themes.map((theme, index) => (
@@ -73,13 +75,20 @@ const themes = [
     </div>
   </section>
 
-  <section class="bridge-section">
-    <div class="bridge-section__copy">
-      <p>Some of it comes from my memoir. Some of it comes from where life has taken me since.</p>
-      <h2>None of it is wrapped up neatly.</h2>
+  <section class="memoir-section">
+    <div class="memoir-section__copy">
+      <p class="eyebrow">Memoir</p>
+      <h2>The Memoir</h2>
+      <div class="stack">
+        <p>Dare to Break Free started as an idea in 2009 and took seventeen years to finish.</p>
+        <p>Somewhere in all of that, life happened.</p>
+        <p>I wanted to write a memoir not only for my own healing, but in the hope it might help someone else feel a little less alone in theirs.</p>
+        <p>It's about what happens after survival too.</p>
+      </div>
+      <a class="button secondary light-button" href={withBase("book/")}>About the book</a>
     </div>
-    <div class="image-placeholder bridge-image">
-      <span>Subtle supporting image</span>
+    <div class="image-placeholder book-image">
+      <span>Book cover / manuscript image placeholder</span>
     </div>
   </section>
 
@@ -98,6 +107,7 @@ const themes = [
       <span>Final background image placeholder</span>
     </div>
     <div class="final-cta__copy">
+      <h2>Still Figuring It Out</h2>
       <p>If you've ever felt trapped by who you were supposed to be, you're probably in the right place.</p>
       <a class="button" href={withBase("blog/")}>Read the blog</a>
     </div>

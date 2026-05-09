@@ -191,6 +191,14 @@ main {
   padding: 4rem 0;
 }
 
+.soft-band {
+  width: 100%;
+  max-width: none;
+  padding: 4rem max(1rem, calc((100vw - 1180px) / 2));
+  background: var(--paper);
+  border-block: 1px solid var(--line);
+}
+
 .section-heading {
   display: grid;
   gap: 0.4rem;

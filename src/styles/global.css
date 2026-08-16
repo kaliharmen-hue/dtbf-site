@@ -146,16 +146,6 @@ main {
   background-size: cover;
 }
 
-.home-hero::after {
-  content: "";
-  position: absolute;
-  inset: auto -8rem -12rem 25%;
-  height: 22rem;
-  background: linear-gradient(90deg, transparent, rgba(15, 139, 141, 0.16), transparent);
-  transform: rotate(-7deg);
-  pointer-events: none;
-}
-
 .home-hero__copy {
   position: relative;
   z-index: 1;
@@ -166,10 +156,10 @@ main {
 }
 
 .home-hero h1 {
-  max-width: 760px;
+  max-width: 820px;
   color: #f4f6fc;
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 5.6vw, 5.8rem);
+  font-size: clamp(3.4rem, 6.4vw, 6.6rem);
 }
 
 .home-hero p:not(.eyebrow) {
@@ -181,14 +171,14 @@ main {
 .hero-intro-copy {
   display: grid;
   gap: 1rem;
-  max-width: 620px;
+  max-width: 700px;
 }
 
 .home-hero .hero-intro-copy p {
   max-width: none;
-  color: rgba(244, 246, 252, 0.78);
-  font-size: clamp(1rem, 1.45vw, 1.2rem);
-  line-height: 1.7;
+  color: rgba(244, 246, 252, 0.84);
+  font-size: clamp(1.12rem, 1.75vw, 1.38rem);
+  line-height: 1.62;
 }
 
 .home-hero .eyebrow,
@@ -773,7 +763,7 @@ textarea:focus {
   }
 
   .home-hero h1 {
-    font-size: clamp(2.7rem, 12vw, 4.5rem);
+    font-size: clamp(3rem, 13vw, 5rem);
   }
 
   .hero-image,

@@ -8,6 +8,7 @@ const posts = (await getCollection("blog"))
   .slice(0, 3);
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 const heroImage = withBase("assets/hero-placeholder.png");
+const mainHeroImage = withBase("assets/hero-main.jpg");
 
 const themes = [
   "The pressure to hold it together.",
@@ -22,16 +23,13 @@ const themes = [
 ---
 
 <BaseLayout title="Dare to Break Free | Stories of Living, Learning & Letting Go">
-  <section class="home-hero">
+  <section class="home-hero" style={`--hero-bg: url("${mainHeroImage}")`}>
     <div class="home-hero__copy">
       <h1>What does breaking free mean to you?</h1>
       <div class="hero-intro-copy">
         <p>Breaking free doesn't always mean blowing your life up and starting again (although it could). Sometimes you've just got to start somewhere, whether that's being honest with yourself about what's actually going on, doing something about that thing you know isn't helping but keep doing anyway, admitting the path you're on isn't working, or finally giving some attention to the idea you can't quite leave alone.</p>
         <p>Whatever that looks like for you, hello.</p>
       </div>
-    </div>
-    <div class="image-placeholder hero-image">
-      <span>Future hero image</span>
     </div>
   </section>
 

@@ -133,15 +133,17 @@ main {
 .home-hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.7fr);
-  gap: clamp(2rem, 7vw, 6rem);
-  align-items: center;
+  align-items: end;
   min-height: calc(100vh - 5.6rem);
   padding: clamp(3rem, 8vw, 6rem) max(1rem, calc((100vw - 1180px) / 2));
   overflow: hidden;
   background:
-    radial-gradient(circle at 84% 15%, rgba(15, 139, 141, 0.34), transparent 32rem),
+    linear-gradient(90deg, rgba(28, 33, 32, 0.92) 0%, rgba(28, 33, 32, 0.7) 38%, rgba(28, 33, 32, 0.2) 68%, rgba(28, 33, 32, 0.05) 100%),
+    linear-gradient(180deg, rgba(41, 21, 40, 0.12), rgba(41, 21, 40, 0.52)),
+    var(--hero-bg),
     linear-gradient(135deg, #291528 0%, #1c2120 52%, #0b0e0d 100%);
+  background-position: center;
+  background-size: cover;
 }
 
 .home-hero::after {
@@ -149,7 +151,7 @@ main {
   position: absolute;
   inset: auto -8rem -12rem 25%;
   height: 22rem;
-  background: linear-gradient(90deg, transparent, rgba(15, 139, 141, 0.18), transparent);
+  background: linear-gradient(90deg, transparent, rgba(15, 139, 141, 0.16), transparent);
   transform: rotate(-7deg);
   pointer-events: none;
 }
@@ -159,10 +161,12 @@ main {
   z-index: 1;
   display: grid;
   gap: 1.4rem;
+  max-width: 760px;
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
 }
 
 .home-hero h1 {
-  max-width: 860px;
+  max-width: 760px;
   color: #f4f6fc;
   font-family: var(--font-heading);
   font-size: clamp(2.8rem, 5.6vw, 5.8rem);
@@ -177,7 +181,7 @@ main {
 .hero-intro-copy {
   display: grid;
   gap: 1rem;
-  max-width: 640px;
+  max-width: 620px;
 }
 
 .home-hero .hero-intro-copy p {
@@ -758,8 +762,14 @@ textarea:focus {
   }
 
   .home-hero {
-    min-height: auto;
+    min-height: 78vh;
     padding-top: 4rem;
+    background:
+      linear-gradient(180deg, rgba(28, 33, 32, 0.84) 0%, rgba(28, 33, 32, 0.62) 48%, rgba(28, 33, 32, 0.94) 100%),
+      var(--hero-bg),
+      linear-gradient(135deg, #291528 0%, #1c2120 100%);
+    background-position: 62% center;
+    background-size: cover;
   }
 
   .home-hero h1 {

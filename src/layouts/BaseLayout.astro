@@ -8,6 +8,7 @@ const {
 
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 const logoSrc = withBase("assets/dtbf-logo.png");
+const faviconSrc = withBase("assets/dtbf-favicon.png");
 const navItems = [
   { href: withBase(), label: "Home" },
   { href: withBase("share-your-story/"), label: "Work With Me" },
@@ -25,6 +26,7 @@ const navItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="icon" type="image/png" href={faviconSrc} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />

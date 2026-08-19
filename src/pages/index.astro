@@ -8,7 +8,7 @@ const posts = (await getCollection("blog"))
   .slice(0, 3);
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 const heroImage = withBase("assets/hero-main.jpg");
-const mainHeroImage = withBase("assets/hero-texture.png");
+const mainHeroImage = withBase("assets/dtbf-hero.png");
 
 const themes = [
   "The pressure to hold it together.",

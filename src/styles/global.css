@@ -142,25 +142,23 @@ main {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 90% 20%, rgba(15, 139, 141, 0.16), transparent 24rem),
-    radial-gradient(circle at 8% 78%, rgba(85, 73, 113, 0.14), transparent 22rem),
+    linear-gradient(90deg, rgba(244, 246, 252, 0.94) 0%, rgba(244, 246, 252, 0.82) 42%, rgba(244, 246, 252, 0.54) 100%),
+    var(--hero-bg),
     #f4f6fc;
+  background-position: center;
+  background-size: cover;
 }
 
 .home-hero::before {
   content: "";
   position: absolute;
-  inset: clamp(2rem, 5vw, 4rem) clamp(1rem, 6vw, 6rem) clamp(2rem, 5vw, 4rem) auto;
+  inset: 0;
   z-index: -1;
-  width: min(48vw, 44rem);
-  border: 1px solid rgba(85, 73, 113, 0.18);
-  border-radius: 0.5rem;
+  width: 100%;
   background:
-    linear-gradient(90deg, rgba(244, 246, 252, 0.1), rgba(244, 246, 252, 0.02)),
-    var(--hero-bg);
-  background-position: center;
-  background-size: cover;
-  box-shadow: 0 2rem 6rem rgba(28, 33, 32, 0.13);
+    radial-gradient(circle at 20% 44%, rgba(255, 255, 255, 0.58), transparent 18rem),
+    linear-gradient(180deg, rgba(85, 73, 113, 0.1), rgba(15, 139, 141, 0.08));
+  pointer-events: none;
 }
 
 .home-hero__copy {
@@ -781,13 +779,15 @@ textarea:focus {
     min-height: 78vh;
     padding-top: 4rem;
     background:
-      radial-gradient(circle at 90% 12%, rgba(15, 139, 141, 0.16), transparent 18rem),
-      radial-gradient(circle at 8% 85%, rgba(85, 73, 113, 0.14), transparent 18rem),
+      linear-gradient(180deg, rgba(244, 246, 252, 0.92) 0%, rgba(244, 246, 252, 0.78) 58%, rgba(244, 246, 252, 0.9) 100%),
+      var(--hero-bg),
       #f4f6fc;
+    background-position: center;
+    background-size: cover;
   }
 
   .home-hero::before {
-    display: none;
+    display: block;
   }
 
   .home-hero h1 {

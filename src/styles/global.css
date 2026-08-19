@@ -82,15 +82,17 @@ main {
 }
 
 .brand {
-  display: grid;
-  gap: 0.1rem;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
 }
 
-.brand span {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 700;
+.brand img {
+  display: block;
+  width: clamp(11rem, 18vw, 16rem);
+  max-height: 3.2rem;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .brand small,

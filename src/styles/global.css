@@ -142,7 +142,7 @@ main {
   overflow: hidden;
   isolation: isolate;
   background:
-    linear-gradient(90deg, rgba(244, 246, 252, 0.94) 0%, rgba(244, 246, 252, 0.82) 42%, rgba(244, 246, 252, 0.54) 100%),
+    linear-gradient(90deg, rgba(28, 33, 32, 0.84) 0%, rgba(28, 33, 32, 0.68) 46%, rgba(28, 33, 32, 0.46) 100%),
     var(--hero-bg),
     #f4f6fc;
   background-position: center;
@@ -156,8 +156,8 @@ main {
   z-index: -1;
   width: 100%;
   background:
-    radial-gradient(circle at 20% 44%, rgba(255, 255, 255, 0.58), transparent 18rem),
-    linear-gradient(180deg, rgba(85, 73, 113, 0.1), rgba(15, 139, 141, 0.08));
+    radial-gradient(circle at 18% 36%, rgba(15, 139, 141, 0.32), transparent 22rem),
+    linear-gradient(180deg, rgba(85, 73, 113, 0.18), rgba(28, 33, 32, 0.24));
   pointer-events: none;
 }
 
@@ -165,49 +165,62 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  justify-items: center;
-  gap: clamp(0.8rem, 1.5vw, 1.2rem);
+  justify-items: start;
+  gap: clamp(1rem, 1.6vw, 1.6rem);
   width: 100%;
-  max-width: none;
+  max-width: 1480px;
   padding: 0;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+}
+
+.dictionary-entry {
+  display: grid;
+  gap: 0.1rem;
+  color: rgba(244, 246, 252, 0.74);
+  font-family: var(--font-heading);
+  line-height: 1.15;
+}
+
+.dictionary-entry p {
+  color: inherit;
+  font-size: clamp(0.9rem, 0.9vw, 1.2rem);
+}
+
+.dictionary-entry .dictionary-term {
+  color: #f4f6fc;
+  font-size: clamp(1.15rem, 1.25vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .home-hero h1 {
-  width: 100%;
-  max-width: none;
-  color: var(--ink);
+  max-width: min(100%, 1280px);
+  color: #f4f6fc;
   font-family: var(--font-heading);
-  font-size: clamp(6rem, 11.4vw, 16rem);
-  line-height: 0.82;
-  white-space: nowrap;
+  font-size: clamp(4.6rem, 8.4vw, 12.6rem);
+  line-height: 0.86;
+  white-space: normal;
 }
 
 .home-hero p:not(.eyebrow) {
   max-width: 520px;
-  color: var(--violet);
+  color: rgba(244, 246, 252, 0.88);
   font-size: clamp(1.3rem, 2.7vw, 2rem);
 }
 
 .hero-intro-copy {
   display: grid;
-  gap: 0.65rem;
-  max-width: 1280px;
+  gap: 0.5rem;
+  max-width: 760px;
 }
 
 .home-hero .hero-intro-copy p {
   max-width: none;
-  color: var(--ink);
-  font-size: clamp(1.15rem, 1.12vw, 1.34rem);
-  line-height: 1.38;
-}
-
-.home-hero .hero-question {
-  color: var(--violet);
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 3vw, 4.4rem);
-  line-height: 1;
+  color: rgba(244, 246, 252, 0.9);
+  font-size: clamp(1.1rem, 1.2vw, 1.45rem);
+  line-height: 1.35;
 }
 
 .home-hero .eyebrow,
@@ -797,9 +810,9 @@ textarea:focus {
     min-height: 78vh;
     padding-top: 3rem;
     background:
-      linear-gradient(180deg, rgba(244, 246, 252, 0.92) 0%, rgba(244, 246, 252, 0.78) 58%, rgba(244, 246, 252, 0.9) 100%),
+      linear-gradient(180deg, rgba(28, 33, 32, 0.82) 0%, rgba(28, 33, 32, 0.68) 58%, rgba(28, 33, 32, 0.84) 100%),
       var(--hero-bg),
-      #f4f6fc;
+      #1c2120;
     background-position: center;
     background-size: cover;
   }

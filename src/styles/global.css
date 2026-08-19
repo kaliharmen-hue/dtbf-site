@@ -75,9 +75,9 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: clamp(1.5rem, 4vw, 4rem);
-  width: min(1400px, calc(100% - 2rem));
+  width: min(1520px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 1.45rem 0;
+  padding: 1.25rem 0;
   color: var(--ink);
 }
 
@@ -89,8 +89,8 @@ main {
 
 .brand img {
   display: block;
-  width: clamp(17rem, 24vw, 25rem);
-  max-height: 4.8rem;
+  width: clamp(20rem, 31vw, 33rem);
+  max-height: 5.6rem;
   object-fit: contain;
   object-position: left center;
 }
@@ -111,7 +111,7 @@ main {
   flex-wrap: wrap;
   gap: 0.55rem clamp(1.1rem, 1.8vw, 1.8rem);
   color: var(--muted);
-  font-size: clamp(1rem, 0.9vw, 1.15rem);
+  font-size: clamp(1.06rem, 1vw, 1.28rem);
   font-weight: 700;
 }
 
@@ -138,7 +138,7 @@ main {
   display: grid;
   align-items: center;
   min-height: calc(100vh - 6.8rem);
-  padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 6vw, 7rem);
+  padding: clamp(1.5rem, 4vw, 4rem) clamp(1.25rem, 4.5vw, 5.5rem);
   overflow: hidden;
   isolation: isolate;
   background:
@@ -166,20 +166,20 @@ main {
   z-index: 1;
   display: grid;
   justify-items: center;
-  gap: 1.8rem;
-  width: min(100%, 1480px);
-  max-width: 1480px;
-  padding: clamp(1.25rem, 3vw, 2rem) 0;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  max-width: 1560px;
+  padding: clamp(0.5rem, 1vw, 1rem) 0;
   margin: 0 auto;
   text-align: center;
 }
 
 .home-hero h1 {
-  max-width: 1280px;
+  max-width: 1560px;
   color: var(--ink);
   font-family: var(--font-heading);
-  font-size: clamp(4rem, 7.7vw, 9.4rem);
-  line-height: 0.92;
+  font-size: clamp(5rem, 9vw, 12rem);
+  line-height: 0.86;
 }
 
 .home-hero p:not(.eyebrow) {
@@ -190,15 +190,15 @@ main {
 
 .hero-intro-copy {
   display: grid;
-  gap: 1rem;
-  max-width: 980px;
+  gap: 0.7rem;
+  max-width: 1220px;
 }
 
 .home-hero .hero-intro-copy p {
   max-width: none;
   color: var(--ink);
-  font-size: clamp(1.2rem, 1.55vw, 1.5rem);
-  line-height: 1.55;
+  font-size: clamp(1.2rem, 1.35vw, 1.45rem);
+  line-height: 1.45;
 }
 
 .home-hero .eyebrow,

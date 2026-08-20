@@ -177,7 +177,7 @@ main {
   max-width: 860px;
   color: #f4f6fc;
   font-family: var(--font-h1);
-  font-size: clamp(3.2rem, 5.2vw, 7.2rem);
+  font-size: clamp(3rem, 4vw, 4.5rem);
   line-height: 0.9;
   white-space: normal;
   text-shadow: 0 0.18rem 1.4rem rgba(28, 33, 32, 0.28);

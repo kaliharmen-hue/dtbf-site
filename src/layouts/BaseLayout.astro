@@ -36,7 +36,13 @@ const navItems = [
       <a class="brand" href={withBase()} aria-label="Dare to Break Free home">
         <img src={logoSrc} alt="Dare to Break Free" />
       </a>
-      <nav class="nav" aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
           <a href={item.href}>{item.label}</a>
         ))}
@@ -49,5 +55,15 @@ const navItems = [
       <p>Dare to Break Free</p>
       <p>Stories of Living, Learning & Letting Go</p>
     </footer>
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const primaryNav = document.querySelector("#primary-nav");
+
+      menuToggle?.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        primaryNav?.classList.toggle("is-open", !isOpen);
+      });
+    </script>
   </body>
 </html>

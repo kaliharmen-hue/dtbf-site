@@ -164,13 +164,13 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  justify-items: start;
+  justify-items: center;
   gap: clamp(0.8rem, 1.4vw, 1.35rem);
   width: min(58vw, 860px);
   max-width: 860px;
   padding: 0;
   margin: clamp(0.75rem, 1.5vw, 2rem) 0 0 clamp(16vw, 18vw, 22rem);
-  text-align: left;
+  text-align: center;
 }
 
 .home-hero h1 {

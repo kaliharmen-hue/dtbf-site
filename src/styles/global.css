@@ -178,7 +178,7 @@ main {
   color: #f4f6fc;
   font-family: var(--font-h1);
   font-size: clamp(3rem, 4vw, 4.5rem);
-  line-height: 0.9;
+  line-height: 0.98;
   white-space: normal;
   text-shadow: 0 0.18rem 1.4rem rgba(28, 33, 32, 0.28);
 }

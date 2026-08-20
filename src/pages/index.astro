@@ -9,6 +9,9 @@ const posts = (await getCollection("blog"))
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 const heroImage = withBase("assets/kali-harmen-current.jpg");
 const mainHeroImage = withBase("assets/hero-tear.jpg");
+const workWithMeImage = withBase("assets/card-work-with-me.png");
+const journalImage = withBase("assets/card-read-the-journal.png");
+const speakingImage = withBase("assets/card-speaking.png");
 
 const themes = [
   "The pressure to hold it together.",
@@ -56,7 +59,7 @@ const themes = [
     <div class="reflection-grid">
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
-          <span>Reflection image</span>
+          <img src={workWithMeImage} alt="Work with me" />
         </div>
         <h3>Find Your Words</h3>
         <p>Got something you're trying to get hold of, work through, say or bring into the world?</p>
@@ -65,7 +68,7 @@ const themes = [
       </article>
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
-          <span>Reflection image</span>
+          <img src={journalImage} alt="Read the Journal" />
         </div>
         <h3>The Journal</h3>
         <p>The book ends. I didn't.</p>
@@ -74,7 +77,7 @@ const themes = [
       </article>
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
-          <span>Reflection image</span>
+          <img src={speakingImage} alt="Speaking" />
         </div>
         <h3>Speaking</h3>
         <p>If you're looking for someone to speak who isn't going to give you a polished story about overcoming adversity and then pretend everything worked out perfectly afterwards, let's talk.</p>

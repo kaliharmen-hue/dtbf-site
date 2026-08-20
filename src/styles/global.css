@@ -342,6 +342,18 @@ main {
   min-height: 14rem;
 }
 
+.reflection-image::before {
+  display: none;
+}
+
+.reflection-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .reflection-card p {
   color: var(--ink);
   font-size: 1rem;

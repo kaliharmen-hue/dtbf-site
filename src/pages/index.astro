@@ -7,7 +7,7 @@ const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
-const heroImage = withBase("assets/hero-main.jpg");
+const heroImage = withBase("assets/kali-harmen.png");
 const mainHeroImage = withBase("assets/hero-tear.jpg");
 
 const themes = [
@@ -47,7 +47,7 @@ const themes = [
       </div>
     </div>
     <div class="image-placeholder editorial-image hero-image--photo">
-      <img src={heroImage} alt="Temporary portrait placeholder for the future editorial image" />
+      <img src={heroImage} alt="Portrait of Kali Harmen for the Dare to Break Free introduction" />
       <span>Editorial image placeholder</span>
     </div>
   </section>

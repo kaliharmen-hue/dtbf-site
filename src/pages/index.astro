@@ -8,7 +8,7 @@ const posts = (await getCollection("blog"))
   .slice(0, 3);
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 const heroImage = withBase("assets/hero-main.jpg");
-const mainHeroImage = withBase("assets/dtbf-hero.png");
+const mainHeroImage = withBase("assets/hero-tear.jpg");
 
 const themes = [
   "The pressure to hold it together.",
@@ -25,11 +25,6 @@ const themes = [
 <BaseLayout title="Dare to Break Free | Stories of Living, Learning & Letting Go">
   <section class="home-hero" style={`--hero-bg: url("${mainHeroImage}")`}>
     <div class="home-hero__copy">
-      <div class="dictionary-entry" aria-label="Dare to Break Free definition">
-        <p class="dictionary-term">Dare to Break Free</p>
-        <p>phrase</p>
-        <p>/ˌdeə tə breɪk ˈfriː/</p>
-      </div>
       <h1>When playing it safe starts to feel risky.</h1>
       <div class="hero-intro-copy">
         <p>Breaking free doesn’t always mean blowing your life up and starting again. Although it could.</p>

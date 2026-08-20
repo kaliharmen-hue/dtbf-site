@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PostCard from "../components/PostCard.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog"))
@@ -12,17 +11,7 @@ const mainHeroImage = withBase("assets/hero-tear.jpg");
 const workWithMeImage = withBase("assets/card-work-with-me.png");
 const journalImage = withBase("assets/card-read-the-journal.png");
 const speakingImage = withBase("assets/card-speaking.png");
-
-const themes = [
-  "The pressure to hold it together.",
-  "The identities we outgrow.",
-  "Neurodiversity and feeling different long before you have words for it.",
-  "Addiction in all its forms.",
-  "Burnout.",
-  "Midlife.",
-  "Starting over when you thought you'd already figured life out.",
-  "Wanting more from life while also wanting to disappear from it."
-];
+const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? null);
 ---
 
 <BaseLayout title="Dare to Break Free | Stories of Living, Learning & Letting Go">
@@ -86,20 +75,16 @@ const themes = [
     </div>
   </section>
 
-  <section class="themes-section">
+  <section class="themes-section about-snapshot">
     <div class="themes-section__heading">
-      <p class="eyebrow">Themes</p>
-      <h2>What This Space Explores</h2>
+      <p class="eyebrow">About</p>
+      <h2>A bit about me</h2>
     </div>
-    <div class="theme-lines">
-      {themes.map((theme, index) => (
-        <h3 class={`theme-line theme-line--${index + 1}`}>{theme}</h3>
-      ))}
-    </div>
-    <div class="mini-image-row" aria-label="Future imagery placeholders">
-      <div class="image-placeholder mini-image"><span>Detail image</span></div>
-      <div class="image-placeholder mini-image"><span>Texture image</span></div>
-      <div class="image-placeholder mini-image"><span>Memory image</span></div>
+    <div class="about-snapshot__copy stack">
+      <p>The short version is, I've taken a fairly unconventional route.</p>
+      <p>I've been an addict, an escort, self-employed for most of my adult life, a personal trainer, nutritional therapist, coach, mature student, marketer and now author.</p>
+      <p>It’s a strange mix, but they’ve all played their part in getting me here.</p>
+      <a class="button secondary light-button" href={withBase("about/")}>Read more about me</a>
     </div>
   </section>
 
@@ -122,12 +107,33 @@ const themes = [
 
   <section class="section latest-section">
     <div class="section-heading">
-      <p class="eyebrow">Latest writing</p>
-      <h2>From the blog</h2>
+      <p class="eyebrow">Journal</p>
+      <h2>Latest from the Journal</h2>
     </div>
-    <div class="post-grid">
-      {posts.map((post) => <PostCard post={post} />)}
+    <div class="post-grid journal-preview-grid">
+      {journalSlots.map((post, index) => (
+        post ? (
+          <article class="post-card journal-preview-card">
+            <div class="image-placeholder journal-entry-image">
+              <img src={journalImage} alt="" />
+            </div>
+            <p class="eyebrow">{index === 0 ? "Most recent Journal entry" : `${index + 1}${index === 1 ? "nd" : "rd"} most recent Journal entry`}</p>
+            <h3><a href={withBase(`blog/${post.slug}/`)}>{post.data.title}</a></h3>
+            <p>{post.data.excerpt}</p>
+          </article>
+        ) : (
+          <article class="post-card journal-preview-card journal-preview-card--empty">
+            <div class="image-placeholder journal-entry-image">
+              <img src={journalImage} alt="" />
+            </div>
+            <p class="eyebrow">{index === 1 ? "Second most recent Journal entry" : "Third most recent Journal entry"}</p>
+            <h3>More journal entries coming soon</h3>
+            <p>New writing will appear here as the Journal grows.</p>
+          </article>
+        )
+      ))}
     </div>
+    <a class="button secondary light-button" href={withBase("blog/")}>See all Journal entries</a>
   </section>
 
   <section class="final-cta">

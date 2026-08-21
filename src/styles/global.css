@@ -229,8 +229,8 @@ main {
 .home-hero h1 {
   max-width: 980px;
   color: var(--ink);
-  font-family: var(--font-h1);
-  font-size: clamp(3.2rem, 5.4vw, 4.5rem);
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 6vw, 5rem);
   line-height: 1.04;
   white-space: normal;
   text-shadow: none;
@@ -251,8 +251,8 @@ main {
 .home-hero .hero-intro-copy p {
   max-width: none;
   color: var(--muted);
-  font-size: clamp(1.02rem, 1.08vw, 1.28rem);
-  line-height: 1.45;
+  font-size: clamp(1.15rem, 1.45vw, 1.5rem);
+  line-height: 1.5;
   text-shadow: none;
 }
 
@@ -1024,13 +1024,13 @@ textarea:focus {
   }
 
   .home-hero h1 {
-    font-size: clamp(2.9rem, 12vw, 4.9rem);
+    font-size: clamp(3rem, 12vw, 4.5rem);
     line-height: 1.04;
     white-space: normal;
   }
 
   .home-hero .hero-intro-copy p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .hero-image,

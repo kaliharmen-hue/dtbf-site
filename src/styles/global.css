@@ -176,8 +176,8 @@ main {
   position: relative;
   display: grid;
   align-items: center;
-  min-height: calc(100vh - 6.8rem);
-  padding: clamp(2rem, 4vw, 4.5rem) clamp(1.25rem, 5vw, 6rem);
+  min-height: clamp(34rem, 66vh, 44rem);
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 5vw, 6rem);
   overflow: hidden;
   isolation: isolate;
   background:
@@ -205,19 +205,19 @@ main {
   display: grid;
   justify-items: start;
   gap: clamp(0.8rem, 1.4vw, 1.35rem);
-  width: min(52vw, 760px);
-  max-width: 760px;
+  width: min(76vw, 1120px);
+  max-width: 1120px;
   padding: 0;
   margin: 0;
   text-align: left;
 }
 
 .home-hero h1 {
-  max-width: 760px;
+  max-width: 1120px;
   color: var(--ink);
   font-family: var(--font-h1);
-  font-size: clamp(3.3rem, 5.4vw, 6.2rem);
-  line-height: 1.02;
+  font-size: clamp(4rem, 6.2vw, 7.4rem);
+  line-height: 0.96;
   white-space: normal;
   text-shadow: none;
 }
@@ -231,7 +231,7 @@ main {
 .hero-intro-copy {
   display: grid;
   gap: 0.5rem;
-  max-width: 700px;
+  max-width: 640px;
 }
 
 .home-hero .hero-intro-copy p {
@@ -991,8 +991,8 @@ textarea:focus {
   }
 
   .home-hero {
-    min-height: 78vh;
-    padding: 3rem 1.25rem;
+    min-height: 34rem;
+    padding: 2.5rem 1.25rem;
     background: var(--hero-bg), #f4f6fc;
     background-position: 62% center;
     background-size: cover;
@@ -1005,7 +1005,7 @@ textarea:focus {
 
   .home-hero__copy {
     width: min(100%, 34rem);
-    margin: 2rem 0 0;
+    margin: 1rem 0 0;
     text-align: left;
   }
 

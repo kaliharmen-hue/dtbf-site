@@ -7,7 +7,7 @@ const posts = (await getCollection("blog"))
   .slice(0, 3);
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 const heroImage = withBase("assets/kali-harmen-current.jpg");
-const mainHeroImage = withBase("assets/hero-tear.jpg");
+const mainHeroImage = withBase("assets/hero-abstract.png");
 const workWithMeImage = withBase("assets/card-work-with-me.png");
 const journalImage = withBase("assets/card-read-the-journal.png");
 const speakingImage = withBase("assets/card-speaking.png");

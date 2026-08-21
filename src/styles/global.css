@@ -9,8 +9,8 @@
   --plum: #291528;
   --violet: #554971;
   --sky: rgba(15, 139, 141, 0.16);
-  --font-h1: "BIZ UDPGothic", Inter, Arial, sans-serif;
-  --font-heading: "Playfair Display", Georgia, serif;
+  --font-h1: "Marcellus", Georgia, serif;
+  --font-heading: "Merriweather", Georgia, serif;
   --font-body: "Inter", Arial, sans-serif;
 }
 
@@ -183,7 +183,7 @@ main {
   background:
     var(--hero-bg),
     #f4f6fc;
-  background-position: center;
+  background-position: center right;
   background-size: cover;
 }
 
@@ -194,8 +194,8 @@ main {
   z-index: -1;
   width: 100%;
   background:
-    radial-gradient(circle at 48% 47%, rgba(28, 33, 32, 0.18), transparent 30rem),
-    linear-gradient(90deg, rgba(28, 33, 32, 0.08), transparent 18%, transparent 82%, rgba(28, 33, 32, 0.08));
+    linear-gradient(90deg, rgba(244, 246, 252, 0.92), rgba(244, 246, 252, 0.62) 48%, rgba(244, 246, 252, 0.06) 76%),
+    radial-gradient(circle at 18% 50%, rgba(15, 139, 141, 0.1), transparent 28rem);
   pointer-events: none;
 }
 
@@ -203,23 +203,23 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  justify-items: center;
+  justify-items: start;
   gap: clamp(0.8rem, 1.4vw, 1.35rem);
-  width: min(58vw, 860px);
-  max-width: 860px;
+  width: min(52vw, 760px);
+  max-width: 760px;
   padding: 0;
-  margin: clamp(0.75rem, 1.5vw, 2rem) 0 0 clamp(16vw, 18vw, 22rem);
-  text-align: center;
+  margin: 0;
+  text-align: left;
 }
 
 .home-hero h1 {
-  max-width: 860px;
-  color: #f4f6fc;
+  max-width: 760px;
+  color: var(--ink);
   font-family: var(--font-h1);
-  font-size: clamp(3rem, 4vw, 4.5rem);
-  line-height: 0.98;
+  font-size: clamp(3.3rem, 5.4vw, 6.2rem);
+  line-height: 1.02;
   white-space: normal;
-  text-shadow: 0 0.18rem 1.4rem rgba(28, 33, 32, 0.28);
+  text-shadow: none;
 }
 
 .home-hero p:not(.eyebrow) {
@@ -236,10 +236,10 @@ main {
 
 .home-hero .hero-intro-copy p {
   max-width: none;
-  color: rgba(244, 246, 252, 0.9);
-  font-size: clamp(1rem, 1.05vw, 1.28rem);
-  line-height: 1.35;
-  text-shadow: 0 0.12rem 0.8rem rgba(28, 33, 32, 0.32);
+  color: var(--muted);
+  font-size: clamp(1.02rem, 1.08vw, 1.28rem);
+  line-height: 1.45;
+  text-shadow: none;
 }
 
 .home-hero .eyebrow,
@@ -982,24 +982,24 @@ textarea:focus {
     min-height: 78vh;
     padding: 3rem 1.25rem;
     background: var(--hero-bg), #f4f6fc;
-    background-position: 48% center;
+    background-position: 62% center;
     background-size: cover;
   }
 
   .home-hero::before {
     display: block;
-    background: linear-gradient(180deg, rgba(28, 33, 32, 0.1), rgba(28, 33, 32, 0.22));
+    background: linear-gradient(180deg, rgba(244, 246, 252, 0.96), rgba(244, 246, 252, 0.7));
   }
 
   .home-hero__copy {
     width: min(100%, 34rem);
-    margin: 4rem auto 0;
+    margin: 2rem 0 0;
     text-align: left;
   }
 
   .home-hero h1 {
-    font-size: clamp(2.8rem, 12vw, 4.9rem);
-    line-height: 0.9;
+    font-size: clamp(2.9rem, 12vw, 4.9rem);
+    line-height: 1.04;
     white-space: normal;
   }
 

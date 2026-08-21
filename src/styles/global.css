@@ -673,19 +673,18 @@ main {
 }
 
 .journal-hero {
-  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.72fr);
-  gap: clamp(2rem, 7vw, 6rem);
-  align-items: end;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
   padding-block: clamp(4rem, 8vw, 7rem);
 }
 
 .journal-hero h1 {
-  max-width: 780px;
-  font-size: clamp(3rem, 6.4vw, 6.6rem);
+  max-width: 1080px;
+  font-size: clamp(3rem, 5.2vw, 5.8rem);
 }
 
 .journal-hero__copy {
-  max-width: 560px;
+  max-width: 720px;
   padding: clamp(1.25rem, 2.5vw, 2rem);
   border-left: 3px solid var(--accent);
   background: rgba(255, 255, 255, 0.54);

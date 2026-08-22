@@ -556,6 +556,7 @@ main {
   place-items: center;
   min-height: 0;
   padding: clamp(1rem, 2vw, 2rem);
+  background: transparent;
 }
 
 .book-image::before {

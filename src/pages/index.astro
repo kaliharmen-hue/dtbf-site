@@ -78,19 +78,6 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
     </div>
   </section>
 
-  <section class="themes-section about-snapshot">
-    <div class="themes-section__heading">
-      <p class="eyebrow">About</p>
-      <h2>A bit about me</h2>
-    </div>
-    <div class="about-snapshot__copy stack">
-      <p>The short version is, I've taken a fairly unconventional route.</p>
-      <p>I've been an addict, an escort, self-employed for most of my adult life, a personal trainer, nutritional therapist, coach, mature student, marketer and now author.</p>
-      <p>It’s a strange mix, but they’ve all played their part in getting me here.</p>
-      <a class="button secondary light-button" href={withBase("about/")}>Read more about me</a>
-    </div>
-  </section>
-
   <section class="memoir-section">
     <div class="memoir-section__copy">
       <p class="eyebrow">Memoir</p>
@@ -137,6 +124,19 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
       ))}
     </div>
     <a class="button secondary light-button" href={withBase("blog/")}>See all Journal entries</a>
+  </section>
+
+  <section class="themes-section about-snapshot">
+    <div class="themes-section__heading">
+      <p class="eyebrow">About</p>
+      <h2>A bit about me</h2>
+    </div>
+    <div class="about-snapshot__copy stack">
+      <p>The short version is, I've taken a fairly unconventional route.</p>
+      <p>I've been an addict, an escort, self-employed for most of my adult life, a personal trainer, nutritional therapist, coach, mature student, marketer and now author.</p>
+      <p>It’s a strange mix, but they’ve all played their part in getting me here.</p>
+      <a class="button secondary light-button" href={withBase("about/")}>Read more about me</a>
+    </div>
   </section>
 
   <section class="definition-section">

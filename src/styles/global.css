@@ -586,7 +586,7 @@ main {
   min-height: 20rem;
 }
 
-.latest-section {
+.section.latest-section {
   width: min(1680px, calc(100% - 2rem));
   margin: 0 auto;
   padding-block: clamp(4rem, 8vw, 7rem);
@@ -616,7 +616,7 @@ main {
   display: grid;
   grid-template-columns: minmax(20rem, 0.72fr) minmax(0, 1fr);
   align-items: stretch;
-  width: min(1180px, calc(100% - 2.5rem));
+  width: min(1680px, calc(100% - 2rem));
   margin: clamp(3rem, 7vw, 7rem) auto;
   overflow: hidden;
   background: var(--violet);

@@ -367,6 +367,16 @@ main {
   border-block: 1px solid rgba(85, 73, 113, 0.16);
 }
 
+.pathways-heading {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 760px;
+}
+
+.pathways-heading h2 {
+  font-size: clamp(2.4rem, 4.5vw, 4.8rem);
+}
+
 .atmospheric-image {
   min-height: 24rem;
 }
@@ -390,6 +400,7 @@ main {
   padding: clamp(1rem, 1.4vw, 1.35rem);
   border-left: 3px solid var(--accent);
   background: rgba(255, 255, 255, 0.48);
+  box-shadow: 0 1rem 2rem rgba(28, 33, 32, 0.1);
 }
 
 .reflection-image {
@@ -410,7 +421,8 @@ main {
 
 .reflection-card p {
   color: var(--ink);
-  font-size: 1rem;
+  font-size: clamp(1.06rem, 1.22vw, 1.18rem);
+  line-height: 1.58;
 }
 
 .reflection-card h3 {
@@ -442,7 +454,7 @@ main {
 .themes-section {
   display: grid;
   gap: clamp(2.5rem, 6vw, 5rem);
-  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1180px) / 2));
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1480px) / 2));
   background: #f4f6fc;
 }
 
@@ -515,7 +527,7 @@ main {
   grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.6fr);
   gap: clamp(2rem, 8vw, 6rem);
   align-items: center;
-  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1080px) / 2));
+  padding: clamp(5rem, 10vw, 8rem) max(1rem, calc((100vw - 1480px) / 2));
   background:
     radial-gradient(circle at 82% 30%, rgba(15, 139, 141, 0.12), transparent 24rem),
     linear-gradient(135deg, rgba(85, 73, 113, 0.12), rgba(15, 139, 141, 0.07)),
@@ -531,7 +543,8 @@ main {
 .memoir-section__copy .stack {
   max-width: 640px;
   color: var(--ink);
-  font-size: 1.08rem;
+  font-size: clamp(1.1rem, 1.35vw, 1.28rem);
+  line-height: 1.6;
 }
 
 .book-image {
@@ -567,8 +580,16 @@ main {
 }
 
 .latest-section {
+  width: min(1480px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-block: clamp(4rem, 8vw, 7rem);
   background: #f4f6fc;
   color: var(--ink);
+}
+
+.latest-section .post-card p:not(.eyebrow) {
+  font-size: clamp(1.05rem, 1.2vw, 1.16rem);
+  line-height: 1.55;
 }
 
 .latest-section .light-button {

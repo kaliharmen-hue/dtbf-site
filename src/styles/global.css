@@ -177,7 +177,7 @@ main {
   display: grid;
   align-items: center;
   min-height: clamp(32rem, 62vh, 42rem);
-  padding: clamp(2rem, 4vw, 3.5rem) max(1.25rem, calc((100vw - 1480px) / 2)) clamp(3rem, 5vw, 5rem);
+  padding: clamp(2rem, 4vw, 3.5rem) max(1.25rem, calc((100vw - 1680px) / 2)) clamp(3rem, 5vw, 5rem);
   overflow: hidden;
   isolation: isolate;
   background:
@@ -220,18 +220,18 @@ main {
   display: grid;
   justify-items: center;
   gap: clamp(0.8rem, 1.4vw, 1.35rem);
-  width: min(90vw, 1240px);
-  max-width: 1240px;
+  width: min(92vw, 1400px);
+  max-width: 1400px;
   padding: 0;
   margin: 0 auto;
   text-align: center;
 }
 
 .home-hero h1 {
-  max-width: 1240px;
+  max-width: 1400px;
   color: var(--plum);
   font-family: var(--font-heading);
-  font-size: clamp(calc(3.5rem + 2px), calc(6.5vw + 2px), calc(5.5rem + 2px));
+  font-size: clamp(calc(3.5rem + 2px), calc(7vw + 2px), calc(6rem + 2px));
   line-height: 1.25;
   white-space: normal;
   text-shadow: none;

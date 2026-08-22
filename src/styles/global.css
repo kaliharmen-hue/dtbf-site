@@ -635,11 +635,11 @@ main {
 }
 
 .definition-section__copy p {
-  max-width: 39rem;
+  max-width: none;
   color: var(--paper);
   font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 2.1vw, 2.35rem);
-  line-height: 1.4;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .definition-section__image {

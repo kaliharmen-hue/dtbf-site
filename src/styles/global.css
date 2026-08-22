@@ -620,18 +620,19 @@ main {
 
 .definition-section {
   display: grid;
-  grid-template-columns: minmax(20rem, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(24rem, 0.85fr) minmax(26rem, 38rem) minmax(5rem, 0.55fr);
   align-items: stretch;
   width: 100%;
   margin: clamp(3rem, 7vw, 7rem) 0;
   overflow: hidden;
-  background: var(--violet);
+  background: #eeedf4;
 }
 
 .definition-section__copy {
   display: grid;
   align-content: center;
-  padding: clamp(3rem, 6vw, 5.5rem) max(2.5rem, var(--page-gutter));
+  padding: clamp(3rem, 6vw, 5.5rem);
+  background: var(--violet);
 }
 
 .definition-section__copy p {
@@ -964,6 +965,12 @@ textarea:focus {
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+@media (max-width: 1200px) {
+  .definition-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 1080px) {

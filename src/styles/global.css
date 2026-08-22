@@ -566,20 +566,14 @@ main {
   display: none;
 }
 
-.book-image__crop {
-  width: min(100%, 26rem);
-  aspect-ratio: 24 / 37.5;
-  overflow: hidden;
-  box-shadow: 0 0.9rem 1.8rem rgba(28, 33, 32, 0.16);
-}
-
 .book-image img {
   position: relative;
   display: block;
-  width: 104.17%;
+  width: min(100%, 26rem);
   height: auto;
-  max-height: none;
-  transform: translateX(-4%);
+  max-height: 39rem;
+  object-fit: contain;
+  box-shadow: 0 0.9rem 1.8rem rgba(28, 33, 32, 0.16);
 }
 
 .light-button {

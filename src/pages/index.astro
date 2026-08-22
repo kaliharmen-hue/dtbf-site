@@ -12,6 +12,7 @@ const workWithMeImage = withBase("assets/card-work-with-me.png");
 const journalImage = withBase("assets/card-read-the-journal.png");
 const speakingImage = withBase("assets/card-speaking.png");
 const bookCoverImage = withBase("assets/book-cover.jpg");
+const definitionImage = withBase("assets/dtbf-definition.jpg");
 const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? null);
 ---
 
@@ -135,14 +136,12 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
     <a class="button secondary light-button" href={withBase("blog/")}>See all Journal entries</a>
   </section>
 
-  <section class="final-cta">
-    <div class="image-placeholder final-image">
-      <span>Final background image placeholder</span>
+  <section class="definition-section">
+    <div class="definition-section__copy">
+      <p>Sometimes you’ve just got to start somewhere: being honest with yourself about what’s actually going on, doing something about that thing you know isn’t helping but keep doing anyway, admitting the path you’re on isn’t working, or finally giving some attention to the idea you can’t quite leave alone.</p>
     </div>
-    <div class="final-cta__copy">
-      <h2>Still Figuring It Out</h2>
-      <p>If you've ever felt trapped by who you were supposed to be, you're probably in the right place.</p>
-      <a class="button" href={withBase("blog/")}>Read the blog</a>
+    <div class="definition-section__image">
+      <img src={definitionImage} alt="Dare to Break Free definition" />
     </div>
   </section>
 </BaseLayout>

@@ -622,8 +622,8 @@ main {
   display: grid;
   grid-template-columns: minmax(20rem, 0.72fr) minmax(0, 1fr);
   align-items: stretch;
-  width: min(1680px, calc(100% - 5rem));
-  margin: clamp(3rem, 7vw, 7rem) auto;
+  width: 100%;
+  margin: clamp(3rem, 7vw, 7rem) 0;
   overflow: hidden;
   background: var(--violet);
 }
@@ -631,7 +631,7 @@ main {
 .definition-section__copy {
   display: grid;
   align-content: center;
-  padding: clamp(3rem, 6vw, 5.5rem);
+  padding: clamp(3rem, 6vw, 5.5rem) max(2.5rem, var(--page-gutter));
 }
 
 .definition-section__copy p {
@@ -1159,7 +1159,7 @@ textarea:focus {
 
   .definition-section {
     grid-template-columns: 1fr;
-    width: min(100% - 2rem, 34rem);
+    width: 100%;
   }
 
   .definition-section__copy {

@@ -638,8 +638,8 @@ main {
   max-width: none;
   color: var(--paper);
   font-family: var(--font-heading);
-  font-size: 20px;
-  line-height: 1.5;
+  font-size: 28px;
+  line-height: 1.45;
 }
 
 .definition-section__image {

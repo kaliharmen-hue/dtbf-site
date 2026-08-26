@@ -40,7 +40,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.6;
 }
 
@@ -550,7 +550,7 @@ main {
 .memoir-section__copy .stack {
   max-width: 640px;
   color: var(--ink);
-  font-size: clamp(1.1rem, 1.35vw, 1.28rem);
+  font-size: 1rem;
   line-height: 1.6;
 }
 

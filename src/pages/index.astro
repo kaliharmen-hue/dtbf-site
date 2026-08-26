@@ -79,23 +79,6 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
     </div>
   </section>
 
-  <section class="memoir-section">
-    <div class="memoir-section__copy">
-      <p class="eyebrow">Memoir</p>
-      <h2>The Memoir</h2>
-      <div class="stack">
-        <p>Dare to Break Free started as an idea in 2009 and took seventeen years to finish.</p>
-        <p>Somewhere in all of that, life happened.</p>
-        <p>I wanted to write a memoir not only for my own healing, but in the hope it might help someone else feel a little less alone in theirs.</p>
-        <p>It's about what happens after survival too.</p>
-      </div>
-      <a class="button secondary light-button" href={withBase("book/")}>About the book</a>
-    </div>
-    <div class="image-placeholder book-image">
-      <img src={bookCoverImage} alt="Dare to Break Free book cover" />
-    </div>
-  </section>
-
   <section class="section latest-section">
     <div class="section-heading">
       <p class="eyebrow">Journal</p>
@@ -152,6 +135,21 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         <p>Admitting the path you’re on isn’t working.</p>
         <p>Or finally giving some attention to the idea you can’t quite leave alone.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="memoir-section">
+    <div class="memoir-section__copy">
+      <p class="eyebrow">Memoir</p>
+      <h2>The Memoir</h2>
+      <div class="stack">
+        <p>Dare to Break Free started as an idea in 2009 and took seventeen years to finish. Two degrees, a few businesses and a lot of life happened in between.</p>
+        <p>It isn’t a polished redemption story. It’s what I actually lived.</p>
+      </div>
+      <a class="button secondary light-button" href={withBase("book/")}>About the book</a>
+    </div>
+    <div class="image-placeholder book-image">
+      <img src={bookCoverImage} alt="Dare to Break Free memoir" />
     </div>
   </section>
 </BaseLayout>

@@ -628,10 +628,10 @@ main {
 
 .definition-section__inner {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(22rem, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(2.5rem, 4vw, 4rem);
   align-items: center;
-  width: min(1240px, 100%);
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -644,7 +644,7 @@ main {
 }
 
 .definition-section__copy p {
-  max-width: 34rem;
+  max-width: none;
   color: var(--paper);
   font-family: var(--font-heading);
   font-size: 28px;
@@ -653,13 +653,13 @@ main {
 
 .definition-section__image {
   display: grid;
-  place-items: center;
+  place-items: center start;
   padding: 0;
 }
 
 .definition-section__image img {
   display: block;
-  width: min(100%, 24rem);
+  width: min(100%, 32rem);
   height: auto;
   box-shadow: 0 1.2rem 2.5rem rgba(28, 33, 32, 0.2);
 }

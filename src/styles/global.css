@@ -550,7 +550,7 @@ main {
 .memoir-section__copy .stack {
   max-width: 640px;
   color: var(--ink);
-  font-size: 1rem;
+  font-size: clamp(1.1rem, 1.35vw, 1.25rem);
   line-height: 1.6;
 }
 
@@ -570,9 +570,9 @@ main {
 .book-image img {
   position: relative;
   display: block;
-  width: min(100%, 26rem);
+  width: min(100%, 22rem);
   height: auto;
-  max-height: 39rem;
+  max-height: 34rem;
   object-fit: contain;
   box-shadow: 0 0.9rem 1.8rem rgba(28, 33, 32, 0.16);
 }

@@ -411,7 +411,7 @@ main {
 
 .reflection-image {
   min-height: 0;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 2;
 }
 
 .reflection-image::before {

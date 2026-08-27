@@ -7,7 +7,7 @@ const {
 } = Astro.props;
 
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
-const logoSrc = withBase("assets/dtbf-logo.png");
+const logoSrc = `${withBase("assets/dtbf-logo.png")}?v=2`;
 const faviconSrc = `${withBase("assets/dtbf-favicon.png")}?v=2`;
 const navItems = [
   { href: withBase(), label: "Home" },

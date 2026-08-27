@@ -17,6 +17,11 @@ const navItems = [
   { href: withBase("contact/"), label: "Speaking" },
   { href: withBase("about/"), label: "About" }
 ];
+const currentPath = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const homePath = withBase();
+const isCurrentNavItem = (href: string) => href === homePath
+  ? currentPath === homePath
+  : currentPath.startsWith(href);
 ---
 
 <!doctype html>
@@ -32,9 +37,10 @@ const navItems = [
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Marcellus&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <a class="brand" href={withBase()} aria-label="Dare to Break Free home">
-        <img src={logoSrc} alt="Dare to Break Free" />
+        <img src={logoSrc} alt="Dare to Break Free" width="683" height="215" fetchpriority="high" />
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
         <span class="menu-toggle__line"></span>
@@ -44,11 +50,11 @@ const navItems = [
       </button>
       <nav class="nav" id="primary-nav" aria-label="Primary navigation">
         {navItems.map((item) => (
-          <a href={item.href}>{item.label}</a>
+          <a href={item.href} aria-current={isCurrentNavItem(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <footer class="site-footer">

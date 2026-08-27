@@ -1,28 +1,47 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import heroImage from "../assets/kali-harmen-current.jpg";
+import mainHeroImage from "../assets/home-page-hero.jpg";
+import workWithMeImage from "../assets/card-work-with-me.png";
+import journalImage from "../assets/card-read-the-journal.png";
+import speakingImage from "../assets/card-speaking.png";
+import bookCoverImage from "../assets/book-cover.jpg";
+import definitionImage from "../assets/dtbf-definition.jpg";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
-const heroImage = withBase("assets/kali-harmen-current.jpg");
-const mainHeroImage = withBase("assets/home-page-hero.jpg");
-const workWithMeImage = withBase("assets/card-work-with-me.png");
-const journalImage = withBase("assets/card-read-the-journal.png");
-const speakingImage = withBase("assets/card-speaking.png");
-const bookCoverImage = withBase("assets/book-cover.jpg");
-const definitionImage = withBase("assets/dtbf-definition.jpg");
 const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? null);
 ---
 
 <BaseLayout title="Dare to Break Free | Stories of Living, Learning & Letting Go">
-  <section class="home-hero" style={`--hero-bg: url("${mainHeroImage}")`}>
+  <section class="home-hero">
+    <Image
+      class="home-hero__media"
+      src={mainHeroImage}
+      alt=""
+      widths={[640, 960, 1280, 1600, 1920, 2400]}
+      sizes="100vw"
+      format="webp"
+      quality={82}
+      loading="eager"
+      fetchpriority="high"
+    />
     <div class="home-hero__copy">
       <h1>When Playing It Safe Starts to Feel Risky</h1>
       <div class="hero-intro-copy">
-        <p>Is there something you want to say, change, create or do next?</p>
+        <p><strong>If life isn't quite working out the way you thought it would, you're probably in the right place.</strong></p>
       </div>
+      <nav class="hero-paths" aria-label="Homepage paths">
+        <a href={withBase("share-your-story/")}>Work with me</a>
+        <span aria-hidden="true">·</span>
+        <a href={withBase("blog/")}>Read the Journal</a>
+        <span aria-hidden="true">·</span>
+        <a href={withBase("contact/")}>Invite me to speak</a>
+      </nav>
     </div>
   </section>
 
@@ -31,16 +50,24 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
       <p class="eyebrow">Intro</p>
       <h2>Hi, I'm Kali.</h2>
       <div class="editorial-copy stack">
-        <p><strong>Author of Dare to Break Free: <em>Drugs, Sex & Serendipity.</em></strong></p>
-        <p>For all the years I've spent coaching, studying psychology and doing more personal development than I can even account for, it was somewhere in the 21 revisions it took to finish my memoir that I began to really understand my story, and how much I was still censoring myself because of it.</p>
+        <p><strong>Author of <em>Dare to Break Free: Drugs, Sex & Serendipity</em>.</strong></p>
+        <p>For all the years I've spent coaching, studying psychology and doing more personal development than I can even account for, it was somewhere around revision 21 of my memoir that I began to really understand my story, and how much of it I was still censoring.</p>
         <p>I'd always been told, <strong>“Don't air your dirty laundry.”</strong> Instead, I'm letting mine fly free. Why? Because I will no longer let shame have a hold over me.</p>
-        <p>Our stories matter. And I don't mean the bullshit we tell ourselves that keeps us stuck. I mean what has actually happened to us, what we've made it mean and how it could still be influencing our lives today.</p>
+        <p>What happened to us matters. So does what we made it mean. Sometimes that stuff is still having a say in our lives long after we thought we'd dealt with it.</p>
         <p>I'm not pretending I've got the answers. I've learnt a lot along the way, but I still get stuck, trip myself up and have to find my way through things I thought I'd already figured out.</p>
       </div>
     </div>
     <div class="image-placeholder editorial-image hero-image--photo">
-      <img src={heroImage} alt="Portrait of Kali Harmen for the Dare to Break Free introduction" />
-      <span>Editorial image placeholder</span>
+      <Image
+        src={heroImage}
+        alt="Portrait of Kali Harmen"
+        widths={[480, 720, 960, 1200]}
+        sizes="(max-width: 1080px) 100vw, 38vw"
+        format="webp"
+        quality={82}
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   </section>
 
@@ -52,29 +79,29 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
     <div class="reflection-grid">
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
-          <img src={workWithMeImage} alt="Work with me" />
+          <Image src={workWithMeImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={82} loading="lazy" decoding="async" />
         </div>
-        <h3>Work With Me</h3>
+        <h3>Find Your Words</h3>
         <p>Got something you're trying to get hold of, work through, say or bring into the world?</p>
-        <p>I work one-to-one with people who need a thinking partner, useful questions and another brain in the room.</p>
-        <a class="button secondary light-button" href={withBase("share-your-story/")}>Find out more</a>
+        <p>I work one-to-one with people who need useful questions, someone to spot the thread and another brain in the room.</p>
+        <a class="button secondary light-button" href={withBase("share-your-story/")}>See how I work</a>
       </article>
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
-          <img src={journalImage} alt="Read the Journal" />
+          <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={82} loading="lazy" decoding="async" />
         </div>
         <h3>The Journal</h3>
-        <p>The book ends. I didn't.</p>
-        <p>This is where I write about life now, from midlife, ADHD and work to ambition, shame, sex, relationships and whatever else happens to be occupying my brain.</p>
+        <p><strong>The book ends. I didn't.</strong></p>
+        <p>This is where I write about life now: midlife, ADHD, work, ambition, shame, sex, relationships and whatever else refuses to leave my brain alone.</p>
         <a class="button secondary light-button" href={withBase("blog/")}>Read the Journal</a>
       </article>
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
-          <img src={speakingImage} alt="Speaking" />
+          <Image src={speakingImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={82} loading="lazy" decoding="async" />
         </div>
         <h3>Speaking</h3>
         <p>If you're looking for someone to speak who isn't going to give you a polished story about overcoming adversity and then pretend everything worked out perfectly afterwards, let's talk.</p>
-        <a class="button secondary light-button" href={withBase("contact/")}>Invite me</a>
+        <a class="button secondary light-button" href={withBase("contact/")}>Invite me to speak</a>
       </article>
     </div>
   </section>
@@ -89,7 +116,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         post ? (
           <article class="post-card journal-preview-card">
             <div class="image-placeholder journal-entry-image">
-              <img src={journalImage} alt="" />
+              <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
             </div>
             <p class="eyebrow">{index === 0 ? "Most recent Journal entry" : `${index + 1}${index === 1 ? "nd" : "rd"} most recent Journal entry`}</p>
             <h3><a href={withBase(`blog/${post.slug}/`)}>{post.data.title}</a></h3>
@@ -98,7 +125,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         ) : (
           <article class="post-card journal-preview-card journal-preview-card--empty">
             <div class="image-placeholder journal-entry-image">
-              <img src={journalImage} alt="" />
+              <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
             </div>
             <p class="eyebrow">{index === 1 ? "Second most recent Journal entry" : "Third most recent Journal entry"}</p>
             <h3>More journal entries coming soon</h3>
@@ -126,7 +153,16 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
   <section class="definition-section">
     <div class="definition-section__inner">
       <div class="definition-section__image">
-        <img src={definitionImage} alt="Dare to Break Free definition" />
+        <Image
+          src={definitionImage}
+          alt="Dare to Break Free, phrase. To stop pretending everything's fine when you know it isn't. To choose the unknown over staying stuck, despite having absolutely no idea what happens next."
+          widths={[480, 720, 960, 1200]}
+          sizes="(max-width: 980px) 100vw, 38vw"
+          format="webp"
+          quality={82}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div class="definition-section__copy">
         <p>Sometimes you’ve just got to start somewhere.</p>
@@ -149,7 +185,16 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
       <a class="button secondary light-button" href={withBase("book/")}>About the book</a>
     </div>
     <div class="image-placeholder book-image">
-      <img src={bookCoverImage} alt="Dare to Break Free memoir" />
+      <Image
+        src={bookCoverImage}
+        alt="Dare to Break Free memoir"
+        widths={[360, 540, 720, 960]}
+        sizes="(max-width: 1080px) 80vw, 28vw"
+        format="webp"
+        quality={82}
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   </section>
 </BaseLayout>

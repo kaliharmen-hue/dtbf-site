@@ -40,7 +40,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.6;
 }
 
@@ -109,7 +109,6 @@ main {
   object-position: left center;
 }
 
-.brand small,
 .eyebrow {
   color: var(--accent-dark);
   font-size: 0.78rem;
@@ -169,8 +168,7 @@ main {
 .healing-section,
 .themes-section,
 .memoir-section,
-.latest-section,
-.final-cta {
+.latest-section {
   color: var(--ink);
 }
 
@@ -297,11 +295,6 @@ main {
   text-transform: uppercase;
 }
 
-.hero-image {
-  min-height: min(70vh, 42rem);
-  transform: translateY(2rem);
-}
-
 .hero-image--photo {
   place-items: stretch;
   padding: 0;
@@ -383,16 +376,6 @@ main {
   font-size: clamp(2.4rem, 4.5vw, 4.8rem);
 }
 
-.atmospheric-image {
-  min-height: 24rem;
-}
-
-.healing-section__copy {
-  display: grid;
-  gap: 1.2rem;
-  max-width: 760px;
-}
-
 .reflection-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -437,25 +420,14 @@ main {
   font-size: clamp(1.6rem, 2.6vw, 2.4rem);
 }
 
+.reflection-card .button {
+  margin-top: auto;
+}
+
 .healing-section h2,
 .themes-section h2,
-.memoir-section h2,
-.final-cta h2 {
+.memoir-section h2 {
   color: var(--ink);
-}
-
-.healing-section__copy p:not(.eyebrow) {
-  max-width: 560px;
-  color: var(--violet);
-  font-size: 1.2rem;
-}
-
-.healing-section__copy .editorial-copy {
-  max-width: 680px;
-  color: var(--ink);
-  font-family: var(--font-heading);
-  font-size: clamp(1.65rem, 3vw, 2.8rem);
-  line-height: 1.18;
 }
 
 .themes-section {
@@ -479,54 +451,6 @@ main {
   max-width: 760px;
   color: var(--ink);
   font-size: clamp(1.1rem, 1.35vw, 1.35rem);
-}
-
-.theme-lines {
-  display: grid;
-  gap: 0.55rem;
-}
-
-.theme-line {
-  width: fit-content;
-  max-width: min(100%, 920px);
-  margin: 0;
-  color: var(--ink);
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3.7vw, 3.8rem);
-  line-height: 1.06;
-}
-
-.theme-line--2,
-.theme-line--5 {
-  margin-left: 10vw;
-  color: var(--violet);
-}
-
-.theme-line--3,
-.theme-line--7 {
-  margin-left: 3vw;
-  color: #0f8b8d;
-}
-
-.theme-line--4,
-.theme-line--8 {
-  margin-left: 16vw;
-  color: var(--plum);
-}
-
-.mini-image-row {
-  display: grid;
-  grid-template-columns: 0.85fr 1.1fr 0.7fr;
-  gap: 1rem;
-  align-items: end;
-}
-
-.mini-image {
-  min-height: 11rem;
-}
-
-.mini-image:nth-child(2) {
-  min-height: 16rem;
 }
 
 .memoir-section {
@@ -581,16 +505,6 @@ main {
   width: fit-content;
   color: var(--accent);
   border-color: rgba(15, 139, 141, 0.45);
-}
-
-.bridge-section__copy p {
-  max-width: 620px;
-  color: var(--violet);
-  font-size: clamp(1.4rem, 3vw, 2.4rem);
-}
-
-.bridge-image {
-  min-height: 20rem;
 }
 
 .section.latest-section {
@@ -664,27 +578,12 @@ main {
   box-shadow: 0 1.2rem 2.5rem rgba(28, 33, 32, 0.2);
 }
 
-.hero {
-  display: grid;
-  min-height: 74vh;
-  padding: 5rem 1rem 4rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 245, 0.82) 58%, rgba(217, 231, 236, 0.62) 100%);
-}
-
-.hero-inner,
 .page-hero,
 .section,
-.cta-band,
 .form-section,
 .article {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-}
-
-.hero-inner {
-  align-self: center;
-  display: grid;
-  gap: 1.25rem;
 }
 
 .lede {
@@ -742,7 +641,7 @@ main {
 .journal-hero {
   gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .journal-hero h1 {
@@ -761,14 +660,6 @@ main {
 .form-section,
 .article {
   padding: 4rem 0;
-}
-
-.soft-band {
-  width: 100%;
-  max-width: none;
-  padding: 4rem max(1rem, calc((100vw - 1180px) / 2));
-  background: var(--paper);
-  border-block: 1px solid var(--line);
 }
 
 .section-heading {
@@ -905,18 +796,6 @@ main {
   font-weight: 700;
 }
 
-.cta-band {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-bottom: 4rem;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  background: var(--paper);
-  border: 1px solid var(--line);
-}
-
 .contact-form {
   display: grid;
   gap: 1rem;
@@ -1039,79 +918,24 @@ textarea:focus {
     --page-gutter: 1.25rem;
   }
 
-  .site-footer,
-  .cta-band {
+  .site-footer {
     align-items: flex-start;
     flex-direction: column;
   }
 
   .site-header {
-    position: relative;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.75rem;
     width: min(100% - 1.25rem, 1520px);
     padding: 0.8rem 0;
   }
 
-  .menu-toggle {
-    display: grid;
-    margin-left: auto;
-  }
-
-  .nav {
-    display: none;
-    width: 100%;
-    justify-content: stretch;
-    gap: 0;
-    padding: 0.45rem 0 0.25rem;
-    font-size: 1rem;
-  }
-
-  .nav.is-open {
-    display: grid;
-  }
-
-  .nav a {
-    display: block;
-    padding: 0.85rem 0;
-    border-top: 1px solid rgba(85, 73, 113, 0.18);
-  }
-
   .brand img {
-    width: min(76vw, 27rem);
-    max-height: 5.75rem;
-  }
-
-  .hero {
-    min-height: 62vh;
-    padding-top: 3rem;
-  }
-
-  .two-column,
-  .form-section,
-  .post-grid,
-  .journal-hero,
-  .journal-theme-grid,
-  .reflection-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .post-card {
-    min-height: auto;
-  }
-
-  .home-hero,
-  .editorial-section,
-  .healing-section,
-  .memoir-section {
-    grid-template-columns: 1fr;
+    width: min(67vw, 24rem);
+    max-height: 5rem;
   }
 
   .home-hero {
-    min-height: 34rem;
-    padding: 2.5rem 1.25rem 3rem;
+    min-height: 30rem;
+    padding: 2rem 1.25rem 2.5rem;
     background: var(--hero-bg), #f4f6fc;
     background-position: 62% center;
     background-size: cover;
@@ -1142,31 +966,10 @@ textarea:focus {
     font-size: 1.12rem;
   }
 
-  .hero-image,
   .editorial-image,
-  .atmospheric-image,
   .book-image {
     min-height: 18rem;
     transform: none;
-  }
-
-  .theme-line,
-  .theme-line--2,
-  .theme-line--3,
-  .theme-line--4,
-  .theme-line--5,
-  .theme-line--7,
-  .theme-line--8 {
-    margin-left: 0;
-  }
-
-  .mini-image-row {
-    grid-template-columns: 1fr;
-  }
-
-  .mini-image,
-  .mini-image:nth-child(2) {
-    min-height: 10rem;
   }
 
   .definition-section__copy {
@@ -1175,27 +978,5 @@ textarea:focus {
 
   .definition-section__image img {
     height: auto;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #f4f6fc;
-    --paper: #f4f6fc;
-    --ink: #1c2120;
-    --muted: #554971;
-    --line: rgba(85, 73, 113, 0.24);
-    --accent-dark: #291528;
-    --sky: rgba(15, 139, 141, 0.16);
-  }
-
-  .post-card,
-  input,
-  textarea {
-    background: #ffffff;
-  }
-
-  .hero {
-    background: linear-gradient(90deg, rgba(244, 246, 252, 0.95), rgba(244, 246, 252, 0.82));
   }
 }

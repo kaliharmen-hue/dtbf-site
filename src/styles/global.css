@@ -103,8 +103,8 @@ main {
 
 .brand img {
   display: block;
-  width: clamp(20rem, 31vw, 33rem);
-  max-height: 5.6rem;
+  width: clamp(24rem, 36vw, 38rem);
+  max-height: 7.5rem;
   object-fit: contain;
   object-position: left center;
 }
@@ -1080,8 +1080,8 @@ textarea:focus {
   }
 
   .brand img {
-    width: min(62vw, 20rem);
-    max-height: 4rem;
+    width: min(72vw, 24rem);
+    max-height: 5rem;
   }
 
   .hero {

@@ -196,7 +196,6 @@ main {
 .home-hero,
 .editorial-section,
 .healing-section,
-.themes-section,
 .memoir-section,
 .latest-section {
   color: var(--ink);
@@ -314,8 +313,7 @@ main {
 
 .home-hero .eyebrow,
 .editorial-section .eyebrow,
-.healing-section .eyebrow,
-.themes-section .eyebrow {
+.healing-section .eyebrow {
   color: var(--accent-text);
 }
 
@@ -373,6 +371,11 @@ main {
 .intro-panel__text {
   display: grid;
   gap: 1rem;
+}
+
+.intro-panel__text > .button {
+  justify-self: start;
+  margin-top: 0.5rem;
 }
 
 .editorial-section h2 {
@@ -466,32 +469,8 @@ main {
 }
 
 .healing-section h2,
-.themes-section h2,
 .memoir-section h2 {
   color: var(--ink);
-}
-
-.themes-section {
-  display: grid;
-  gap: clamp(2.5rem, 6vw, 5rem);
-  padding: clamp(5rem, 10vw, 8rem) var(--page-gutter);
-  background: #f4f6fc;
-}
-
-.themes-section__heading {
-  display: grid;
-  gap: 1rem;
-  max-width: 680px;
-}
-
-.about-snapshot {
-  gap: clamp(1.5rem, 4vw, 3rem);
-}
-
-.about-snapshot__copy {
-  max-width: 760px;
-  color: var(--ink);
-  font-size: clamp(1.1rem, 1.35vw, 1.35rem);
 }
 
 .memoir-section {

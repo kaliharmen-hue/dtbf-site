@@ -266,17 +266,17 @@ main {
   position: relative;
   z-index: 1;
   display: grid;
-  justify-items: center;
+  justify-items: start;
   gap: clamp(0.8rem, 1.4vw, 1.35rem);
-  width: min(92vw, 1400px);
-  max-width: 1400px;
+  width: min(60vw, 1050px);
+  max-width: 1050px;
   padding: 0;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  text-align: left;
 }
 
 .home-hero h1 {
-  max-width: 1400px;
+  max-width: 950px;
   color: var(--plum);
   font-family: var(--font-heading);
   font-size: clamp(calc(3.5rem + 2px), calc(7vw + 2px), calc(6rem + 2px));
@@ -294,7 +294,7 @@ main {
 .hero-intro-copy {
   display: grid;
   gap: 0.5rem;
-  max-width: 1020px;
+  max-width: 760px;
 }
 
 .home-hero .hero-intro-copy p {
@@ -308,7 +308,7 @@ main {
 .hero-paths {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 0.35rem 0.75rem;
   color: var(--plum);

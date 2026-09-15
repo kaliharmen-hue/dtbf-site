@@ -983,8 +983,8 @@ textarea:focus {
 
 @media (max-width: 900px) {
   .home-hero {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     min-height: 0;
     aspect-ratio: auto;
     padding: 0;
@@ -993,13 +993,14 @@ textarea:focus {
   .home-hero__media {
     position: relative;
     inset: auto;
-    z-index: auto;
-    order: 2;
+    z-index: 0;
+    grid-column: 1;
+    grid-row: 1;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 2 / 1;
     object-fit: cover;
-    object-position: right center;
+    object-position: center;
   }
 
   .home-hero::before {
@@ -1007,17 +1008,44 @@ textarea:focus {
   }
 
   .home-hero__copy {
-    order: 1;
-    justify-items: center;
+    display: contents;
+  }
+
+  .home-hero h1 {
+    z-index: 1;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: start;
+    width: 62%;
+    max-width: 35rem;
+    padding: 0;
+    margin-left: var(--page-gutter);
+    text-align: left;
+  }
+
+  .hero-intro-copy {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: stretch;
     width: 100%;
-    max-width: 42rem;
-    padding: 2.5rem 1.25rem 2rem;
-    margin: 0 auto;
-    text-align: center;
+    max-width: none;
+    padding: 1.5rem var(--page-gutter) 0.4rem;
+    text-align: left;
   }
 
   .hero-paths {
-    justify-content: center;
+    grid-column: 1;
+    grid-row: 3;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0.5rem var(--page-gutter) 2rem;
+  }
+
+  .hero-paths span {
+    display: none;
   }
 }
 
@@ -1062,8 +1090,8 @@ textarea:focus {
   }
 
   .home-hero h1 {
-    font-size: clamp(calc(3rem + 2px), calc(12vw + 2px), calc(4.5rem + 2px));
-    line-height: 1.25;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1.08;
     white-space: normal;
   }
 
@@ -1072,8 +1100,8 @@ textarea:focus {
   }
 
   .hero-paths {
-    gap: 0.3rem 0.55rem;
-    font-size: 0.98rem;
+    gap: 0.7rem;
+    font-size: 1rem;
   }
 
   .editorial-image,

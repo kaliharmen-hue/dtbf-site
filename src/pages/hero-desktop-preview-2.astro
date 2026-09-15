@@ -1,0 +1,141 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import previewHeroImage from "../assets/home-page-hero-left-preview-2.png";
+
+const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
+---
+
+<BaseLayout
+  title="Desktop Hero Preview 2 | Dare to Break Free"
+  description="Second desktop homepage hero concept preview"
+>
+  <section class="desktop-preview-hero">
+    <Image
+      class="desktop-preview-hero__media"
+      src={previewHeroImage}
+      alt=""
+      widths={[960, 1280, 1600, 1920, 2400]}
+      sizes="100vw"
+      format="webp"
+      quality={82}
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="desktop-preview-hero__copy">
+      <h1>When Playing It Safe<br />Starts to Feel Risky</h1>
+      <p><strong>If life isn't quite working out the way you thought it would, you're probably in the right place.</strong></p>
+      <nav class="desktop-preview-hero__paths" aria-label="Homepage paths">
+        <a href={withBase("share-your-story/")}>Work with me</a>
+        <span aria-hidden="true">·</span>
+        <a href={withBase("blog/")}>Read the Journal</a>
+        <span aria-hidden="true">·</span>
+        <a href={withBase("contact/")}>Invite me to speak</a>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .desktop-preview-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 43% 57%;
+    align-items: center;
+    aspect-ratio: 2 / 1;
+    min-height: 34rem;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--paper);
+  }
+
+  .desktop-preview-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .desktop-preview-hero__copy {
+    display: grid;
+    grid-column: 2;
+    justify-self: stretch;
+    justify-items: start;
+    gap: clamp(1rem, 1.5vw, 1.5rem);
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    padding: clamp(2.5rem, 5vw, 5.5rem) var(--page-gutter) clamp(3rem, 6vw, 6rem) clamp(1.5rem, 3vw, 4rem);
+    color: var(--plum);
+    text-align: left;
+  }
+
+  .desktop-preview-hero h1 {
+    width: 100%;
+    max-width: none;
+    color: var(--plum);
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 5.2vw, 5.75rem);
+    line-height: 1.12;
+  }
+
+  .desktop-preview-hero p {
+    max-width: 46rem;
+    font-size: clamp(1.2rem, 1.55vw, 1.65rem);
+    line-height: 1.5;
+  }
+
+  .desktop-preview-hero__paths {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+    min-width: 0;
+    max-width: 100%;
+    color: var(--plum);
+    font-size: clamp(1rem, 1.25vw, 1.2rem);
+    font-weight: 700;
+  }
+
+  .desktop-preview-hero__paths a {
+    text-decoration-color: var(--accent-text);
+  }
+
+  .desktop-preview-hero__paths a:hover {
+    color: var(--accent-text);
+  }
+
+  @media (max-width: 700px) {
+    .desktop-preview-hero {
+      grid-template-columns: 1fr;
+      aspect-ratio: auto;
+      min-height: 0;
+    }
+
+    .desktop-preview-hero__media {
+      position: relative;
+      z-index: 0;
+      aspect-ratio: 2 / 1;
+    }
+
+    .desktop-preview-hero__copy {
+      grid-column: 1;
+      justify-items: center;
+      width: 100%;
+      padding: 2rem var(--page-gutter) 2.5rem;
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .desktop-preview-hero h1 {
+      font-size: clamp(2.4rem, 9vw, 4rem);
+    }
+
+    .desktop-preview-hero__paths {
+      justify-content: center;
+    }
+  }
+</style>

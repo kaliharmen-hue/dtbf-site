@@ -23,7 +23,7 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
       fetchpriority="high"
     />
     <div class="desktop-preview-hero__copy">
-      <h1>When Playing It Safe Starts to Feel Risky</h1>
+      <h1>When Playing It Safe<br />Starts to Feel Risky</h1>
       <p><strong>If life isn't quite working out the way you thought it would, you're probably in the right place.</strong></p>
       <nav class="desktop-preview-hero__paths" aria-label="Homepage paths">
         <a href={withBase("share-your-story/")}>Work with me</a>
@@ -62,20 +62,23 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
   .desktop-preview-hero__copy {
     display: grid;
     grid-column: 2;
+    justify-self: stretch;
     justify-items: start;
     gap: clamp(1rem, 1.5vw, 1.5rem);
     min-width: 0;
-    width: min(100%, 58rem);
+    width: auto;
+    max-width: none;
     padding: clamp(2.5rem, 5vw, 5.5rem) var(--page-gutter) clamp(3rem, 6vw, 6rem) clamp(1.5rem, 3vw, 4rem);
     color: var(--plum);
     text-align: left;
   }
 
   .desktop-preview-hero h1 {
-    max-width: 54rem;
+    width: 100%;
+    max-width: none;
     color: var(--plum);
     font-family: var(--font-heading);
-    font-size: clamp(3.75rem, 5.6vw, 6.5rem);
+    font-size: clamp(3.5rem, 5.2vw, 5.75rem);
     line-height: 1.12;
   }
 

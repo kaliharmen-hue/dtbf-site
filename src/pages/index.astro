@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import heroImage from "../assets/hi-im-kali.png";
-import mainHeroImage from "../assets/home-page-hero-portrait.png";
+import mainHeroImage from "../assets/home-page-hero-main.png";
 import workWithMeImage from "../assets/card-work-with-me.jpg";
 import journalImage from "../assets/card-read-the-journal.png";
 import speakingImage from "../assets/card-speaking.jpg";
@@ -31,7 +31,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
       fetchpriority="high"
     />
     <div class="home-hero__copy">
-      <h1>When Playing It Safe Starts to Feel Risky</h1>
+      <h1><span>When Playing It Safe</span> <span>Starts to Feel Risky</span></h1>
       <div class="hero-intro-copy">
         <p><strong>If life isn't quite working out the way you thought it would, you're probably in the right place.</strong></p>
       </div>

@@ -220,7 +220,7 @@ main {
   align-items: center;
   min-height: 0;
   aspect-ratio: 2 / 1;
-  padding: clamp(2rem, 4vw, 3.5rem) var(--page-gutter) clamp(3rem, 5vw, 5rem);
+  padding: 2rem var(--page-gutter) 2rem 42%;
   overflow: hidden;
   isolation: isolate;
   background: #f4f6fc;
@@ -237,7 +237,7 @@ main {
 }
 
 .home-hero::before {
-  content: "";
+  content: none;
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -269,19 +269,20 @@ main {
   display: grid;
   justify-items: start;
   gap: clamp(0.8rem, 1.4vw, 1.35rem);
-  width: min(60vw, 1050px);
-  max-width: 1050px;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
   padding: 0;
   margin: 0;
   text-align: left;
 }
 
 .home-hero h1 {
-  max-width: 950px;
+  max-width: none;
   color: var(--plum);
   font-family: var(--font-heading);
-  font-size: clamp(calc(3.5rem + 2px), calc(7vw + 2px), calc(6rem + 2px));
-  line-height: 1.25;
+  font-size: 64px;
+  line-height: 1.2;
   white-space: normal;
   text-shadow: none;
 }
@@ -290,6 +291,18 @@ main {
   max-width: 520px;
   color: rgba(244, 246, 252, 0.88);
   font-size: clamp(1.3rem, 2.7vw, 2rem);
+}
+
+.home-hero h1 span {
+  display: block;
+}
+
+@media (min-width: 901px) and (max-width: 1439px) {
+  .home-hero h1 { font-size: 48px; }
+}
+
+@media (min-width: 901px) and (max-width: 1099px) {
+  .home-hero h1 { font-size: 38px; }
 }
 
 .hero-intro-copy {
@@ -1017,12 +1030,16 @@ textarea:focus {
     grid-row: 1;
     align-self: center;
     justify-self: start;
-    width: 62%;
+    width: 55%;
     max-width: 35rem;
     padding: 0;
-    margin-left: var(--page-gutter);
+    margin-left: 42%;
     text-align: left;
+    font-size: 40px;
+    line-height: 1.15;
   }
+
+  .home-hero h1 span { display: inline; }
 
   .hero-intro-copy {
     position: relative;
@@ -1110,7 +1127,7 @@ textarea:focus {
   }
 
   .home-hero h1 {
-    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-size: 36px;
     line-height: 1.08;
     white-space: normal;
   }
@@ -1138,4 +1155,16 @@ textarea:focus {
   .definition-section__image img {
     height: auto;
   }
+}
+
+@media (max-width: 600px) {
+  .home-hero h1 { font-size: 28px; }
+}
+
+@media (max-width: 420px) {
+  .home-hero h1 { font-size: 24px; }
+}
+
+@media (max-width: 359px) {
+  .home-hero h1 { font-size: 21px; }
 }

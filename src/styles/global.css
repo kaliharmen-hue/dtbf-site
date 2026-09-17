@@ -288,6 +288,10 @@ main {
   text-align: left;
 }
 
+.home-hero__heading {
+  display: contents;
+}
+
 .home-hero h1 {
   max-width: none;
   color: var(--plum);
@@ -1196,5 +1200,55 @@ textarea:focus {
 
   .hero-paths a {
     padding-inline: 0.25rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 900px) {
+  .home-hero__media {
+    height: 100%;
+    object-position: left top;
+  }
+
+  .home-hero__heading {
+    display: grid;
+    grid-area: 1 / 1;
+    align-self: center;
+    gap: 1rem;
+    width: 58%;
+    min-width: 0;
+    margin-left: 40%;
+    padding: 1rem 1rem 1rem 0;
+    z-index: 1;
+  }
+
+  .home-hero h1 {
+    grid-area: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-wrap: balance;
+  }
+
+  .home-hero .hero-intro-copy {
+    grid-area: auto;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+  }
+
+  .hero-paths {
+    grid-row: 2;
+    padding-top: 1rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 600px) {
+  .home-hero .hero-intro-copy p {
+    font-size: 1.125rem;
+    line-height: 1.4;
   }
 }

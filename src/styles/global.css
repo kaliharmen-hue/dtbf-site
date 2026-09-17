@@ -247,6 +247,17 @@ main {
   object-position: right top;
 }
 
+@media (min-width: 901px) {
+  .home-hero__media {
+    right: auto;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
+    mask-image: linear-gradient(to right, #000 85%, transparent);
+  }
+}
+
 .home-hero::before {
   content: none;
   position: absolute;

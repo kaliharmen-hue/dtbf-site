@@ -220,7 +220,7 @@ main {
   align-items: center;
   min-height: 0;
   aspect-ratio: 2 / 1;
-  padding: 2rem var(--page-gutter) 2rem 42%;
+  padding: 2.5rem var(--page-gutter) 2.5rem 40%;
   overflow: hidden;
   isolation: isolate;
   background: #f4f6fc;
@@ -281,8 +281,8 @@ main {
   max-width: none;
   color: var(--plum);
   font-family: var(--font-heading);
-  font-size: 64px;
-  line-height: 1.2;
+  font-size: 4.5rem;
+  line-height: 1.15;
   white-space: normal;
   text-shadow: none;
 }
@@ -298,11 +298,16 @@ main {
 }
 
 @media (min-width: 901px) and (max-width: 1439px) {
-  .home-hero h1 { font-size: 48px; }
+  .home-hero h1 { font-size: 4rem; }
 }
 
-@media (min-width: 901px) and (max-width: 1099px) {
-  .home-hero h1 { font-size: 38px; }
+@media (min-width: 901px) and (max-width: 1199px) {
+  .home-hero h1 {
+    font-size: 3.5rem;
+    text-wrap: balance;
+  }
+
+  .home-hero h1 span { display: inline; }
 }
 
 .hero-intro-copy {
@@ -314,7 +319,7 @@ main {
 .home-hero .hero-intro-copy p {
   max-width: none;
   color: var(--plum);
-  font-size: clamp(1.2rem, 1.7vw, 1.65rem);
+  font-size: 1.5rem;
   line-height: 1.5;
   text-shadow: none;
 }
@@ -326,7 +331,7 @@ main {
   flex-wrap: wrap;
   gap: 0.35rem 0.75rem;
   color: var(--plum);
-  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
@@ -1035,7 +1040,7 @@ textarea:focus {
     padding: 0;
     margin-left: 42%;
     text-align: left;
-    font-size: 40px;
+    font-size: 2.5rem;
     line-height: 1.15;
   }
 
@@ -1127,19 +1132,19 @@ textarea:focus {
   }
 
   .home-hero h1 {
-    font-size: 36px;
-    line-height: 1.08;
+    font-size: 2.25rem;
+    line-height: 1.15;
     white-space: normal;
   }
 
   .home-hero .hero-intro-copy p {
-    font-size: 1.12rem;
-    line-height: 1.45;
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 
   .hero-paths {
     gap: 0;
-    font-size: 0.92rem;
+    font-size: 1.125rem;
   }
 
   .editorial-image,
@@ -1158,13 +1163,27 @@ textarea:focus {
 }
 
 @media (max-width: 600px) {
-  .home-hero h1 { font-size: 28px; }
-}
+  .home-hero h1 {
+    grid-row: 2;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 1.5rem var(--page-gutter) 0;
+    font-size: 2rem;
+    text-align: center;
+  }
 
-@media (max-width: 420px) {
-  .home-hero h1 { font-size: 24px; }
-}
+  .hero-intro-copy {
+    grid-row: 3;
+    padding-top: 1rem;
+    box-shadow: none;
+  }
 
-@media (max-width: 359px) {
-  .home-hero h1 { font-size: 21px; }
+  .hero-paths {
+    grid-row: 4;
+  }
+
+  .hero-paths a {
+    padding-inline: 0.25rem;
+  }
 }

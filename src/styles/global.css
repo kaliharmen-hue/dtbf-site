@@ -533,10 +533,11 @@ main {
 
 .memoir-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.6fr);
-  gap: clamp(2rem, 8vw, 6rem);
+  grid-template-columns: minmax(0, 280px) minmax(0, 640px);
+  justify-content: center;
+  gap: 3rem;
   align-items: center;
-  padding: clamp(5rem, 10vw, 8rem) var(--page-gutter);
+  padding: 3rem var(--page-gutter);
   background:
     radial-gradient(circle at 82% 30%, rgba(15, 139, 141, 0.12), transparent 24rem),
     linear-gradient(135deg, rgba(85, 73, 113, 0.12), rgba(15, 139, 141, 0.07)),
@@ -546,7 +547,7 @@ main {
 
 .memoir-section__copy {
   display: grid;
-  gap: 1.6rem;
+  gap: 1rem;
 }
 
 .memoir-section__copy .stack {
@@ -560,7 +561,7 @@ main {
   display: grid;
   place-items: center;
   min-height: 0;
-  padding: clamp(1rem, 2vw, 2rem);
+  padding: 0;
   border: 0;
   background: transparent;
 }
@@ -572,9 +573,9 @@ main {
 .book-image img {
   position: relative;
   display: block;
-  width: min(100%, 22rem);
+  width: min(100%, 17.5rem);
   height: auto;
-  max-height: 34rem;
+  max-height: none;
   object-fit: contain;
   box-shadow: 0 0.9rem 1.8rem rgba(28, 33, 32, 0.16);
 }
@@ -1189,6 +1190,14 @@ textarea:focus {
 }
 
 @media (max-width: 600px) {
+  .memoir-section .book-image {
+    min-height: 0;
+  }
+
+  .memoir-section .book-image img {
+    width: min(100%, 220px);
+  }
+
   .home-hero h1 {
     grid-row: 2;
     width: 100%;

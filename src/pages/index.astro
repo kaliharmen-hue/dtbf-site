@@ -180,7 +180,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         ) : (
           <article class="post-card journal-preview-card journal-preview-card--empty">
             <div class="image-placeholder journal-entry-image">
-              <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 31vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
+              <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
             </div>
             <p class="eyebrow">{index === 1 ? "Second most recent Journal entry" : "Third most recent Journal entry"}</p>
             <h3>More journal entries coming soon</h3>

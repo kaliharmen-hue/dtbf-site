@@ -112,7 +112,7 @@
     z-index: 1;
     display: grid;
     gap: 1.1rem;
-    margin: -2.25rem 1rem 0;
+    margin: -1rem 1rem 0;
     padding: 1.35rem 1.25rem 1.5rem;
     background: var(--violet);
     border-radius: 0.5rem;
@@ -138,5 +138,40 @@
     line-height: 1.5;
     text-align: center;
     font-weight: 400;
+  }
+
+  .home-hero-mobile__paths {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .home-hero-mobile__paths a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.25rem;
+    border: 1px solid var(--paper);
+    border-radius: 0.4rem;
+    background: var(--paper);
+    color: var(--plum);
+    font-size: clamp(0.8rem, 3.3vw, 0.95rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .home-hero-mobile__paths a:hover {
+    background: transparent;
+    color: var(--paper);
+  }
+
+  .home-hero-mobile__paths a:focus-visible {
+    outline: 3px solid var(--paper);
+    outline-offset: 3px;
   }
 }

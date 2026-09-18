@@ -68,6 +68,10 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         <span>Starts to Feel Risky</span>
       </h1>
       <p>If life isn't quite working out the way you thought it would, you're probably in the right place.</p>
+      <nav class="home-hero-mobile__paths" aria-label="Homepage paths">
+        <a href={withBase("share-your-story/")}>Work with me</a>
+        <a href={withBase("blog/")}>Read the Journal</a>
+      </nav>
     </div>
   </section>
 

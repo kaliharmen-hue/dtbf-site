@@ -108,9 +108,11 @@
   }
 
   .home-hero-mobile__panel {
+    position: relative;
+    z-index: 1;
     display: grid;
     gap: 1.1rem;
-    margin: 0 1rem;
+    margin: -2.25rem 1rem 0;
     padding: 1.35rem 1.25rem 1.5rem;
     background: var(--violet);
     border-radius: 0.5rem;
@@ -119,11 +121,14 @@
   .home-hero-mobile h1 {
     color: var(--paper);
     font-family: "Merriweather", Georgia, serif;
-    font-size: clamp(1.9rem, 8vw, 2.35rem);
-    line-height: 1.15;
+    font-size: clamp(1.75rem, 7.2vw, 2.1rem);
+    line-height: 1.12;
     text-align: center;
-    text-wrap: balance;
     margin: 0;
+  }
+
+  .home-hero-mobile h1 span {
+    display: block;
   }
 
   .home-hero-mobile__panel p {

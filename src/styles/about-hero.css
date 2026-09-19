@@ -68,7 +68,7 @@
   .about-intro {
     width: min(1180px, calc(100% - 1.5rem));
     margin-top: -2.75rem;
-    border-radius: 1rem;
+    border-radius: 1rem 1rem 0 0;
   }
 }
 
@@ -86,7 +86,7 @@
   .about-intro {
     width: min(1180px, calc(100% - 2rem));
     margin-top: -7rem;
-    border-radius: 2.5rem;
+    border-radius: 2.5rem 2.5rem 0 0;
   }
 
   .about-intro > h2,

@@ -1,0 +1,16 @@
+/* A quiet tattoo backdrop for the About hero on tablet and desktop only. */
+@media (min-width: 480px) {
+  .page-hero.about-hero {
+    width: 100%;
+    min-height: clamp(35rem, 46vw, 46rem);
+    margin: 0;
+    padding-inline: max(1rem, calc((100vw - 1180px) / 2));
+    background-image:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.2) 56%, rgba(255, 255, 255, 0.02)),
+      url("../assets/About Page Hero.png");
+    background-position: center, center right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--line);
+  }
+}

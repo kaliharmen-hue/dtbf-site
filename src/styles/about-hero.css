@@ -1,6 +1,5 @@
-/* About: the portrait introduces the page; the longer introduction lives below it. */
-.page-hero.about-hero > h1,
-.page-hero.about-hero > h2 {
+/* About: let the portrait and one headline lead, with the story in a separate panel. */
+.page-hero.about-hero > h1 {
   color: var(--plum);
 }
 
@@ -8,11 +7,17 @@
   position: relative;
   z-index: 1;
   width: min(1040px, calc(100% - 2rem));
-  margin: -1.25rem auto 0;
+  margin: 0 auto;
   padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 4.25rem);
   background: #123d3d;
   border-top: 3px solid var(--accent);
   box-shadow: 0 1.25rem 2.75rem rgba(18, 61, 61, 0.14);
+}
+
+.about-intro > h2 {
+  max-width: 850px;
+  margin: 0 auto clamp(1.5rem, 3vw, 2.25rem);
+  color: #fff;
 }
 
 .about-intro .about-copy {
@@ -27,25 +32,25 @@
 @media (min-width: 480px) {
   .page-hero.about-hero {
     width: 100%;
-    min-height: clamp(26rem, 46vw, 42rem);
+    min-height: clamp(28rem, 48vw, 44rem);
     margin: 0;
     padding-inline: max(1rem, calc((100vw - 1180px) / 2));
     display: grid;
     grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
-    grid-template-rows: auto auto;
+    grid-template-rows: auto;
     align-content: center;
     column-gap: clamp(1rem, 3vw, 3rem);
     background-image:
       linear-gradient(90deg, transparent 38%, rgba(255, 255, 255, 0.06) 58%, rgba(255, 255, 255, 0.2)),
       url("../../About Page Kali .png");
-    background-position: center, left center;
+    /* Show the image's upper edge instead of cropping the space above Kali's head. */
+    background-position: center, left top;
     background-size: cover;
     background-repeat: no-repeat;
     border-bottom: 1px solid var(--line);
   }
 
-  .page-hero.about-hero > h1,
-  .page-hero.about-hero > h2 {
+  .page-hero.about-hero > h1 {
     grid-column: 2;
     min-width: 0;
     max-width: 100%;

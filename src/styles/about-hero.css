@@ -72,8 +72,8 @@
   }
 }
 
-/* Give the desktop panel a little more side space while letting its text
-   use more of the available width. Keep the existing overlap and mobile layout. */
+/* Keep the desktop panel close to its text while preserving the hero and
+   overlap. Smaller-screen composition stays unchanged. */
 @media (min-width: 901px) {
   .page-hero.about-hero {
     min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
@@ -84,13 +84,18 @@
   }
 
   .about-intro {
-    width: min(1380px, calc(100% - 2rem));
+    width: min(1180px, calc(100% - 2rem));
     margin-top: -7rem;
+    border-radius: 2.5rem;
   }
 
   .about-intro > h2,
   .about-intro .about-copy {
     max-width: 1000px;
+  }
+
+  .about-intro > h2 {
+    font-size: 48px;
   }
 }
 

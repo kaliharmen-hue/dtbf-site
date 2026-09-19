@@ -1,0 +1,4 @@
+/* Keep the memoir section distinct from its tinted neighbouring sections. */
+.memoir-section {
+  background: #fff;
+}

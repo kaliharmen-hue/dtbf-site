@@ -72,16 +72,21 @@
   }
 }
 
-/* Bring the desktop panel up towards the marked line and let it reach wider
-   without changing the portrait, hero height, or tablet/phone composition. */
+/* Give the desktop panel a little more side space while letting its text
+   use more of the available width. Keep the existing overlap and mobile layout. */
 @media (min-width: 901px) {
   .page-hero.about-hero {
     min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
   }
 
   .about-intro {
-    width: min(1460px, calc(100% - 2rem));
+    width: min(1380px, calc(100% - 2rem));
     margin-top: -7rem;
+  }
+
+  .about-intro > h2,
+  .about-intro .about-copy {
+    max-width: 1000px;
   }
 }
 

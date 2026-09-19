@@ -18,14 +18,14 @@
   object-fit: contain;
 }
 
-/* A spacious reading column, with the old tattoo hero as a quiet corner detail. */
+/* Let the story's white section run edge to edge, while its prose remains readable. */
 .section.two-column.about-section--story {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   display: block;
-  width: min(1120px, calc(100% - 2rem));
-  margin: clamp(3rem, 6vw, 5rem) auto;
+  width: 100%;
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
   padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 6vw, 5.5rem);
   background: #fff;
 }
@@ -49,12 +49,19 @@
 .about-section--story > .about-copy {
   position: relative;
   z-index: 1;
-  max-width: 780px;
+  max-width: 1000px;
   margin-inline: auto;
 }
 
 .about-section--story > h2 {
   margin-bottom: clamp(2rem, 3vw, 2.75rem);
+}
+
+/* The final section also spans the page; its two columns retain their own spacing. */
+.section.two-column.about-section--final {
+  width: 100%;
+  margin: 0;
+  padding-inline: clamp(1.5rem, 6vw, 6rem);
 }
 
 @media (max-width: 700px) {

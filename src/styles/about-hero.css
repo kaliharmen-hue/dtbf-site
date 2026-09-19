@@ -79,6 +79,10 @@
     min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
   }
 
+  .page-hero.about-hero > h1 {
+    transform: translateY(-30px);
+  }
+
   .about-intro {
     width: min(1380px, calc(100% - 2rem));
     margin-top: -7rem;

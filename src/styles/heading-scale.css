@@ -34,10 +34,15 @@
   }
 }
 
-/* Align inner-page and article H1s with the existing homepage H1. */
+/* Inner-page and article H1s use the exact homepage typeface, weight,
+   colour, line-height and responsive size. Keep the bespoke homepage intact. */
 .page-hero h1,
 .article h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: var(--site-h1-size);
+  line-height: 1.15;
+  color: var(--plum);
 }
 
 /* The named selectors override older page-specific H2 sizes. */

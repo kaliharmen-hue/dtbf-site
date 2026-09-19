@@ -57,6 +57,17 @@
   margin-bottom: clamp(2rem, 3vw, 2.75rem);
 }
 
+/* Let the heading use the full-width section without stretching the paragraphs. */
+@media (min-width: 901px) {
+  .section.two-column.about-section--story {
+    padding-inline: clamp(1.5rem, 3vw, 3.5rem);
+  }
+
+  .section.about-section--story > h2 {
+    max-width: 1400px;
+  }
+}
+
 /* The final section also spans the page; its two columns retain their own spacing. */
 .section.two-column.about-section--final {
   width: 100%;

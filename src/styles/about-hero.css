@@ -69,6 +69,13 @@
   }
 }
 
+/* Match the homepage's desktop hero height without changing tablet or phone layouts. */
+@media (min-width: 901px) {
+  .page-hero.about-hero {
+    min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
+  }
+}
+
 /* Until a separate phone image is ready, allow the lines to wrap on very small screens. */
 @media (max-width: 479px) {
   .page-hero.about-hero > h1 {

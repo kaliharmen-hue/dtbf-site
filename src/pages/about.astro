@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/about-hero.css";
+import "../styles/about-story.css";
+import aboutPhoto from "../assets/Kali Harmen - About.png";
 
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 ---
@@ -21,7 +23,12 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
   </section>
 
   <section class="section two-column about-section">
-    <h2>Chasing the Life I Thought I Wanted</h2>
+    <div class="about-section__visual">
+      <h2>Chasing the Life I Thought I Wanted</h2>
+      <figure class="about-section__portrait">
+        <img src={aboutPhoto.src} width={aboutPhoto.width} height={aboutPhoto.height} alt="Kali Harmen" loading="lazy" decoding="async" />
+      </figure>
+    </div>
     <div class="about-copy">
       <p>There was a time when I was hell bent on following advice like...</p>
       <p><strong>Find your passion. Follow your purpose. Work harder. Do more. Be more. Trust and everything will fall into place.</strong></p>

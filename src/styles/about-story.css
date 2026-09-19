@@ -1,0 +1,19 @@
+/* Keep the About portrait beside the story without cropping the uploaded photo. */
+.about-section__visual {
+  display: grid;
+  align-content: start;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  min-width: 0;
+}
+
+.about-section__portrait {
+  width: min(100%, 26.25rem);
+  margin: 0;
+}
+
+.about-section__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

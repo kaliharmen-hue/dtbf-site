@@ -9,9 +9,11 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
 
 <BaseLayout title="About Kali Harmen | Dare to Break Free">
   <section class="page-hero about-hero">
-    <p class="eyebrow">About</p>
     <h1>You’ve clicked About.</h1>
     <h2>Neat and tidy was never really my thing.</h2>
+  </section>
+
+  <section class="about-intro" aria-label="About Kali">
     <div class="about-copy">
       <p>
         I've taken an unconventional route in life. Been an addict, an escort, a toilet cleaner, personal trainer, nutritional therapist, weight loss specialist, life coach of more niches than I even remember, marketeer / social media manager (although you wouldn't think it to look at mine) and now author.
@@ -22,7 +24,7 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
     </div>
   </section>
 
-  <section class="section two-column about-section">
+  <section class="section two-column about-section about-section--story">
     <h2>Chasing the Life I Thought I Wanted</h2>
     <div class="about-copy">
       <p>There was a time when I was hell bent on following advice like...</p>

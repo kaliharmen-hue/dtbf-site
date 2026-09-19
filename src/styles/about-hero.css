@@ -72,10 +72,16 @@
   }
 }
 
-/* Match the homepage's desktop hero height without changing tablet or phone layouts. */
+/* Bring the desktop panel up towards the marked line and let it reach wider
+   without changing the portrait, hero height, or tablet/phone composition. */
 @media (min-width: 901px) {
   .page-hero.about-hero {
     min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
+  }
+
+  .about-intro {
+    width: min(1460px, calc(100% - 2rem));
+    margin-top: -7rem;
   }
 }
 

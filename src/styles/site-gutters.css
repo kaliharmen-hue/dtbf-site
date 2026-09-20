@@ -1,0 +1,32 @@
+/* One outer gutter across Home, About and future pages. Full-bleed section
+   backgrounds and intentionally narrow reading/panel widths are separate. */
+:root {
+  --site-content-max: 1680px;
+  --page-gutter: max(
+    clamp(1.25rem, 3vw, 2.5rem),
+    calc((100vw - var(--site-content-max)) / 2)
+  );
+}
+
+/* Wide navigation and multi-card sections use the same outer edge. */
+.site-header,
+.section.latest-section {
+  width: min(
+    var(--site-content-max),
+    calc(100% - var(--page-gutter) - var(--page-gutter))
+  );
+}
+
+/* Existing constrained content retains its own maximum, but never uses a
+   smaller edge gutter than the rest of the site. About's full-bleed sections
+   keep their more specific width rules. */
+.page-hero,
+.section,
+.form-section,
+.article,
+.site-footer {
+  width: min(
+    1180px,
+    calc(100% - var(--page-gutter) - var(--page-gutter))
+  );
+}

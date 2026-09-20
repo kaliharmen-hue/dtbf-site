@@ -36,6 +36,7 @@
 .about-story__inner > h2 {
   max-width: none;
   margin: 0 0 clamp(2.25rem, 4vw, 4rem);
+  text-align: center;
 }
 
 .about-story__row {

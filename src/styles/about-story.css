@@ -18,51 +18,66 @@
   object-fit: contain;
 }
 
-/* Let the story's white section run edge to edge, while its prose remains readable. */
-.section.two-column.about-section--story {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  display: block;
+/* Full-width About story with the same outer gutter as Home. The story is
+   split at the transition into employed work, rather than one long column. */
+.section.about-section--story {
   width: 100%;
   margin: clamp(3rem, 6vw, 5rem) 0 0;
   padding: clamp(3rem, 5vw, 5rem) var(--page-gutter);
   background: #fff;
 }
 
-.about-section--story::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  bottom: 0;
-  width: min(40%, 480px);
-  height: min(36rem, 80%);
-  pointer-events: none;
-  background: url("../assets/About Page Hero.png") right bottom / auto 100% no-repeat;
-  opacity: 0.36;
-  -webkit-mask-image: radial-gradient(ellipse at bottom right, #000 3%, transparent 75%);
-  mask-image: radial-gradient(ellipse at bottom right, #000 3%, transparent 75%);
-}
-
-.about-section--story > h2,
-.about-section--story > .about-copy {
-  position: relative;
-  z-index: 1;
-  max-width: 1000px;
+.about-story__inner {
+  width: 100%;
+  max-width: var(--site-content-max, 1680px);
   margin-inline: auto;
 }
 
-.about-section--story > h2 {
-  margin-bottom: clamp(2rem, 3vw, 2.75rem);
+.about-story__inner > h2 {
+  max-width: none;
+  margin: 0 0 clamp(2.25rem, 4vw, 4rem);
 }
 
-/* Retain the current heading layout until its two alternating image/text
-   sections and their imagery are ready. */
-@media (min-width: 901px) {
-  .section.about-section--story > h2 {
-    max-width: 1400px;
-  }
+.about-story__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.about-story__row + .about-story__row {
+  margin-top: clamp(3.5rem, 7vw, 7rem);
+}
+
+.about-story__copy {
+  max-width: 46rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.about-story__row--reverse .about-story__copy {
+  justify-self: end;
+}
+
+/* Temporary quiet visual slots, ready for two distinct story images. */
+.about-story__media {
+  width: 100%;
+  min-height: clamp(22rem, 35vw, 34rem);
+  aspect-ratio: 5 / 4;
+  border: 1px solid rgba(85, 73, 113, 0.12);
+  border-radius: 0.625rem;
+}
+
+.about-story__media--first {
+  background:
+    radial-gradient(circle at 70% 28%, rgba(255, 255, 255, 0.78), transparent 40%),
+    linear-gradient(145deg, #d9cbd4, #d4d3dd 52%, #eae3e7);
+}
+
+.about-story__media--second {
+  background:
+    radial-gradient(circle at 30% 72%, rgba(255, 255, 255, 0.75), transparent 43%),
+    linear-gradient(145deg, #cce2de, #e6eae3 56%, #bed4d8);
 }
 
 /* The final section also spans the page; its two columns retain their own spacing. */
@@ -72,10 +87,17 @@
   padding-inline: var(--page-gutter);
 }
 
-@media (max-width: 700px) {
-  .about-section--story::before {
-    width: 14rem;
-    height: 18rem;
-    opacity: 0.22;
+@media (max-width: 900px) {
+  .about-story__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-story__row--reverse .about-story__copy {
+    justify-self: stretch;
+  }
+
+  .about-story__media {
+    min-height: 16rem;
+    aspect-ratio: 5 / 3;
   }
 }

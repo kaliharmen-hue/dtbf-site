@@ -24,24 +24,38 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
     </div>
   </section>
 
-  <section class="section two-column about-section about-section--story">
-    <h2>Chasing the Life I Thought I Wanted</h2>
-    <div class="about-copy">
-      <p>There was a time when I was hell bent on following advice like...</p>
-      <p><strong>Find your passion. Follow your purpose. Work harder. Do more. Be more. Trust and everything will fall into place.</strong></p>
-      <p>What I found was, sometimes it fucking doesn't.</p>
-      <p>
-        By the time I'd finished my Master's, I hit a midlife wall. I was exhausted and broke. Years of striving had left me grieving the life I thought all those sacrifices were supposed to lead to. <strong>And if this hadn't worked, what the hell was I supposed to do next?</strong>
-      </p>
-      <p>
-        I listened to the voice inside me and folded my business, even though it meant walking away from everything I'd fought to create. I'd spent years studying, qualifying, building businesses and working with people. I cared about what I did. I thought I was living my purpose.
-      </p>
-      <p>
-        After more than two decades of self-employment, I did something that felt backwards: I got a job. Working conventional hours exposed just how erratically I'd always functioned and led to another assessment, then an ADHD diagnosis. Suddenly, leaving school with nothing, my scattered career path and the boom-and-bust cycles made more sense. So did the fact that I could handle academically demanding, science-heavy work, yet trying to sustain it as a career fried my brain.
-      </p>
-      <p>
-        The job grew with me. I completed another postgraduate qualification in digital marketing, and later became a director within the company. It also gave me something I hadn't had before: stability, which means I can still work <a href={withBase("share-your-story/")}>one-to-one</a> when it feels like a good fit to do so.
-      </p>
+  <section class="section about-section about-section--story">
+    <div class="about-story__inner">
+      <h2>Chasing the Life I Thought I Wanted</h2>
+
+      <div class="about-story__row">
+        <!-- Temporary visual panel. Replace with the first chosen story image. -->
+        <div class="about-story__media about-story__media--first" aria-hidden="true"></div>
+        <div class="about-copy about-story__copy">
+          <p>There was a time when I was hell bent on following advice like...</p>
+          <p><strong>Find your passion. Follow your purpose. Work harder. Do more. Be more. Trust and everything will fall into place.</strong></p>
+          <p>What I found was, sometimes it fucking doesn't.</p>
+          <p>
+            By the time I'd finished my Master's, I hit a midlife wall. I was exhausted and broke. Years of striving had left me grieving the life I thought all those sacrifices were supposed to lead to. <strong>And if this hadn't worked, what the hell was I supposed to do next?</strong>
+          </p>
+          <p>
+            I listened to the voice inside me and folded my business, even though it meant walking away from everything I'd fought to create. I'd spent years studying, qualifying, building businesses and working with people. I cared about what I did. I thought I was living my purpose.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-story__row about-story__row--reverse">
+        <div class="about-copy about-story__copy">
+          <p>
+            After more than two decades of self-employment, I did something that felt backwards: I got a job. Working conventional hours exposed just how erratically I'd always functioned and led to another assessment, then an ADHD diagnosis. Suddenly, leaving school with nothing, my scattered career path and the boom-and-bust cycles made more sense. So did the fact that I could handle academically demanding, science-heavy work, yet trying to sustain it as a career fried my brain.
+          </p>
+          <p>
+            The job grew with me. I completed another postgraduate qualification in digital marketing, and later became a director within the company. It also gave me something I hadn't had before: stability, which means I can still work <a href={withBase("share-your-story/")}>one-to-one</a> when it feels like a good fit to do so.
+          </p>
+        </div>
+        <!-- Temporary visual panel. Replace with the second chosen story image. -->
+        <div class="about-story__media about-story__media--second" aria-hidden="true"></div>
+      </div>
     </div>
   </section>
 

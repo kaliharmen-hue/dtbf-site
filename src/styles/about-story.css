@@ -26,7 +26,7 @@
   display: block;
   width: 100%;
   margin: clamp(3rem, 6vw, 5rem) 0 0;
-  padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 6vw, 5.5rem);
+  padding: clamp(3rem, 5vw, 5rem) var(--page-gutter);
   background: #fff;
 }
 
@@ -57,12 +57,9 @@
   margin-bottom: clamp(2rem, 3vw, 2.75rem);
 }
 
-/* Let the heading use the full-width section without stretching the paragraphs. */
+/* Retain the current heading layout until its two alternating image/text
+   sections and their imagery are ready. */
 @media (min-width: 901px) {
-  .section.two-column.about-section--story {
-    padding-inline: clamp(1.5rem, 3vw, 3.5rem);
-  }
-
   .section.about-section--story > h2 {
     max-width: 1400px;
   }
@@ -72,7 +69,7 @@
 .section.two-column.about-section--final {
   width: 100%;
   margin: 0;
-  padding-inline: clamp(1.5rem, 6vw, 6rem);
+  padding-inline: var(--page-gutter);
 }
 
 @media (max-width: 700px) {

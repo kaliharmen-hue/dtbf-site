@@ -81,8 +81,8 @@
     linear-gradient(145deg, #cce2de, #e6eae3 56%, #bed4d8);
 }
 
-/* Align the portrait's top with Here I Am, while the copy sits below
-   the heading in the right-hand column. */
+/* Keep the portrait aligned with the heading, but don't let the tall portrait
+   stretch the heading's row and push the right-hand copy far below it. */
 .section.two-column.about-section--final {
   width: 100%;
   margin: 0;
@@ -90,7 +90,8 @@
   grid-template-areas:
     "portrait heading"
     "portrait copy";
-  row-gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-rows: min-content 1fr;
+  row-gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .about-section--final > .about-section__visual {
@@ -116,6 +117,7 @@
       "portrait"
       "heading"
       "copy";
+    grid-template-rows: auto;
   }
 }
 

@@ -119,7 +119,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
       <h2>The Memoir</h2>
       <div class="stack">
         <p>Dare to Break Free started as an idea in 2009 and took seventeen years to finish. Two degrees, a few businesses and a lot of life happened in between.</p>
-        <p>It isn’t a polished redemption story. It’s what I actually lived.</p>
+        <p>It isn’t a polished redemption story. It’s my story.</p>
       </div>
       <a class="button secondary light-button" href={withBase("book/")}>About the book</a>
     </div>
@@ -127,7 +127,6 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
 
   <section class="healing-section">
     <div class="pathways-heading">
-      <p class="eyebrow">Start here</p>
       <h2>Choose Your Starting Point</h2>
     </div>
     <div class="reflection-grid">
@@ -157,6 +156,30 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         <p>If you're looking for someone to speak who isn't going to give you a polished story about overcoming adversity and then pretend everything worked out perfectly afterwards, let's talk.</p>
         <a class="button secondary light-button" href={withBase("contact/")}>Invite me to speak</a>
       </article>
+    </div>
+  </section>
+
+  <section class="definition-section">
+    <div class="definition-section__inner">
+      <div class="definition-section__image">
+        <Image
+          src={definitionImage}
+          alt="Dare to Break Free, phrase. To stop pretending everything's fine when you know it isn't. To choose the unknown over staying stuck, despite having absolutely no idea what happens next."
+          widths={[480, 720, 960, 1200]}
+          sizes="(max-width: 980px) 100vw, 38vw"
+          format="webp"
+          quality={82}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="definition-section__copy">
+        <p class="definition-section__intro">There’s no dictionary definition of <em>Dare to Break Free</em>. I made that bit up. But this is what it means to me.</p>
+        <p class="definition-section__dare">The dare is the question: <strong>‘Are you up for it?’</strong></p>
+        <p>And breaking free doesn’t have to mean blowing your life up and starting again (although it could).</p>
+        <p>I’ve found, and I’m still finding, that I can stay caught in something for months, sometimes decades, before I realise how much it’s getting in the way of how I want to live.</p>
+        <p class="definition-section__closing">And then there’s another thing to break free from.</p>
+      </div>
     </div>
   </section>
 
@@ -191,28 +214,5 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
     <a class="button secondary light-button" href={withBase("blog/")}>See all Journal entries</a>
   </section>
 
-  <section class="definition-section">
-    <div class="definition-section__inner">
-      <div class="definition-section__image">
-        <Image
-          src={definitionImage}
-          alt="Dare to Break Free, phrase. To stop pretending everything's fine when you know it isn't. To choose the unknown over staying stuck, despite having absolutely no idea what happens next."
-          widths={[480, 720, 960, 1200]}
-          sizes="(max-width: 980px) 100vw, 38vw"
-          format="webp"
-          quality={82}
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div class="definition-section__copy">
-        <p class="definition-section__intro">There’s no dictionary definition of <em>Dare to Break Free</em>. I made that bit up. But this is what it means to me.</p>
-        <p class="definition-section__dare">The dare is the question: <strong>‘Are you up for it?’</strong></p>
-        <p>And breaking free doesn’t have to mean blowing your life up and starting again (although it could).</p>
-        <p>I’ve found, and I’m still finding, that I can stay caught in something for months, sometimes decades, before I realise how much it’s getting in the way of how I want to live.</p>
-        <p class="definition-section__closing">And then there’s another thing to break free from.</p>
-      </div>
-    </div>
-  </section>
 
 </BaseLayout>

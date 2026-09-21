@@ -6,6 +6,7 @@
 
 /* Cap the introduction at roughly 2px below its former 21.6px desktop maximum. */
 .intro-panel .editorial-copy {
+  max-width: none;
   font-size: clamp(1.08rem, 1.55vw, 1.225rem);
 }
 

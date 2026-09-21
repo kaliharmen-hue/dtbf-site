@@ -1,48 +1,96 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const formAction = "https://formspree.io/f/your-form-id";
+import "../styles/work-with-me.css";
 ---
 
-<BaseLayout title="Share Your Story | Dare to Break Free">
-  <section class="page-hero">
-    <p class="eyebrow">Share Your Story</p>
-    <h1>Your story deserves care, shape and a listening ear.</h1>
-    <p class="lede">A gentle invitation for people who are ready to explore the story they have lived and the meaning they want to make from it.</p>
-  </section>
-
-  <section class="section two-column">
-    <div>
-      <p class="eyebrow">The invitation</p>
-      <h2>Start with the truth. Then find the thread.</h2>
-    </div>
-    <div class="stack">
-      <p>Share Your Story is for people carrying a lived experience they want to understand, preserve, or pass on. It may become a written piece, a keepsake, a talk, a letter, or simply a clearer version of the truth.</p>
-      <p>Bring the raw material. The work is to listen closely, honour what matters, and shape it without sanding away the life in it.</p>
+<BaseLayout title="Work With Me | Kali Harmen | Dare to Break Free" description="One-to-one collaboration sessions with Kali Harmen for stories, business, marketing and life transitions.">
+  <section class="work-hero" aria-labelledby="work-page-title">
+    <div class="work-hero__photo" aria-hidden="true"></div>
+    <div class="work-hero__content">
+      <h1 id="work-page-title">One-to-one collaboration sessions</h1>
     </div>
   </section>
 
-  <section class="form-section">
-    <div>
-      <p class="eyebrow">Enquire</p>
-      <h2>Tell me where you are starting from</h2>
-      <p>Use the form below to send a first note. The Formspree endpoint can be swapped in as soon as it is ready.</p>
+  <section class="work-intro work-section" aria-label="How we might collaborate">
+    <div class="work-section__inner work-intro__inner">
+      <!-- Space for a future image; no photograph chosen for this section yet. -->
+      <div class="work-intro__image-slot" aria-hidden="true"></div>
+      <div class="work-intro__copy">
+        <p>If you’re caught up in something you’re trying to create or change in your life, sometimes having another brain in the room is just what you need to get things moving again.</p>
+        <p>I don’t have a five-step process or promise transformation. What I do have is years of coaching, business and marketing experience, what I learnt from sticking with a memoir long enough to finish it, and a neurodivergent brain that tends to notice patterns and make connections.</p>
+        <p>I’m useful when you need someone to challenge your thinking, spot what you may be missing and help you notice if you’re making yourself smaller (I think I’ve earned a PhD in that area). Of course, nothing changes unless you take some sort of action.</p>
+      </div>
     </div>
-    <form class="contact-form" action={formAction} method="POST">
-      <label>
-        Name
-        <input name="name" type="text" autocomplete="name" required />
-      </label>
-      <label>
-        Email
-        <input name="email" type="email" autocomplete="email" required />
-      </label>
-      <label>
-        What would you like help with?
-        <textarea name="message" rows="7" required></textarea>
-      </label>
-      <input type="hidden" name="form-name" value="share-your-story" />
-      <button class="button" type="submit">Send enquiry</button>
-    </form>
+  </section>
+
+  <section class="work-areas work-section" aria-labelledby="work-areas-title">
+    <div class="work-section__inner">
+      <h2 id="work-areas-title">What We Might Work On</h2>
+      <p class="work-areas__intro">It could be...</p>
+      <div class="work-areas__grid">
+        <article class="work-areas__item">
+          <h3>Memoir</h3>
+          <p>A memoir you want to write or are already writing.</p>
+        </article>
+        <article class="work-areas__item">
+          <h3>Business</h3>
+          <p>Something in your business that has you stuck.</p>
+        </article>
+        <article class="work-areas__item">
+          <h3>Marketing</h3>
+          <p>A marketing idea you’re trying to make clearer.</p>
+        </article>
+        <article class="work-areas__item">
+          <h3>Transition</h3>
+          <p>Or you’ve found yourself knee-deep in a transition, wading into the unknown and wanting someone to work through it with.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work-pricing work-section" aria-labelledby="work-pricing-title">
+    <div class="work-section__inner">
+      <h2 id="work-pricing-title">The practicalities</h2>
+      <div class="work-pricing__grid">
+        <article class="work-pricing__card">
+          <div class="work-pricing__card-top">
+            <h3>One-off</h3>
+            <p class="work-pricing__price">£95</p>
+          </div>
+          <p>A 90-minute session for something contained enough that we can make useful progress in one conversation.</p>
+        </article>
+        <article class="work-pricing__card">
+          <div class="work-pricing__card-top">
+            <h3>Series</h3>
+            <p class="work-pricing__price">£270</p>
+          </div>
+          <p>Three 90-minute sessions, usually spread over six weeks, for something that needs developing, testing or revisiting over time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work-start work-section" id="enquiry" aria-labelledby="work-start-title">
+    <div class="work-section__inner work-start__inner">
+      <div class="work-start__copy">
+        <h2 id="work-start-title">Getting started</h2>
+        <p>Start by filling out a short form so I can understand what you’re working on and where you’re getting stuck.</p>
+        <p>From there, we can have a free 20-minute scoping call to see if we’re a good fit to collaborate and whether I’m the right person for what you need. There’s no obligation to go any further.</p>
+        <p>If the stars align, we’ll agree what to work on and book our first session.</p>
+      </div>
+      <div class="work-start__form-wrap">
+        <h3>Tell me what you’re working on</h3>
+        <p class="work-start__form-note">Form preview: enquiries can’t be sent until the form is connected.</p>
+        <div class="work-start__form-preview" aria-label="Enquiry form preview">
+          <label for="work-name">Name</label>
+          <input id="work-name" type="text" name="name" autocomplete="name" disabled />
+          <label for="work-email">Email</label>
+          <input id="work-email" type="email" name="email" autocomplete="email" disabled />
+          <label for="work-message">What are you working on, and where are you getting stuck?</label>
+          <textarea id="work-message" name="message" rows="5" disabled></textarea>
+          <button class="button" type="button" disabled>Tell me what you’re working on</button>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>

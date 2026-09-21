@@ -1,0 +1,264 @@
+/* The Work With Me page is the next designed page. Keep its layout local and
+   use the shared site gutter, fonts and heading sizes. */
+.work-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.work-hero__photo {
+  min-height: inherit;
+  background: url("../../Work with me Page.jpg") center top / cover no-repeat;
+}
+
+.work-hero__content {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: clamp(3rem, 6vw, 6rem) var(--page-gutter) clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+}
+
+.work-hero h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: var(--site-h1-size);
+  overflow-wrap: normal;
+}
+
+section.work-section {
+  width: 100%;
+  margin: 0;
+  padding: clamp(3.5rem, 6vw, 6rem) var(--page-gutter);
+}
+
+.work-section__inner {
+  width: 100%;
+  max-width: var(--site-content-max, 1680px);
+  margin-inline: auto;
+}
+
+.work-section h2 {
+  margin-bottom: clamp(1.75rem, 3vw, 3rem);
+  font-size: var(--site-h2-size);
+}
+
+.work-intro__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+/* Reserved for an image Kali will select; intentionally not another portrait. */
+.work-intro__image-slot {
+  width: 100%;
+  min-height: clamp(24rem, 33vw, 34rem);
+  aspect-ratio: 5 / 4;
+  border: 1px solid rgba(85, 73, 113, 0.12);
+  border-radius: 0.625rem;
+  background:
+    radial-gradient(circle at 68% 28%, rgba(255, 255, 255, 0.85), transparent 42%),
+    linear-gradient(145deg, #d8e5e2, #e7e5ec 58%, #d7d1df);
+}
+
+.work-intro__copy,
+.work-start__copy {
+  display: grid;
+  align-content: start;
+  gap: clamp(1rem, 2vw, 1.4rem);
+  max-width: 46rem;
+  min-width: 0;
+}
+
+.work-intro__copy p,
+.work-start__copy p {
+  margin: 0;
+}
+
+.work-areas {
+  background: #fff;
+}
+
+.work-areas__intro {
+  margin: -0.5rem 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.work-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+.work-areas__item {
+  min-width: 0;
+  padding: clamp(1.25rem, 2vw, 2rem);
+  border-top: 3px solid var(--accent);
+  background: var(--paper);
+}
+
+.work-areas__item h3,
+.work-pricing__card h3,
+.work-start__form-wrap h3 {
+  margin: 0 0 1rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  line-height: 1.25;
+}
+
+.work-areas__item p,
+.work-pricing__card p {
+  margin: 0;
+}
+
+.work-pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.work-pricing__card {
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+.work-pricing__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: clamp(1rem, 2vw, 1.75rem);
+}
+
+.work-pricing__card-top h3 {
+  margin: 0;
+}
+
+.work-pricing__price {
+  color: var(--plum);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.work-start {
+  background: #e9efed;
+  border-block: 1px solid var(--line);
+}
+
+.work-start__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.work-start__copy h2 {
+  margin: 0 0 clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.work-start__form-wrap {
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+
+.work-start__form-wrap h3 {
+  margin-bottom: 0.5rem;
+}
+
+.work-start__form-note {
+  margin: 0 0 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.work-start__form-preview {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.work-start__form-preview label {
+  margin-top: 0.5rem;
+}
+
+.work-start__form-preview input,
+.work-start__form-preview textarea {
+  max-width: 100%;
+  background: var(--paper);
+  opacity: 1;
+}
+
+.work-start__form-preview .button {
+  width: fit-content;
+  margin-top: 1rem;
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1080px) {
+  .work-areas__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .work-hero {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .work-hero__photo {
+    min-height: clamp(14rem, 52vw, 30rem);
+    background-position: center 20%;
+  }
+
+  .work-hero__content {
+    padding: clamp(2rem, 5vw, 3rem) var(--page-gutter);
+  }
+
+  .work-hero h1 {
+    max-width: 20ch;
+  }
+
+  .work-intro__inner,
+  .work-start__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .work-intro__image-slot {
+    min-height: 16rem;
+    aspect-ratio: 5 / 3;
+  }
+
+  .work-intro__copy,
+  .work-start__copy {
+    max-width: 46rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-areas__grid,
+  .work-pricing__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .work-hero__photo {
+    min-height: 13rem;
+    aspect-ratio: 2 / 1;
+  }
+
+  .work-pricing__card,
+  .work-start__form-wrap {
+    padding: 1.5rem;
+  }
+}

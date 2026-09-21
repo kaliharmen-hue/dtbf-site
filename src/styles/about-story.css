@@ -81,11 +81,42 @@
     linear-gradient(145deg, #cce2de, #e6eae3 56%, #bed4d8);
 }
 
-/* The final section also spans the page; its two columns retain their own spacing. */
+/* Put Here I Am above the right-hand copy and start the portrait and copy
+   together beneath it, without changing the content or image size. */
 .section.two-column.about-section--final {
   width: 100%;
   margin: 0;
   padding-inline: var(--page-gutter);
+  grid-template-areas:
+    ". heading"
+    "portrait copy";
+  row-gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.about-section--final > .about-section__visual {
+  display: contents;
+}
+
+.about-section--final > .about-section__visual > h2 {
+  grid-area: heading;
+}
+
+.about-section--final .about-section__portrait {
+  grid-area: portrait;
+}
+
+.about-section--final > .about-copy {
+  grid-area: copy;
+}
+
+@media (max-width: 1080px) {
+  .section.two-column.about-section--final {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "portrait"
+      "heading"
+      "copy";
+  }
 }
 
 @media (max-width: 900px) {

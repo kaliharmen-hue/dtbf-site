@@ -81,14 +81,14 @@
     linear-gradient(145deg, #cce2de, #e6eae3 56%, #bed4d8);
 }
 
-/* Put Here I Am above the right-hand copy and start the portrait and copy
-   together beneath it, without changing the content or image size. */
+/* Align the portrait's top with Here I Am, while the copy sits below
+   the heading in the right-hand column. */
 .section.two-column.about-section--final {
   width: 100%;
   margin: 0;
   padding-inline: var(--page-gutter);
   grid-template-areas:
-    ". heading"
+    "portrait heading"
     "portrait copy";
   row-gap: clamp(1.5rem, 3vw, 2.5rem);
 }

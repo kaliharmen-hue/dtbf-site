@@ -60,7 +60,7 @@
   justify-self: end;
 }
 
-/* Temporary quiet visual slots, ready for two distinct story images. */
+/* The first slot uses the full certificates collage; the second awaits its image. */
 .about-story__media {
   width: 100%;
   min-height: clamp(22rem, 35vw, 34rem);
@@ -70,9 +70,16 @@
 }
 
 .about-story__media--first {
-  background:
-    radial-gradient(circle at 70% 28%, rgba(255, 255, 255, 0.78), transparent 40%),
-    linear-gradient(145deg, #d9cbd4, #d4d3dd 52%, #eae3e7);
+  min-height: 0;
+  aspect-ratio: auto;
+  background: #f4f2f1;
+}
+
+.about-story__media--first img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
 }
 
 .about-story__media--second {
@@ -133,5 +140,10 @@
   .about-story__media {
     min-height: 16rem;
     aspect-ratio: 5 / 3;
+  }
+
+  .about-story__media--first {
+    min-height: 0;
+    aspect-ratio: auto;
   }
 }

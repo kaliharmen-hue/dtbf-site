@@ -274,3 +274,15 @@ section.work-section {
     mask-image: linear-gradient(to right, transparent, #000 40%);
   }
 }
+
+@media (min-width: 901px) {
+  .work-hero__photo {
+    /* Start the fade at the fitted 2:1 image edge, not the viewport edge. */
+    --image-width: calc(2 * clamp(28rem, calc(100svh - 18rem), 40rem));
+    mask-image: linear-gradient(
+      to right,
+      transparent max(0px, calc(100% - var(--image-width))),
+      #000 max(30%, calc(100% - var(--image-width) + 18rem))
+    );
+  }
+}

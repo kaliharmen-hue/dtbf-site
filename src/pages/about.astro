@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/about-hero.css";
 import "../styles/about-story.css";
 import aboutPhoto from "../assets/Kali Harmen - About.png";
-import certificatesImage from "../../Certificates Image.png";
+import certificatesImage from "../../Kali Certificate Wall.png";
 
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 ---
@@ -31,7 +31,7 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
 
       <div class="about-story__row">
         <div class="about-story__media about-story__media--first">
-          <img src={certificatesImage.src} width={certificatesImage.width} height={certificatesImage.height} alt="A collage of Kali’s certificates and qualifications displayed together on a wall" loading="lazy" decoding="async" />
+          <img src={certificatesImage.src} width={certificatesImage.width} height={certificatesImage.height} alt="Kali’s certificates and qualifications displayed together on a wall" loading="lazy" decoding="async" />
         </div>
         <div class="about-copy about-story__copy">
           <p>There was a time when I was hell bent on following advice like...</p>

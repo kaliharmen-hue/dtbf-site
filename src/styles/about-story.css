@@ -82,6 +82,30 @@
   border-radius: inherit;
 }
 
+/* On desktop, let the text set the row height and size the full collage to
+   fit within it. Anchor the image at the bottom so both columns finish level. */
+@media (min-width: 901px) {
+  .about-story__media--first {
+    position: relative;
+    align-self: stretch;
+    border: 0;
+    background: none;
+  }
+
+  .about-story__media--first img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: translateX(-50%);
+    border: 1px solid rgba(85, 73, 113, 0.12);
+  }
+}
+
 .about-story__media--second {
   background:
     radial-gradient(circle at 30% 72%, rgba(255, 255, 255, 0.75), transparent 43%),

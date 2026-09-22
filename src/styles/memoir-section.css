@@ -1,4 +1,66 @@
-/* Keep the memoir section distinct from its tinted neighbouring sections. */
+/* A compact book feature rather than a full-width colour band. */
 .memoir-section {
-  background: #fff;
+  width: min(1180px, calc(100% - var(--page-gutter) - var(--page-gutter)));
+  margin: 0 auto;
+  padding: 2rem 0;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 2rem;
+  background: #f4f6fc;
+  border: 0;
+}
+
+.memoir-section h2 {
+  font-size: var(--site-h2-size);
+  line-height: 1.2;
+}
+
+.memoir-section__copy {
+  gap: 0.75rem;
+}
+
+.memoir-section__copy .stack {
+  max-width: none;
+}
+
+.memoir-section .book-image {
+  min-height: 0;
+}
+
+.memoir-section .book-image img {
+  width: 240px;
+  max-width: 100%;
+  box-shadow: none;
+  filter: drop-shadow(0 0.5rem 0.75rem rgba(28, 33, 32, 0.14));
+}
+
+@media (min-width: 901px) {
+  .memoir-section {
+    width: auto;
+    /* Preserve the cover's existing left edge while extending only the text side. */
+    margin-left: max(var(--page-gutter), calc((100% - 1180px) / 2));
+    margin-right: var(--page-gutter);
+    padding-block: 1.5rem;
+    column-gap: 5rem;
+    overflow: visible;
+  }
+
+  .memoir-section .book-image {
+    position: relative;
+    top: -1rem;
+    z-index: 1;
+    align-self: end;
+    margin-top: -5rem;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .memoir-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .memoir-section .book-image {
+    justify-items: start;
+  }
 }

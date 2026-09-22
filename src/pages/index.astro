@@ -108,7 +108,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         src={bookCoverImage}
         alt="Dare to Break Free memoir"
         widths={[280, 560, 840]}
-        sizes="(max-width: 600px) 220px, 280px"
+        sizes="240px"
         format="webp"
         quality={82}
         loading="lazy"
@@ -146,7 +146,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         <h3>The Journal</h3>
         <p><strong>The book ends. I didn't.</strong></p>
         <p>This is where I write about life now: midlife, ADHD, work, ambition, shame, sex, relationships and whatever else refuses to leave my brain alone.</p>
-        <a class="button secondary light-button" href={withBase("blog/")}>Read the Journal</a>
+        <a class="button secondary light-button" href={withBase("blog/")}>Read the journal</a>
       </article>
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
@@ -185,7 +185,6 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
 
   <section class="section latest-section">
     <div class="section-heading">
-      <p class="eyebrow">Journal</p>
       <h2>Latest from the Journal</h2>
     </div>
     <div class="post-grid journal-preview-grid">
@@ -211,7 +210,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         )
       ))}
     </div>
-    <a class="button secondary light-button" href={withBase("blog/")}>See all Journal entries</a>
+    <a class="button secondary light-button" href={withBase("blog/")}>See all journal entries</a>
   </section>
 
 

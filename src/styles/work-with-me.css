@@ -2,7 +2,7 @@
    use the shared site gutter, fonts and heading sizes. */
 .work-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   width: 100%;
   min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
   background: var(--paper);
@@ -10,19 +10,23 @@
 }
 
 .work-hero__photo {
+  grid-area: 1 / 1;
   min-height: inherit;
   background: url("../../Work with me Page.jpg") center top / cover no-repeat;
 }
 
 .work-hero__content {
+  grid-area: 1 / 1;
+  position: relative;
   display: flex;
   align-items: center;
   min-width: 0;
-  padding: clamp(3rem, 6vw, 6rem) var(--page-gutter) clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+  padding: 2rem var(--page-gutter);
+  width: 65%;
 }
 
 .work-hero h1 {
-  max-width: 12ch;
+  max-width: 18ch;
   margin: 0;
   font-size: var(--site-h1-size);
   overflow-wrap: normal;
@@ -223,7 +227,7 @@ section.work-section {
   }
 
   .work-hero__content {
-    padding: clamp(2rem, 5vw, 3rem) var(--page-gutter);
+    padding: 1.5rem var(--page-gutter);
   }
 
   .work-hero h1 {

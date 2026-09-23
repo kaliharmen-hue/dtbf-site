@@ -12,7 +12,7 @@
 .work-hero__photo {
   grid-area: 1 / 1;
   min-height: inherit;
-  background: url("../../Work with me Page.jpg") center top / cover no-repeat;
+  background: url("../../Work with me Page V2.jpg") center top / cover no-repeat;
 }
 
 .work-hero__content {

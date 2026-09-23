@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import gettingStuckImage from "../../Getting Stuck .png";
 import "../styles/work-with-me.css";
 ---
 
@@ -13,8 +15,15 @@ import "../styles/work-with-me.css";
 
   <section class="work-intro work-section" aria-label="How we might collaborate">
     <div class="work-section__inner work-intro__inner">
-      <!-- Space for a future image; no photograph chosen for this section yet. -->
-      <div class="work-intro__image-slot" aria-hidden="true"></div>
+      <Image
+        class="work-intro__image-slot"
+        src={gettingStuckImage}
+        alt="A notebook, pen and notes on a desk, ready for ideas"
+        widths={[480, 720, 960, 1200, 1600]}
+        sizes="(max-width: 900px) calc(100vw - 2 * var(--page-gutter)), 45vw"
+        format="webp"
+        quality={82}
+      />
       <div class="work-intro__copy">
         <p>If you’re caught up in something you’re trying to create or change in your life, sometimes having another brain in the room is just what you need to get things moving again.</p>
         <p>I don’t have a five-step process or promise transformation. What I do have is years of coaching, business and marketing experience, what I learnt from sticking with a memoir long enough to finish it, and a neurodivergent brain that tends to notice patterns and make connections.</p>

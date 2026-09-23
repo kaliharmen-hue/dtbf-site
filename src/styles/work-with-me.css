@@ -58,14 +58,14 @@ section.work-section {
 
 /* Reserved for an image Kali will select; intentionally not another portrait. */
 .work-intro__image-slot {
+  display: block;
   width: 100%;
-  min-height: clamp(24rem, 33vw, 34rem);
-  aspect-ratio: 5 / 4;
-  border: 1px solid rgba(85, 73, 113, 0.12);
+  height: auto;
+  min-height: 0;
+  aspect-ratio: auto;
   border-radius: 0.625rem;
-  background:
-    radial-gradient(circle at 68% 28%, rgba(255, 255, 255, 0.85), transparent 42%),
-    linear-gradient(145deg, #d8e5e2, #e7e5ec 58%, #d7d1df);
+  object-fit: contain;
+  box-shadow: 0 0.75rem 1.75rem rgba(30, 31, 36, 0.12);
 }
 
 .work-intro__copy,
@@ -237,11 +237,6 @@ section.work-section {
   .work-intro__inner,
   .work-start__inner {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .work-intro__image-slot {
-    min-height: 16rem;
-    aspect-ratio: 5 / 3;
   }
 
   .work-intro__copy,

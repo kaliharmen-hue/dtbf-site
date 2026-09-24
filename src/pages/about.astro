@@ -4,6 +4,7 @@ import "../styles/about-hero.css";
 import "../styles/about-story.css";
 import aboutPhoto from "../../Kali Harmen - About Page.png";
 import certificatesImage from "../../Kali - About - Certificate Wall.jpg";
+import deskImage from "../../Neat Desk Untidy Desk.jpg";
 
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 ---
@@ -55,8 +56,9 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
             The job grew with me. I completed another postgraduate qualification in digital marketing, and later became a director within the company. It also gave me something I hadn't had before: stability, which means I can still work <a href={withBase("work-with-me/")}>one-to-one</a> when it feels like a good fit to do so.
           </p>
         </div>
-        <!-- Temporary visual panel. Replace with the second chosen story image. -->
-        <div class="about-story__media about-story__media--second" aria-hidden="true"></div>
+        <div class="about-story__media about-story__media--second">
+          <img src={deskImage.src} width={deskImage.width} height={deskImage.height} alt="Kali’s desk showing a contrast between a cluttered and more organised workspace" loading="lazy" decoding="async" />
+        </div>
       </div>
     </div>
   </section>

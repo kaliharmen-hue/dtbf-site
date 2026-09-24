@@ -68,7 +68,7 @@
 }
 
 /* Let story images keep their natural proportions and use the full width of
-   their image column. The second slot stays visible while it awaits its image. */
+   their image column. */
 .about-story__media {
   width: 100%;
   border-radius: 0.625rem;
@@ -84,14 +84,6 @@
 
 .about-story__media--first {
   background: none;
-}
-
-.about-story__media--second {
-  min-height: clamp(22rem, 35vw, 34rem);
-  border: 1px solid rgba(85, 73, 113, 0.12);
-  background:
-    radial-gradient(circle at 30% 72%, rgba(255, 255, 255, 0.75), transparent 43%),
-    linear-gradient(145deg, #cce2de, #e6eae3 56%, #bed4d8);
 }
 
 /* Keep the portrait aligned with the heading, but don't let the tall portrait
@@ -151,9 +143,5 @@
 
   .about-story__row--reverse .about-story__copy {
     justify-self: stretch;
-  }
-
-  .about-story__media--second {
-    min-height: 16rem;
   }
 }

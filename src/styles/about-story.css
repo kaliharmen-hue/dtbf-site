@@ -39,11 +39,18 @@
   text-align: center;
 }
 
+/* Follow the site's standard image-and-copy split rather than equal columns.
+   The proportions reverse with the second row so the image remains the
+   slightly narrower column on both sides. */
 .about-story__row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
+}
+
+.about-story__row--reverse {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 }
 
 .about-story__row + .about-story__row {
@@ -60,53 +67,28 @@
   justify-self: end;
 }
 
-/* The first slot uses the full certificates collage; the second awaits its image. */
+/* Let story images keep their natural proportions and use the full width of
+   their image column. The second slot stays visible while it awaits its image. */
 .about-story__media {
   width: 100%;
-  min-height: clamp(22rem, 35vw, 34rem);
-  aspect-ratio: 5 / 4;
-  border: 1px solid rgba(85, 73, 113, 0.12);
   border-radius: 0.625rem;
 }
 
-.about-story__media--first {
-  min-height: 0;
-  aspect-ratio: auto;
-  background: #f4f2f1;
-}
-
-.about-story__media--first img {
+.about-story__media img {
   display: block;
   width: 100%;
   height: auto;
+  border: 1px solid rgba(85, 73, 113, 0.12);
   border-radius: inherit;
 }
 
-/* On desktop, let the text set the row height and size the full collage to
-   fit within it. Anchor the image at the bottom so both columns finish level. */
-@media (min-width: 901px) {
-  .about-story__media--first {
-    position: relative;
-    align-self: stretch;
-    border: 0;
-    background: none;
-  }
-
-  .about-story__media--first img {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: auto;
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: center bottom;
-    transform: translateX(-50%);
-    border: 1px solid rgba(85, 73, 113, 0.12);
-  }
+.about-story__media--first {
+  background: none;
 }
 
 .about-story__media--second {
+  min-height: clamp(22rem, 35vw, 34rem);
+  border: 1px solid rgba(85, 73, 113, 0.12);
   background:
     radial-gradient(circle at 30% 72%, rgba(255, 255, 255, 0.75), transparent 43%),
     linear-gradient(145deg, #cce2de, #e6eae3 56%, #bed4d8);
@@ -141,6 +123,15 @@
   grid-area: copy;
 }
 
+/* On desktop the portrait should fill its image column rather than sitting
+   inside a wider column with unused space beside it. */
+@media (min-width: 1081px) {
+  .about-section--final .about-section__portrait {
+    width: 100%;
+    max-width: none;
+  }
+}
+
 @media (max-width: 1080px) {
   .section.two-column.about-section--final {
     grid-template-columns: minmax(0, 1fr);
@@ -153,7 +144,8 @@
 }
 
 @media (max-width: 900px) {
-  .about-story__row {
+  .about-story__row,
+  .about-story__row--reverse {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -161,13 +153,7 @@
     justify-self: stretch;
   }
 
-  .about-story__media {
+  .about-story__media--second {
     min-height: 16rem;
-    aspect-ratio: 5 / 3;
-  }
-
-  .about-story__media--first {
-    min-height: 0;
-    aspect-ratio: auto;
   }
 }

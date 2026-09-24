@@ -51,19 +51,17 @@ section.work-section {
 
 .work-intro__inner {
   display: grid;
-  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: stretch;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
 }
 
 .work-intro__image-slot {
   display: block;
-  width: min(100%, 18rem);
+  width: 100%;
   height: auto;
   min-height: 0;
-  aspect-ratio: 4 / 5;
   border-radius: 0.625rem;
-  object-fit: cover;
   box-shadow: 0 0.75rem 1.75rem rgba(30, 31, 36, 0.12);
 }
 
@@ -236,11 +234,6 @@ section.work-section {
   .work-intro__inner,
   .work-start__inner {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .work-intro__image-slot {
-    width: min(100%, 20rem);
-    justify-self: center;
   }
 
   .work-intro__copy,

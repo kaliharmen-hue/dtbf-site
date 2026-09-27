@@ -2,9 +2,9 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://daretobreakfree.co.uk",
-  base: "/dtbf-site",
+  base: "/",
   output: "static",
   redirects: {
-    "/share-your-story/": "/dtbf-site/work-with-me/"
+    "/share-your-story/": "/work-with-me/"
   }
 });

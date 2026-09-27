@@ -1,18 +1,42 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import bookCoverImage from "../assets/memoir-book.png";
+import "../styles/book-page.css";
 ---
 
-<BaseLayout title="Book | Dare to Break Free">
-  <section class="page-hero">
-    <p class="eyebrow">Forthcoming memoir</p>
-    <h1>The book is taking shape.</h1>
-    <p class="lede">A dedicated home for the memoir, including synopsis, cover reveal, release details, and pre-order links when they are ready.</p>
-  </section>
-  <section class="section two-column">
-    <div>
-      <p class="eyebrow">Coming 2026</p>
-      <h2>A story of recovery, reckoning and release</h2>
+<BaseLayout
+  title="The Book | Dare to Break Free"
+  description="An unflinching memoir of addiction, reinvention, resilience and reckoning."
+>
+  <section class="book-page" aria-labelledby="book-title">
+    <div class="book-page__inner">
+      <figure class="book-page__cover">
+        <Image
+          src={bookCoverImage}
+          alt="Cover of Dare to Break Free by Kali Harmen"
+          widths={[320, 480, 640, 800]}
+          sizes="(max-width: 760px) 70vw, 32vw"
+          format="webp"
+          quality={84}
+          loading="eager"
+        />
+      </figure>
+
+      <div class="book-page__copy">
+        <p class="book-page__eyebrow">The memoir</p>
+        <h1 id="book-title">Dare to Break Free</h1>
+
+        <div class="book-page__bio">
+          <p>This memoir is an unflinching account of a young girl who spirals from carefree days into the chaos of heroin and crack addiction. It follows her fight to break free and rebuild her life. After finding an unconventional way to get clean, Kali remains trapped in financial struggle.</p>
+
+          <p>Determined to escape poverty, she takes on a role that shifts her world entirely—moving from sleeping on a friend’s mattress to living in one of the wealthiest parts of town.</p>
+
+          <p>But this isn’t a simple rags-to-riches story. That leap comes at a great personal cost, forcing Kali to confront the sacrifices she’s made and grapple with the woman she wants to become.</p>
+
+          <p>Raw and honest, <em>Dare to Break Free</em> is a story of resilience and reckoning that refuses to wrap life neatly in a bow. It speaks to anyone who has ever felt stuck or overwhelmed, reminding us that even the darkest paths can hold the promise of light.</p>
+        </div>
+      </div>
     </div>
-    <p>This page is ready for the next layer of book copy: synopsis, author Q&A, cover artwork, ISBN, release date, and retailer links.</p>
   </section>
 </BaseLayout>

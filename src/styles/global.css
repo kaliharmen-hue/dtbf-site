@@ -914,6 +914,14 @@ main {
   gap: 1rem;
 }
 
+.contact-form__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 label {
   display: grid;
   gap: 0.4rem;

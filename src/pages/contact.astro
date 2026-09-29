@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const formAction = "https://formspree.io/f/your-form-id";
+const formAction = "https://formspree.io/f/xwlpaqpg";
 ---
 
 <BaseLayout title="Contact | Dare to Break Free">
@@ -18,6 +18,10 @@ const formAction = "https://formspree.io/f/your-form-id";
       <p>The site uses a form-first contact flow so the public email address does not have to sit exposed on every page.</p>
     </div>
     <form class="contact-form" action={formAction} method="POST">
+      <div class="contact-form__honeypot" aria-hidden="true">
+        <label for="contact-website">Leave this field empty</label>
+        <input id="contact-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+      </div>
       <label>
         Name
         <input name="name" type="text" autocomplete="name" required />

@@ -15,10 +15,26 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout title={`${post.data.title} | Dare to Break Free`} description={post.data.excerpt}>
+  {post.data.coverImage && (
+    <header
+      class="article-hero"
+      style={`--article-hero-image: url("${post.data.coverImage}")`}
+    >
+      <div class="article-hero__content">
+        <p class="eyebrow">{post.data.date.toLocaleDateString("en-GB")}</p>
+        <h1>{post.data.title}</h1>
+        <p class="lede">{post.data.excerpt}</p>
+      </div>
+    </header>
+  )}
   <article class="article">
-    <p class="eyebrow">{post.data.date.toLocaleDateString("en-GB")}</p>
-    <h1>{post.data.title}</h1>
-    <p class="lede">{post.data.excerpt}</p>
+    {!post.data.coverImage && (
+      <>
+        <p class="eyebrow">{post.data.date.toLocaleDateString("en-GB")}</p>
+        <h1>{post.data.title}</h1>
+        <p class="lede">{post.data.excerpt}</p>
+      </>
+    )}
     <div class="prose">
       <Content />
     </div>

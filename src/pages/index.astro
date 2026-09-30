@@ -192,7 +192,11 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         post ? (
           <article class="post-card journal-preview-card">
             <div class="image-placeholder journal-entry-image">
-              <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
+              {post.data.coverImage ? (
+                <img src={withBase(post.data.coverImage.replace(/^\/+/, ""))} alt="" loading="lazy" decoding="async" />
+              ) : (
+                <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
+              )}
             </div>
             <p class="eyebrow">{index === 0 ? "Most recent Journal entry" : `${index + 1}${index === 1 ? "nd" : "rd"} most recent Journal entry`}</p>
             <h3><a href={withBase(`blog/${post.slug}/`)}>{post.data.title}</a></h3>

@@ -193,7 +193,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
           <article class="post-card journal-preview-card">
             <div class="image-placeholder journal-entry-image">
               {post.data.coverImage ? (
-                <img src={withBase(post.data.coverImage.replace(/^\/+/, ""))} alt="" loading="lazy" decoding="async" />
+                <img class="journal-entry-image__cover" src={withBase(post.data.coverImage.replace(/^\/+/, ""))} alt="" loading="lazy" decoding="async" />
               ) : (
                 <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
               )}

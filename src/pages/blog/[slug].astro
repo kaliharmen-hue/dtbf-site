@@ -21,7 +21,6 @@ const { Content } = await render(post);
       style={`--article-hero-image: url("${post.data.coverImage}")`}
     >
       <div class="article-hero__content">
-        <p class="eyebrow">{post.data.date.toLocaleDateString("en-GB")}</p>
         <h1>{post.data.title}</h1>
         <p class="lede">{post.data.excerpt}</p>
       </div>
@@ -30,7 +29,6 @@ const { Content } = await render(post);
   <article class="article">
     {!post.data.coverImage && (
       <>
-        <p class="eyebrow">{post.data.date.toLocaleDateString("en-GB")}</p>
         <h1>{post.data.title}</h1>
         <p class="lede">{post.data.excerpt}</p>
       </>

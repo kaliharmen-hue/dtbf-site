@@ -766,39 +766,26 @@ main {
 }
 
 .journal-hero__intro {
-  max-width: min(52%, 46rem);
+  max-width: min(58%, 50rem);
 }
 
 .journal-hero h1 {
-  max-width: 10ch;
+  max-width: none;
   margin: 0;
-  font-size: clamp(3rem, 6.2vw, 6.2rem);
+  font-size: clamp(3rem, 5.8vw, 6rem);
 }
 
-.journal-intro-row {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  align-items: start;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  width: min(var(--site-content-max), calc(100% - var(--page-gutter) - var(--page-gutter)));
-  margin: 0 auto;
-  padding-block: clamp(2.5rem, 5vw, 4rem);
+.journal-hero h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
-.journal-intro-row h2 {
-  max-width: 20ch;
+.journal-hero__lede {
+  max-width: 40rem;
   margin: 0;
   color: var(--ink);
-  font-family: "Merriweather", Georgia, serif;
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
-  line-height: 1.25;
-}
-
-.journal-intro-row .journal-hero__copy {
-  max-width: 100%;
-  padding: clamp(1.25rem, 2.5vw, 2rem);
-  border-left: 3px solid var(--accent);
-  background: rgba(255, 255, 255, 0.54);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  line-height: 1.55;
 }
 
 .section,
@@ -1135,9 +1122,16 @@ textarea:focus {
     font-size: clamp(2rem, 8vw, 3rem);
   }
 
-  .journal-intro-row {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .journal-hero__intro {
+    max-width: 58%;
+  }
+
+  .journal-hero h1 {
+    font-size: clamp(1.55rem, 7vw, 2.75rem);
+  }
+
+  .journal-hero__lede {
+    font-size: 0.95rem;
   }
 }
 

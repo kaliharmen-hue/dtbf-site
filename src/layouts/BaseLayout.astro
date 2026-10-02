@@ -8,7 +8,8 @@ import "../styles/site-gutters.css";
 
 const {
   title = "Dare to Break Free",
-  description = "Stories of Living, Learning & Letting Go"
+  description = "Stories of Living, Learning & Letting Go",
+  pageClass = ""
 } = Astro.props;
 
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
@@ -18,7 +19,7 @@ const navItems = [
   { href: withBase(), label: "Home" },
   { href: withBase("work-with-me/"), label: "Work With Me" },
   { href: withBase("book/"), label: "The Book" },
-  { href: withBase("blog/"), label: "Journal" },
+  { href: withBase("journal/"), label: "Journal" },
   { href: withBase("contact/"), label: "Speaking" },
   { href: withBase("about/"), label: "About" }
 ];
@@ -41,30 +42,32 @@ const isCurrentNavItem = (href: string) => href === homePath
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Marcellus&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
   </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href={withBase()} aria-label="Dare to Break Free home">
-        <img src={logoSrc} alt="Dare to Break Free" width="1293" height="364" fetchpriority="high" />
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-        <span class="menu-toggle__line"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-      <nav class="nav" id="primary-nav" aria-label="Primary navigation">
-        {navItems.map((item) => (
-          <a href={item.href} aria-current={isCurrentNavItem(item.href) ? "page" : undefined}>{item.label}</a>
-        ))}
-      </nav>
-    </header>
-    <main id="main-content">
-      <slot />
-    </main>
-    <footer class="site-footer">
-      <p>Dare to Break Free</p>
-    </footer>
+  <body class={pageClass}>
+    <div class="site-frame">
+      <a class="skip-link" href="#main-content">Skip to content</a>
+      <header class="site-header">
+        <a class="brand" href={withBase()} aria-label="Dare to Break Free home">
+          <img src={logoSrc} alt="Dare to Break Free" width="1293" height="364" fetchpriority="high" />
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <a href={item.href} aria-current={isCurrentNavItem(item.href) ? "page" : undefined}>{item.label}</a>
+          ))}
+        </nav>
+      </header>
+      <main id="main-content">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <p>Dare to Break Free</p>
+      </footer>
+    </div>
     <script>
       const menuToggle = document.querySelector(".menu-toggle");
       const primaryNav = document.querySelector("#primary-nav");

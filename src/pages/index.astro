@@ -41,7 +41,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
       <nav class="hero-paths" aria-label="Homepage paths">
         <a href={withBase("work-with-me/")}>Work with me</a>
         <span aria-hidden="true">·</span>
-        <a href={withBase("blog/")}>Read the Journal</a>
+        <a href={withBase("journal/")}>Read the Journal</a>
         <span aria-hidden="true">·</span>
         <a href={withBase("contact/")}>Invite me to speak</a>
       </nav>
@@ -70,7 +70,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
       <p>If life isn't quite working out the way you thought it would, you're probably in the right place.</p>
       <nav class="home-hero-mobile__paths" aria-label="Homepage paths">
         <a href={withBase("work-with-me/")}>Work with me</a>
-        <a href={withBase("blog/")}>Read the Journal</a>
+        <a href={withBase("journal/")}>Read the Journal</a>
       </nav>
     </div>
   </section>
@@ -146,7 +146,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         <h3>The Journal</h3>
         <p><strong>The book ends. I didn't.</strong></p>
         <p>This is where I write about life now: midlife, ADHD, work, ambition, shame, sex, relationships and whatever else refuses to leave my brain alone.</p>
-        <a class="button secondary light-button" href={withBase("blog/")}>Read the journal</a>
+        <a class="button secondary light-button" href={withBase("journal/")}>Read the journal</a>
       </article>
       <article class="reflection-card">
         <div class="image-placeholder reflection-image">
@@ -199,7 +199,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
               )}
             </div>
             <p class="eyebrow">{index === 0 ? "Most recent Journal entry" : `${index + 1}${index === 1 ? "nd" : "rd"} most recent Journal entry`}</p>
-            <h3><a href={withBase(`blog/${post.slug}/`)}>{post.data.title}</a></h3>
+            <h3><a href={withBase(`journal/${post.slug}/`)}>{post.data.title}</a></h3>
             <p>{post.data.excerpt}</p>
           </article>
         ) : (
@@ -214,7 +214,7 @@ const journalSlots = Array.from({ length: 3 }, (_, index) => posts[index] ?? nul
         )
       ))}
     </div>
-    <a class="button secondary light-button" href={withBase("blog/")}>See all journal entries</a>
+    <a class="button secondary light-button" href={withBase("journal/")}>See all journal entries</a>
   </section>
 
 

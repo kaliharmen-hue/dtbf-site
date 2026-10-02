@@ -5,6 +5,8 @@ export default defineConfig({
   base: "/",
   output: "static",
   redirects: {
-    "/share-your-story/": "/work-with-me/"
+    "/share-your-story/": "/work-with-me/",
+    "/blog/": "/journal/",
+    "/blog/knowing-isnt-the-same-as-doing/": "/journal/knowing-isnt-the-same-as-doing/"
   }
 });

@@ -8,7 +8,7 @@ tags:
   - visibility
   - fear
   - action
-coverImage: "/assets/knowing-isnt-the-same-as-doing.jpg"
+coverImage: "/assets/knowing-isnt-the-same-as-doing-article.jpg"
 ---
 
 I always knew once I’d published my memoir it’d sit on Amazon fading into obscurity unless I came out of my hobbit hole and was prepared to make myself more visible. You know, go back on social media, that thing I do for other companies. So what do I do? Get settled into building my website, that’s what.
@@ -31,21 +31,15 @@ When the tinkering eventually finishes, I’ve seen others, and myself, fall fla
 
 I’ve got a little stack of business cards, different logos, different business names, endless amounts of paperwork and programmes I’ve created on the computer. I even scripted a weight-loss CD, then hired a studio to record it over several sessions. I created the nice glossy marketing material too, only to chuck the whole lot, and I do mean physically, as I had CDs, covers and flyers printed, in the bin.
 
-It simply wasn’t good enough. Or, more accurately, I wasn’t good enough. And lurking underneath that: I don’t matter.
+It simply wasn’t good enough. Or, more accurately, **I wasn’t good enough. And lurking underneath that: I don’t matter.**
 
-So I went on to do more qualifications. When that didn’t work, I thought I needed a degree, because surely then I’d feel confident that I was good enough.
+I went on to do more qualifications. When that didn’t work, I thought I needed a degree, because surely then I’d feel confident that I was good enough.
 
 That didn’t work either.
 
 Now I felt inferior to my peers too, who all seemed more capable, much smarter and able to grasp complexities, unlike me. I’d just dug a bigger hole for myself. Vowing never to do another qualification, I found myself in lockdown getting pulled in yet again, this time to do a master’s.
 
-By the time I finished, I knew I could keep going, do a PhD and still feel the same. There wasn’t another qualification that would finally make me feel good enough.
-
-And my God, have I already worked on that limiting belief over the last 20 years. Which makes it all the more frustrating to come face to face with it again.
-
-The ‘I’m not good enough’, the ‘I don’t matter’, probably aren't going to leave me any time soon. I’ve just got to see them for what they are: thoughts, not facts.
-
-If I can notice when my actions (including not doing) are being driven by my fears, I can choose whether to let the beliefs that kept me safe in childhood limit me now as an adult.
+By the time I finished, I knew I could keep going, do a PhD and still feel the same. There wasn’t another qualification that would finally make me feel good enough, and my God, have I already worked on that limiting belief over the last 20 years. Which makes it all the more frustrating to come face to face with it again. The ‘I’m not good enough’, the ‘I don’t matter’, probably aren't going to leave me any time soon. I’ve just got to see them for what they are: thoughts, not facts. If I can notice when my actions (including not doing) are being driven by my fears, I can choose whether to let the beliefs that kept me safe in childhood limit me now as an adult.
 
 And yes, this is all easier said than done.
 

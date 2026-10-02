@@ -30,3 +30,11 @@
     calc(100% - var(--page-gutter) - var(--page-gutter))
   );
 }
+
+.article {
+  width: min(
+    var(--site-content-max),
+    calc(100% - var(--page-gutter) - var(--page-gutter))
+  );
+  max-width: none;
+}

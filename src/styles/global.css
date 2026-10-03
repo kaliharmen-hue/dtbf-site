@@ -752,6 +752,7 @@ main {
 }
 
 .page-hero.journal-hero {
+  position: relative;
   width: 100%;
   max-width: none;
   min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
@@ -763,6 +764,21 @@ main {
   background-image: url("/assets/journal-page-hero.jpg?v=kali-hero-1");
   background-position: center 24%;
   background-size: cover;
+}
+
+.journal-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: auto;
+  bottom: 0;
+  left: 50%;
+  width: min(88%, 1280px);
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 1px 0 rgba(85, 73, 113, 0.28);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .journal-hero__intro {

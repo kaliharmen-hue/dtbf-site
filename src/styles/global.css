@@ -760,7 +760,7 @@ main {
   align-items: center;
   padding: 2.5rem var(--page-gutter);
   background-color: var(--paper);
-  background-image: url("/assets/journal-page-hero.jpg?v=20261003");
+  background-image: url("/assets/journal-page-hero.jpg?v=kali-hero");
   background-position: center 24%;
   background-size: cover;
 }

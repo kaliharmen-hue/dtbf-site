@@ -1,14 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/speaking-page.css";
+import speakingHero from "../assets/speaking-page-hero.jpg";
 
 const formAction = "https://formspree.io/f/xwlpaqpg";
 ---
 
-<BaseLayout title="Contact | Dare to Break Free">
-  <section class="page-hero">
-    <p class="eyebrow">Contact</p>
-    <h1>Get in touch</h1>
-    <p class="lede">For story enquiries, book updates, newsletter notes, and thoughtful conversations around the work.</p>
+<BaseLayout title="Speaking | Dare to Break Free">
+  <section class="page-hero speaking-hero" style={`--speaking-hero-image: url("${speakingHero.src}")`}>
+    <div class="speaking-hero__copy">
+      <h1>Speaking</h1>
+      <p class="lede">Invite Kali to speak</p>
+    </div>
   </section>
 
   <section class="form-section">

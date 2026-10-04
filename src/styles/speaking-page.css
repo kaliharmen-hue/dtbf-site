@@ -1,0 +1,38 @@
+.page-hero.speaking-hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: none;
+  min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
+  margin: 0;
+  padding: 2.5rem var(--page-gutter);
+  background-color: var(--paper);
+  background-image: var(--speaking-hero-image);
+  background-position: left center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--line);
+}
+
+.speaking-hero__copy {
+  width: min(42%, 620px);
+}
+
+.speaking-hero__copy h1 {
+  color: var(--plum);
+}
+
+@media (max-width: 700px) {
+  .page-hero.speaking-hero {
+    display: block;
+    min-height: 0;
+    padding: calc(50vw + 1.5rem) var(--page-gutter) 2.5rem;
+    background-position: top left;
+    background-size: 100% auto;
+  }
+
+  .speaking-hero__copy {
+    width: 100%;
+  }
+}

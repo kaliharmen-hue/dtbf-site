@@ -45,7 +45,8 @@
   }
 
   .memoir-section__copy {
-    padding-inline-start: clamp(3rem, 8vw, 8.5rem);
+    padding-inline: clamp(3rem, 8vw, 8.5rem)
+      max(0px, calc((100vw - 1480px) / 2 - var(--page-gutter)));
   }
 
   .memoir-section .book-image {

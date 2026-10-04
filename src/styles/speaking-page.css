@@ -186,6 +186,38 @@
   color: var(--ink);
 }
 
+.form-section.speaking-enquiry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  width: min(var(--site-content-max), calc(100% - var(--page-gutter) - var(--page-gutter)));
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.speaking-enquiry__intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 940px;
+}
+
+.speaking-enquiry__intro h2 {
+  max-width: none;
+}
+
+.speaking-enquiry__form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+.speaking-enquiry__field--wide,
+.speaking-enquiry__form > .button {
+  grid-column: 1 / -1;
+}
+
+.speaking-enquiry__form > .button {
+  justify-self: start;
+}
+
 @media (max-width: 700px) {
   .page-hero.speaking-hero {
     display: block;
@@ -221,5 +253,14 @@
     padding-top: 2rem;
     border-top: 1px solid rgba(15, 139, 141, 0.45);
     border-left: 0;
+  }
+
+  .speaking-enquiry__form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .speaking-enquiry__field--wide,
+  .speaking-enquiry__form > .button {
+    grid-column: auto;
   }
 }

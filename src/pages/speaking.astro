@@ -57,45 +57,45 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
     </div>
   </section>
 
-  <section class="form-section">
-    <div>
+  <section class="form-section speaking-enquiry">
+    <div class="speaking-enquiry__intro">
       <h2>Get in contact</h2>
       <p>If you have something in mind, including something specific from the book, tell me a little about it in the contact form and I’ll get back to you.</p>
     </div>
-    <form class="contact-form" action={formAction} method="POST">
+    <form class="contact-form speaking-enquiry__form" action={formAction} method="POST">
       <div class="contact-form__honeypot" aria-hidden="true">
         <label for="contact-website">Leave this field empty</label>
         <input id="contact-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
       </div>
-      <label>
+      <label class="speaking-enquiry__field">
         Name
         <input name="name" type="text" autocomplete="name" required />
       </label>
-      <label>
+      <label class="speaking-enquiry__field">
         Email
         <input name="email" type="email" autocomplete="email" required />
       </label>
-      <label>
+      <label class="speaking-enquiry__field">
         Organisation, if relevant
         <input name="organisation" type="text" autocomplete="organization" />
       </label>
-      <label>
+      <label class="speaking-enquiry__field speaking-enquiry__field--wide">
         What are you planning?
         <textarea name="event" rows="3"></textarea>
       </label>
-      <label>
+      <label class="speaking-enquiry__field">
         When is it?
         <input name="event_date" type="text" />
       </label>
-      <label>
+      <label class="speaking-enquiry__field">
         Who is the audience?
         <input name="audience" type="text" />
       </label>
-      <label>
+      <label class="speaking-enquiry__field speaking-enquiry__field--wide">
         What would you like me to speak about?
         <textarea name="speaking_topic" rows="3"></textarea>
       </label>
-      <label>
+      <label class="speaking-enquiry__field speaking-enquiry__field--wide">
         Anything else I should know?
         <textarea name="additional_information" rows="3"></textarea>
       </label>

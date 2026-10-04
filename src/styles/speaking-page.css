@@ -29,6 +29,42 @@
   font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
+.speaking-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.8fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(var(--site-content-max), calc(100% - var(--page-gutter) - var(--page-gutter)));
+  margin: 0 auto;
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.speaking-intro__copy {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.speaking-testimonials {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 3px solid var(--accent);
+  border-radius: 0.35rem;
+  background: var(--plum);
+  color: #fff;
+}
+
+.speaking-testimonials blockquote {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
+}
+
+.speaking-testimonials blockquote + blockquote {
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
 @media (max-width: 700px) {
   .page-hero.speaking-hero {
     display: block;
@@ -40,5 +76,10 @@
 
   .speaking-hero__copy {
     width: 100%;
+  }
+
+  .speaking-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
   }
 }

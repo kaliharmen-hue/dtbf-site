@@ -29,6 +29,19 @@
   padding-inline: clamp(2.25rem, 4vw, 4rem);
 }
 
+/* Keep homepage section content aligned to the definition panel's frame. */
+.healing-section > .pathways-heading,
+.healing-section > .reflection-grid,
+.latest-section > .section-heading,
+.latest-section > .post-grid {
+  width: min(1480px, 100%);
+  margin-inline: auto;
+}
+
+.latest-section > .light-button {
+  margin-inline-start: max(0px, calc((100% - 1480px) / 2));
+}
+
 /* Keep phone typography intact; reduce only tablet and desktop body copy. */
 @media (min-width: 480px) {
   body {

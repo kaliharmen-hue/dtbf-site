@@ -16,6 +16,19 @@
   }
 }
 
+.healing-section .pathways-heading {
+  padding-inline: clamp(2.25rem, 4vw, 4rem);
+}
+
+.reflection-card > :not(.image-placeholder),
+.journal-preview-card > :not(.journal-entry-image) {
+  margin-inline-start: clamp(1rem, 3vw, 3rem);
+}
+
+.latest-section > .section-heading {
+  padding-inline: clamp(2.25rem, 4vw, 4rem);
+}
+
 /* Keep phone typography intact; reduce only tablet and desktop body copy. */
 @media (min-width: 480px) {
   body {

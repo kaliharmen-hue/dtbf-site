@@ -59,9 +59,9 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
 
   <section class="form-section">
     <div>
-      <p class="eyebrow">Message</p>
-      <h2>Send a note</h2>
-      <p>The site uses a form-first contact flow so the public email address does not have to sit exposed on every page.</p>
+      <p class="eyebrow">Speaking enquiries</p>
+      <h2>Interested in having me speak?</h2>
+      <p>If you’re planning a talk, event, panel, podcast or interview, tell me a little about what you have in mind and I’ll get back to you.</p>
     </div>
     <form class="contact-form" action={formAction} method="POST">
       <div class="contact-form__honeypot" aria-hidden="true">
@@ -77,11 +77,31 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
         <input name="email" type="email" autocomplete="email" required />
       </label>
       <label>
-        Message
-        <textarea name="message" rows="7" required></textarea>
+        Organisation, if relevant
+        <input name="organisation" type="text" autocomplete="organization" />
+      </label>
+      <label>
+        What are you planning?
+        <textarea name="event" rows="3"></textarea>
+      </label>
+      <label>
+        When is it?
+        <input name="event_date" type="text" />
+      </label>
+      <label>
+        Who is the audience?
+        <input name="audience" type="text" />
+      </label>
+      <label>
+        What would you like me to speak about?
+        <textarea name="speaking_topic" rows="3"></textarea>
+      </label>
+      <label>
+        Anything else I should know?
+        <textarea name="additional_information" rows="3"></textarea>
       </label>
       <input type="hidden" name="form-name" value="contact" />
-      <button class="button" type="submit">Send message</button>
+      <button class="button" type="submit">Send enquiry</button>
     </form>
   </section>
 </BaseLayout>

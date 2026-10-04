@@ -126,7 +126,7 @@
 .speaking-audience {
   width: 100%;
   margin: 0;
-  padding: clamp(3.5rem, 7vw, 6rem) var(--page-gutter);
+  padding: clamp(1.75rem, 3.5vw, 3rem) var(--page-gutter);
   background: #d4f1f1;
 }
 
@@ -134,10 +134,6 @@
 .speaking-audience__grid {
   width: min(var(--site-content-max), 100%);
   margin-inline: auto;
-}
-
-.speaking-audience > h2 {
-  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .speaking-audience__grid {

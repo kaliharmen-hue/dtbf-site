@@ -124,9 +124,16 @@
 }
 
 .speaking-audience {
-  width: min(var(--site-content-max), calc(100% - var(--page-gutter) - var(--page-gutter)));
-  margin: 0 auto;
-  padding-block: 0 clamp(3.5rem, 7vw, 6rem);
+  width: 100%;
+  margin: 0;
+  padding: clamp(3.5rem, 7vw, 6rem) var(--page-gutter);
+  background: #d4f1f1;
+}
+
+.speaking-audience > h2,
+.speaking-audience__grid {
+  width: min(var(--site-content-max), 100%);
+  margin-inline: auto;
 }
 
 .speaking-audience > h2 {
@@ -141,15 +148,25 @@
 }
 
 .speaking-audience__quote {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.1rem;
   margin: 0;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--accent);
-  border-radius: 0.4rem;
-  background: #fff;
+  padding: 0 clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.speaking-audience__quote + .speaking-audience__quote {
+  border-left: 1px solid rgba(15, 139, 141, 0.45);
+}
+
+.speaking-audience__quote::before {
+  content: "“";
+  color: var(--accent-text);
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 0.75;
 }
 
 .speaking-audience__quote blockquote {
@@ -201,5 +218,12 @@
 
   .speaking-audience__grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .speaking-audience__quote + .speaking-audience__quote {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(15, 139, 141, 0.45);
+    border-left: 0;
   }
 }

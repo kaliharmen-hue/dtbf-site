@@ -4,23 +4,29 @@
   justify-content: flex-end;
   width: 100%;
   max-width: none;
-  min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
+  min-height: clamp(28rem, calc(100svh - 20rem), 37.5rem);
   margin: 0;
   padding: 2.5rem var(--page-gutter);
   background-color: var(--paper);
   background-image: var(--speaking-hero-image);
-  background-position: left center;
-  background-size: auto 100%;
+  background-position: left top;
+  background-size: auto 40rem;
   background-repeat: no-repeat;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(85, 73, 113, 0.32);
 }
 
 .speaking-hero__copy {
-  width: min(42%, 620px);
+  width: min(60%, 920px);
 }
 
 .speaking-hero__copy h1 {
   color: var(--plum);
+}
+
+.speaking-hero__eyebrow {
+  margin-bottom: 0.8rem;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
 @media (max-width: 700px) {

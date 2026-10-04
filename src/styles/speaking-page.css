@@ -213,6 +213,11 @@
   gap: 1rem 1.25rem;
 }
 
+.speaking-enquiry__field input,
+.speaking-enquiry__field textarea {
+  background: var(--paper);
+}
+
 .speaking-enquiry__field--wide,
 .speaking-enquiry__form > .button {
   grid-column: 1 / -1;

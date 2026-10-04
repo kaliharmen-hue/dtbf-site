@@ -21,8 +21,7 @@ const navItems = [
   { href: withBase("book/"), label: "The Book" },
   { href: withBase("about/"), label: "About" },
   { href: withBase("journal/"), label: "Journal" },
-  { href: withBase("speaking/"), label: "Speaking" },
-  { href: withBase("contact/"), label: "Contact" }
+  { href: withBase("speaking/"), label: "Speaking" }
 ];
 const currentPath = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const homePath = withBase();

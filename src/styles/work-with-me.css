@@ -25,8 +25,14 @@
   width: 65%;
 }
 
+@media (min-width: 901px) {
+  .work-hero__content {
+    padding-inline-start: calc(var(--page-gutter) + clamp(1rem, 2vw, 1.75rem));
+  }
+}
+
 .work-hero h1 {
-  max-width: 23ch;
+  max-width: 18ch;
   margin: 0;
   font-size: var(--site-h1-size);
   overflow-wrap: normal;

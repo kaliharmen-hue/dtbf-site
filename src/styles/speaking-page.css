@@ -112,6 +112,56 @@
   }
 }
 
+.speaking-audience {
+  width: min(var(--site-content-max), calc(100% - var(--page-gutter) - var(--page-gutter)));
+  margin: 0 auto;
+  padding-block: 0 clamp(3.5rem, 7vw, 6rem);
+}
+
+.speaking-audience > h2 {
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.speaking-audience__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: stretch;
+}
+
+.speaking-audience__quote {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 0.4rem;
+  background: #fff;
+}
+
+.speaking-audience__quote blockquote {
+  flex: 1;
+  margin: 0;
+  color: var(--plum);
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.65;
+}
+
+.speaking-audience__quote figcaption {
+  display: grid;
+  gap: 0.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.speaking-audience__quote figcaption strong {
+  color: var(--ink);
+}
+
 @media (max-width: 700px) {
   .page-hero.speaking-hero {
     display: block;
@@ -136,5 +186,9 @@
 
   .speaking-topic:last-child {
     grid-column: auto;
+  }
+
+  .speaking-audience__grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

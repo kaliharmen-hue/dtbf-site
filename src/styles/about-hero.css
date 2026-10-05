@@ -19,7 +19,7 @@
   gap: clamp(2.5rem, 4vw, 4rem);
   align-items: center;
   width: min(1480px, calc(100% - 2 * var(--page-gutter)));
-  margin: clamp(1rem, 2vw, 1.75rem) auto 0;
+  margin: clamp(1rem, 2vw, 1.75rem) auto;
 }
 
 .about-intro__copy {
@@ -27,8 +27,7 @@
   gap: clamp(1.25rem, 2.5vw, 2rem);
   align-content: center;
   min-width: 0;
-  min-height: 30rem;
-  padding: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
   background: #123d3d;
   border-top: 3px solid var(--accent);
   box-shadow: 0 1.25rem 2.75rem rgba(18, 61, 61, 0.14);

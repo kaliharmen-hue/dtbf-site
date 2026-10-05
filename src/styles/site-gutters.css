@@ -2,10 +2,7 @@
    backgrounds and intentionally narrow reading/panel widths are separate. */
 :root {
   --site-content-max: 1680px;
-  --page-gutter: max(
-    clamp(1.25rem, 3vw, 2.5rem),
-    calc((100vw - var(--site-content-max)) / 2)
-  );
+  --page-gutter: max(clamp(1.25rem, 3vw, 2.5rem), calc((100vw - var(--site-content-max)) / 2));
 }
 
 /* Wide navigation and multi-card sections use the same outer edge. */

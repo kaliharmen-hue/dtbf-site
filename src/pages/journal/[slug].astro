@@ -128,7 +128,6 @@ const { Content } = await render(post);
   .article-hero__content h1 {
     max-width: none;
     margin: 0;
-    font-size: clamp(2.75rem, 4.5vw, 4rem);
     line-height: 1.08;
     text-wrap: balance;
   }
@@ -152,7 +151,7 @@ const { Content } = await render(post);
 
     :global(body.article-page .site-header) {
       position: static;
-      padding-inline: 1rem;
+      padding-inline: var(--page-gutter);
       box-shadow: none;
     }
 
@@ -160,16 +159,15 @@ const { Content } = await render(post);
       grid-template-columns: minmax(0, 1fr);
       grid-template-areas: "image" "content";
       gap: 1.5rem;
-      padding: 1.25rem 1.25rem 1.5rem;
+      padding: 1.25rem var(--page-gutter) 1.5rem;
     }
 
     .article {
-      padding-inline: 1.25rem;
+      padding-inline: var(--page-gutter);
     }
 
     .article-hero__content h1 {
       max-width: none;
-      font-size: clamp(2.25rem, 9vw, 3.25rem);
     }
 
     .prose {

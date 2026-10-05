@@ -48,7 +48,6 @@
   max-width: 12ch;
   margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
   color: var(--plum);
-  font-size: clamp(2.8rem, 5vw, 4.75rem);
   line-height: 1.06;
 }
 
@@ -98,7 +97,6 @@
   }
 
   .book-page__copy h1 {
-    font-size: var(--site-h1-size);
     margin-bottom: 1.25rem;
   }
 }

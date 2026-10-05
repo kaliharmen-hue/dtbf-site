@@ -776,6 +776,12 @@ main {
   max-width: min(58%, 50rem);
 }
 
+@media (min-width: 901px) {
+  .journal-hero__intro {
+    margin-inline-start: clamp(2rem, 4vw, 3rem);
+  }
+}
+
 .journal-hero h1 {
   max-width: none;
   margin: 0;

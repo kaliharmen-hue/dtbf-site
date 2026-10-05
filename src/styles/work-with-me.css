@@ -22,12 +22,12 @@
   align-items: center;
   min-width: 0;
   padding: 2rem var(--page-gutter);
-  width: 65%;
+  width: 72%;
 }
 
 @media (min-width: 901px) {
   .work-hero__content {
-    padding-inline-start: calc(var(--page-gutter) + clamp(1rem, 2vw, 1.75rem));
+    padding-inline-start: calc(var(--page-gutter) + clamp(2rem, 4vw, 3rem));
   }
 }
 

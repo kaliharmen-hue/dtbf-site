@@ -16,7 +16,7 @@
 .about-intro {
   position: relative;
   z-index: 1;
-  width: min(1040px, calc(100% - 2 * var(--page-gutter)));
+  width: min(var(--site-content-max, 1680px), calc(100% - 2 * var(--page-gutter)));
   margin: 0 auto;
   padding: clamp(1.75rem, 3.2vw, 2.75rem) clamp(1.5rem, 4vw, 3.5rem);
   background: #123d3d;
@@ -25,13 +25,13 @@
 }
 
 .about-intro > h2 {
-  max-width: 850px;
+  max-width: 1200px;
   margin: 0 auto clamp(1.5rem, 3vw, 2.25rem);
   color: #fff;
 }
 
 .about-intro .about-copy {
-  max-width: 850px;
+  max-width: 1200px;
   margin-inline: auto;
 }
 
@@ -69,7 +69,6 @@
     width: min(88%, 1280px);
     height: 2px;
     background: var(--accent);
-    box-shadow: 0 1px 0 rgba(85, 73, 113, 0.28);
     transform: translateX(-50%);
     pointer-events: none;
   }
@@ -81,7 +80,7 @@
   }
 
   .about-intro {
-    width: min(1100px, calc(100% - 2 * var(--page-gutter)));
+    width: min(var(--site-content-max, 1680px), calc(100% - 2 * var(--page-gutter)));
     margin-top: -2.75rem;
     border-radius: 1.25rem 1.25rem 0 0;
   }
@@ -99,14 +98,14 @@
   }
 
   .about-intro {
-    width: min(1100px, calc(100% - 2 * var(--page-gutter)));
+    width: min(var(--site-content-max, 1680px), calc(100% - 2 * var(--page-gutter)));
     margin-top: -4.5rem;
     border-radius: 1.5rem 1.5rem 0 0;
   }
 
   .about-intro > h2,
   .about-intro .about-copy {
-    max-width: 1000px;
+    max-width: 1200px;
   }
 }
 

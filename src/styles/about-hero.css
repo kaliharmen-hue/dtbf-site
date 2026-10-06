@@ -15,7 +15,7 @@
 
 .about-intro {
   display: grid;
-  grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
   gap: clamp(2.5rem, 4vw, 4rem);
   align-items: center;
   width: min(1480px, calc(100% - 2 * var(--page-gutter)));
@@ -52,7 +52,8 @@
 .about-intro__image {
   min-width: 0;
   width: 100%;
-  justify-self: start;
+  justify-self: end;
+  transform: translateY(calc(-1 * clamp(2rem, 4vw, 3rem)));
 }
 
 .about-intro__image img {
@@ -141,6 +142,7 @@
 
   .about-intro__image {
     justify-self: center;
+    transform: none;
   }
 }
 

@@ -34,9 +34,9 @@
   margin: 0;
 }
 
-.about-intro__copy h2 {
+.about-intro__lead {
   margin: 0;
-  font-size: var(--site-h2-size);
+  font-size: inherit;
 }
 
 .about-intro__image {

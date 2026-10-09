@@ -36,14 +36,13 @@
 
 .about-intro__copy h2 {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: var(--site-h2-size);
 }
 
 .about-intro__image {
   min-width: 0;
   width: 100%;
   justify-self: end;
-  transform: translateY(calc(-1 * clamp(2rem, 4vw, 3rem)));
 }
 
 .about-intro__image img {
@@ -114,7 +113,11 @@
   }
 
   .about-intro .about-copy {
-    max-width: 1200px;
+    max-width: 780px;
+  }
+
+  .about-intro__copy {
+    padding-inline-start: clamp(2rem, 5vw, 5.25rem);
   }
 }
 

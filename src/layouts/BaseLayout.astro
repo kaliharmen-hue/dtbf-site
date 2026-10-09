@@ -13,8 +13,8 @@ const {
 } = Astro.props;
 
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
-const logoSrc = `${withBase("assets/dtbf-logo.png")}?v=2`;
-const faviconSrc = `${withBase("assets/dtbf-favicon.png")}?v=9`;
+const logoSrc = `${withBase("assets/dtbf-logo.png")}?v=3`;
+const faviconSrc = `${withBase("assets/dtbf-favicon.png")}?v=10`;
 const navItems = [
   { href: withBase(), label: "Home" },
   { href: withBase("work-with-me/"), label: "Work With Me" },
@@ -47,7 +47,7 @@ const isCurrentNavItem = (href: string) => href === homePath
       <a class="skip-link" href="#main-content">Skip to content</a>
       <header class="site-header">
         <a class="brand" href={withBase()} aria-label="Dare to Break Free home">
-          <img src={logoSrc} alt="Dare to Break Free" width="1293" height="364" fetchpriority="high" />
+          <img src={logoSrc} alt="Dare to Break Free" width="4275" height="1028" fetchpriority="high" />
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
           <span class="menu-toggle__line"></span>

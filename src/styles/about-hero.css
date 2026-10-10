@@ -23,7 +23,7 @@
   width: 100%;
   margin: 0;
   color: var(--ink);
-  font-size: 20px;
+  font-size: clamp(1rem, 2vw, 30px);
   font-weight: 400;
   line-height: 1.35;
 }
@@ -57,7 +57,7 @@
 
 .about-intro__image img {
   display: block;
-  width: min(100%, 24rem);
+  width: min(100%, 263px);
   height: auto;
   box-shadow: 0 1.2rem 2.5rem rgba(28, 33, 32, 0.2);
 }

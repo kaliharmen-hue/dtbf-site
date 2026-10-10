@@ -1,16 +1,30 @@
-/* About: a free-standing, two-line headline on the pale side of the portrait. */
-.page-hero.about-hero > h1 {
-  width: max-content;
-  max-width: none;
-  margin-left: auto;
-  color: var(--plum);
-  text-align: left;
-  text-wrap: initial;
+/* Keep the About title and its lede together in a responsive text column. */
+.about-hero__intro {
+  display: grid;
+  gap: 0.5rem;
+  width: min(58%, 50rem);
+  margin-inline-end: clamp(2rem, 4vw, 3rem);
 }
 
-.page-hero.about-hero > h1 span {
+.page-hero.about-hero h1 {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  color: var(--plum);
+  text-align: left;
+  text-wrap: balance;
+}
+
+.page-hero.about-hero h1 span {
   display: block;
-  white-space: nowrap;
+}
+
+.about-hero__lede {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  line-height: 1.55;
 }
 
 .about-intro {
@@ -87,12 +101,6 @@
     pointer-events: none;
   }
 
-  .page-hero.about-hero > h1 {
-    flex: 0 0 auto;
-    max-width: 100%;
-    margin: 0;
-  }
-
   .about-intro {
     width: min(1480px, calc(100% - 2 * var(--page-gutter)));
   }
@@ -105,7 +113,7 @@
     min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
   }
 
-  .page-hero.about-hero > h1 {
+  .about-hero__intro {
     transform: translateY(-30px);
   }
 
@@ -141,11 +149,12 @@
 
 /* Until a separate phone image is ready, allow the lines to wrap on very small screens. */
 @media (max-width: 479px) {
-  .page-hero.about-hero > h1 {
+  .about-hero__intro {
     width: 100%;
+    margin-inline-end: 0;
   }
 
-  .page-hero.about-hero > h1 span {
-    white-space: normal;
+  .about-hero__lede {
+    font-size: 1rem;
   }
 }

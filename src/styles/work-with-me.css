@@ -1,12 +1,28 @@
 /* The Work With Me page is the next designed page. Keep its layout local and
    use the shared site gutter, fonts and heading sizes. */
 .work-hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   width: 100%;
   min-height: clamp(28rem, calc(100svh - 18rem), 40rem);
   background: var(--paper);
   border-bottom: 1px solid var(--line);
+}
+
+.work-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: auto;
+  bottom: 0;
+  left: 50%;
+  width: min(88%, 1280px);
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 1px 0 rgba(85, 73, 113, 0.28);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .work-hero__photo {

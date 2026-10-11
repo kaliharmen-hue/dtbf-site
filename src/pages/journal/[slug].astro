@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,6 +15,10 @@ export async function getStaticPaths() {
 
 const { post, imageOnRight } = Astro.props;
 const { Content } = await render(post);
+const nextPosts = (await getCollection("blog"))
+  .filter((entry) => entry.id !== post.id)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 ---
 
 <BaseLayout title={`${post.data.title} | Dare to Break Free`} description={post.data.excerpt} pageClass="article-page">
@@ -38,6 +43,20 @@ const { Content } = await render(post);
       <Content />
     </div>
   </article>
+  <section class="article-next" aria-labelledby="article-next-title">
+    <div class="article-next__inner">
+      <div class="article-next__heading">
+        <p class="eyebrow">Keep reading</p>
+        <h2 id="article-next-title">What to read next</h2>
+      </div>
+      {nextPosts.length > 0 && (
+        <div class="article-next__grid">
+          {nextPosts.map((nextPost) => <PostCard post={nextPost} />)}
+        </div>
+      )}
+      <a class="article-next__all" href={`${import.meta.env.BASE_URL}journal/`}>Browse all journal entries</a>
+    </div>
+  </section>
 </BaseLayout>
 
 <script is:inline>
@@ -140,6 +159,42 @@ const { Content } = await render(post);
     width: min(100%, 88ch);
     margin: 0 auto;
     line-height: 1.75;
+  }
+
+  .article-next {
+    padding: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 5vw, 5rem);
+    border-top: 1px solid var(--line);
+    background: #eef3f6;
+  }
+
+  .article-next__inner {
+    width: min(100%, 88rem);
+    margin-inline: auto;
+  }
+
+  .article-next__heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-next__heading .eyebrow {
+    margin: 0 0 0.5rem;
+  }
+
+  .article-next__heading h2 {
+    margin: 0;
+  }
+
+  .article-next__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: 1rem;
+  }
+
+  .article-next__all {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-weight: 700;
+    text-underline-offset: 0.2em;
   }
 
   @media (max-width: 640px) {

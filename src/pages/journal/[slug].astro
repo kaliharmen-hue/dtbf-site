@@ -9,16 +9,18 @@ export async function getStaticPaths() {
   );
   return posts.map((post, index) => ({
     params: { slug: post.slug },
-    props: { post, imageOnRight: index % 2 === 1 }
+    props: {
+      post,
+      imageOnRight: index % 2 === 1,
+      nextPosts: posts
+        .filter((entry) => entry.id !== post.id)
+        .slice(0, 3)
+    }
   }));
 }
 
-const { post, imageOnRight } = Astro.props;
+const { post, imageOnRight, nextPosts } = Astro.props;
 const { Content } = await render(post);
-const nextPosts = (await getCollection("blog"))
-  .filter((entry) => entry.id !== post.id)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
 ---
 
 <BaseLayout title={`${post.data.title} | Dare to Break Free`} description={post.data.excerpt} pageClass="article-page">

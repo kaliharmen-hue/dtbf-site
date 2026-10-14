@@ -59,13 +59,19 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 598px) {
   .memoir-section {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "book";
     gap: 1.25rem;
   }
 
+  .memoir-section__copy {
+    grid-area: copy;
+  }
+
   .memoir-section .book-image {
-    justify-items: start;
+    grid-area: book;
+    justify-items: center;
   }
 }

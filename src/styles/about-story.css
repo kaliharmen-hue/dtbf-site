@@ -124,7 +124,7 @@
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1100px) {
   .section.two-column.about-section--final {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
@@ -148,6 +148,10 @@
 
   .about-story__row--reverse .about-story__copy {
     justify-self: stretch;
+  }
+
+  .about-story__copy {
+    max-width: none;
   }
 
   .about-story__row--reverse .about-story__media--second {

@@ -205,12 +205,6 @@ section.work-section {
   margin-bottom: 0.5rem;
 }
 
-.work-start__form-note {
-  margin: 0 0 1.5rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
 .work-start__form-preview {
   display: grid;
   gap: 0.65rem;

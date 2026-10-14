@@ -148,6 +148,10 @@
     justify-self: center;
     transform: none;
   }
+
+  .about-intro__image img {
+    margin-inline: auto;
+  }
 }
 
 /* Use the portrait side of the wide hero artwork on phones, with the title
@@ -195,6 +199,5 @@
 
   .about-intro__image img {
     width: min(100%, 19rem);
-    margin-inline: auto;
   }
 }

@@ -133,6 +133,10 @@
       "copy";
     grid-template-rows: auto;
   }
+
+  .about-section--final .about-section__portrait {
+    justify-self: center;
+  }
 }
 
 @media (max-width: 900px) {
@@ -151,5 +155,10 @@
 
   .about-story__row--reverse .about-story__copy {
     grid-row: 2;
+  }
+
+  .about-story__media {
+    width: min(100%, 38rem);
+    justify-self: center;
   }
 }

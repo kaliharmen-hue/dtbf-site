@@ -144,4 +144,12 @@
   .about-story__row--reverse .about-story__copy {
     justify-self: stretch;
   }
+
+  .about-story__row--reverse .about-story__media--second {
+    grid-row: 1;
+  }
+
+  .about-story__row--reverse .about-story__copy {
+    grid-row: 2;
+  }
 }

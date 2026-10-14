@@ -150,11 +150,51 @@
   }
 }
 
-/* Until a separate phone image is ready, allow the lines to wrap on very small screens. */
+/* Use the portrait side of the wide hero artwork on phones, with the title
+   below it on a light fade rather than over Kali's face. */
 @media (max-width: 479px) {
+  .page-hero.about-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 29rem;
+    margin: 0;
+    padding: 13rem var(--page-gutter) 2rem;
+    background-color: var(--paper);
+    background-image:
+      linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.08) 36%, rgba(255, 255, 255, 0.94) 59%, var(--paper) 72%),
+      url("/assets/about-page-hero-kali.jpg?v=2");
+    background-position: center, left top;
+    background-size: 100% 100%, auto 74%;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .page-hero.about-hero::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 50%;
+    width: min(88%, 1280px);
+    height: 2px;
+    background: var(--accent);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
   .about-hero__intro {
     width: 100%;
     margin-inline-end: 0;
   }
 
+  .about-hero__lede {
+    font-size: 1rem;
+  }
+
+  .about-intro__image img {
+    width: min(100%, 19rem);
+    margin-inline: auto;
+  }
 }

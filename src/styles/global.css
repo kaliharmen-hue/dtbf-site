@@ -980,6 +980,11 @@ label {
   font-weight: 700;
 }
 
+.form-section h2,
+.work-start__form-wrap h3 {
+  font-family: var(--font-body);
+}
+
 input,
 textarea {
   width: 100%;

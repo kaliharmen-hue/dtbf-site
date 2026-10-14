@@ -135,6 +135,7 @@
   }
 
   .about-section--final .about-section__portrait {
+    width: min(100%, 38rem);
     justify-self: center;
   }
 }

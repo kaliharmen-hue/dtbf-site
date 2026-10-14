@@ -1,5 +1,16 @@
 /* The Work With Me page is the next designed page. Keep its layout local and
    use the shared site gutter, fonts and heading sizes. */
+.work-page {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.work-page .site-frame {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 .work-hero {
   position: relative;
   display: grid;

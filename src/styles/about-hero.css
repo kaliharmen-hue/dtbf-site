@@ -154,6 +154,24 @@
   }
 }
 
+@media (max-width: 1080px) {
+  .about-intro__image {
+    position: static;
+    top: auto;
+    align-self: center;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1081px) {
+  .about-intro__image {
+    position: relative;
+    top: -1rem;
+    align-self: start;
+    margin-top: -6rem;
+  }
+}
+
 /* Use the portrait side of the wide hero artwork on phones, with the title
    below it on a light fade rather than over Kali's face. */
 @media (max-width: 479px) {

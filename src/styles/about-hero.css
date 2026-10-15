@@ -199,7 +199,7 @@
     background-color: var(--paper);
     background-image: url("/assets/about-page-hero-phone.jpg?v=1");
     background-position: left top;
-    background-size: 100% auto;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     border-bottom: 1px solid var(--line);
   }
@@ -227,6 +227,10 @@
 
   .page-hero.about-hero h1 {
     font-size: 1.5rem;
+  }
+
+  .page-hero.about-hero h1 span {
+    display: inline;
   }
 
   .about-hero__lede {

@@ -193,7 +193,7 @@
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    min-height: 28rem;
+    min-height: clamp(18rem, 75vw, 34rem);
     margin: 0;
     padding: 1.5rem var(--page-gutter);
     background-color: var(--paper);
@@ -219,8 +219,10 @@
 
   .about-hero__intro {
     width: 58%;
+    align-self: flex-start;
+    margin-top: 2rem;
     margin-inline-end: 0;
-    transform: translateY(-2rem);
+    transform: none;
   }
 
   .page-hero.about-hero h1 {

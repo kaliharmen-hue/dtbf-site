@@ -241,6 +241,7 @@
 
   .speaking-hero__copy {
     width: 58%;
+    transform: translateY(-2rem);
   }
 
   .speaking-hero__copy h1 {

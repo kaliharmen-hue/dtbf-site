@@ -220,6 +220,7 @@
   .about-hero__intro {
     width: 58%;
     margin-inline-end: 0;
+    transform: translateY(-2rem);
   }
 
   .page-hero.about-hero h1 {

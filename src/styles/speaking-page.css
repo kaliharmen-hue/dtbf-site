@@ -232,7 +232,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    min-height: clamp(28rem, 120vw, 34rem);
+    min-height: clamp(18rem, 75vw, 34rem);
     padding: 1.5rem var(--page-gutter);
     background-image: url("/assets/speaking-page-hero-phone.jpg?v=1");
     background-position: top left;
@@ -241,7 +241,9 @@
 
   .speaking-hero__copy {
     width: 58%;
-    transform: translateY(-2rem);
+    align-self: flex-start;
+    margin-top: 2rem;
+    transform: none;
   }
 
   .speaking-hero__copy h1 {

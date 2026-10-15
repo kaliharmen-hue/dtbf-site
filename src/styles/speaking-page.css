@@ -231,7 +231,8 @@
   .page-hero.speaking-hero {
     display: block;
     min-height: 0;
-    padding: calc(50vw + 1.5rem) var(--page-gutter) 2.5rem;
+    padding: calc(75vw + 1.5rem) var(--page-gutter) 2.5rem;
+    background-image: url("/assets/speaking-page-hero-mobile.jpg?v=1");
     background-position: top left;
     background-size: 100% auto;
   }

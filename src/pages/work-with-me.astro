@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import gettingStuckImage from "../../Getting Stuck - Work With Me .jpg";
 import "../styles/work-with-me.css";
+
+const formAction = "https://formspree.io/f/xwlpaqpg";
 ---
 
 <BaseLayout title="Work With Me | Kali Harmen | Dare to Break Free" description="One-to-one collaboration sessions with Kali Harmen for stories, business, marketing and life transitions." pageClass="work-page">
@@ -88,17 +90,22 @@ import "../styles/work-with-me.css";
         <p>From there, we can have a free 20-minute scoping call to see if we’re a good fit to collaborate and whether I’m the right person for what you need. There’s no obligation to go any further.</p>
         <p>If the stars align, we’ll agree what to work on and book our first session.</p>
       </div>
-      <div class="work-start__form-wrap">
+        <div class="work-start__form-wrap">
         <h3>Tell me what you’re working on</h3>
-        <div class="work-start__form-preview" aria-label="Enquiry form preview">
-          <label for="work-name">Name</label>
-          <input id="work-name" type="text" name="name" autocomplete="name" disabled />
-          <label for="work-email">Email</label>
-          <input id="work-email" type="email" name="email" autocomplete="email" disabled />
-          <label for="work-message">What are you working on, and where are you getting stuck?</label>
-          <textarea id="work-message" name="message" rows="5" disabled></textarea>
-          <button class="button" type="button" disabled>Tell me what you’re working on</button>
-        </div>
+          <form class="contact-form work-start__form" action={formAction} method="POST">
+            <div class="contact-form__honeypot" aria-hidden="true">
+              <label for="work-website">Leave this field empty</label>
+              <input id="work-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <label for="work-name">Name</label>
+            <input id="work-name" type="text" name="name" autocomplete="name" required />
+            <label for="work-email">Email</label>
+            <input id="work-email" type="email" name="email" autocomplete="email" required />
+            <label for="work-message">What are you working on, and where are you getting stuck?</label>
+            <textarea id="work-message" name="message" rows="5" required></textarea>
+            <input type="hidden" name="form-name" value="work-with-me" />
+            <button class="button" type="submit">Send enquiry</button>
+          </form>
       </div>
     </div>
   </section>

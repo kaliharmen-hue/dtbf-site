@@ -216,27 +216,25 @@ section.work-section {
   margin-bottom: 0.5rem;
 }
 
-.work-start__form-preview {
+.work-start__form {
   display: grid;
   gap: 0.65rem;
 }
 
-.work-start__form-preview label {
+.work-start__form label {
   margin-top: 0.5rem;
 }
 
-.work-start__form-preview input,
-.work-start__form-preview textarea {
+.work-start__form input,
+.work-start__form textarea {
   max-width: 100%;
   background: var(--paper);
   opacity: 1;
 }
 
-.work-start__form-preview .button {
+.work-start__form .button {
   width: fit-content;
   margin-top: 1rem;
-  opacity: 0.58;
-  cursor: not-allowed;
 }
 
 @media (max-width: 1080px) {
@@ -281,7 +279,7 @@ section.work-section {
   .work-pricing__grid,
   .work-start__inner,
   .work-start__form-wrap,
-  .work-start__form-preview {
+  .work-start__form {
     min-width: 0;
     width: 100%;
     max-width: 100%;
@@ -306,9 +304,9 @@ section.work-section {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .work-start__form-preview label,
-  .work-start__form-preview input,
-  .work-start__form-preview textarea {
+  .work-start__form label,
+  .work-start__form input,
+  .work-start__form textarea {
     min-width: 0;
     width: 100%;
     max-width: 100%;

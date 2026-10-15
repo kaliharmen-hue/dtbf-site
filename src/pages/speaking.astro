@@ -6,7 +6,7 @@ import speakingHero from "../assets/speaking-page-kali-hero.jpg";
 const formAction = "https://formspree.io/f/xwlpaqpg";
 ---
 
-<BaseLayout title="Speaking | Dare to Break Free">
+<BaseLayout title="Speaking | Dare to Break Free" description="Book Kali Harmen to speak on grit, resilience and midlife reinvention, drawing on lived experience, psychology and the story behind Dare to Break Free.">
   <section class="page-hero speaking-hero" style={`--speaking-hero-image: url("${speakingHero.src}")`}>
     <div class="speaking-hero__copy">
       <p class="speaking-hero__eyebrow"><strong>Speaking about</strong></p>
@@ -51,8 +51,8 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
     </div>
     <form class="contact-form speaking-enquiry__form" action={formAction} method="POST">
       <div class="contact-form__honeypot" aria-hidden="true">
-        <label for="contact-website">Leave this field empty</label>
-        <input id="contact-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+        <label for="speaking-website">Leave this field empty</label>
+        <input id="speaking-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
       </div>
       <label class="speaking-enquiry__field">
         Name
@@ -86,7 +86,7 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
         Anything else I should know?
         <textarea name="additional_information" rows="2"></textarea>
       </label>
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="speaking" />
       <button class="button" type="submit">Send enquiry</button>
     </form>
   </section>

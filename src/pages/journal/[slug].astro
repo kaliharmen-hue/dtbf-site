@@ -21,9 +21,30 @@ export async function getStaticPaths() {
 
 const { post, imageOnRight, nextPosts } = Astro.props;
 const { Content } = await render(post);
+const siteUrl = Astro.site ?? new URL("https://daretobreakfree.co.uk");
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.excerpt,
+  datePublished: post.data.date.toISOString(),
+  dateModified: post.data.date.toISOString(),
+  mainEntityOfPage: new URL(`journal/${post.slug}/`, siteUrl).href,
+  author: {
+    "@type": "Person",
+    name: "Kali Harmen",
+    url: new URL("about/", siteUrl).href
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Dare to Break Free",
+    url: siteUrl.href
+  },
+  ...(post.data.coverImage ? { image: new URL(post.data.coverImage, Astro.site).href } : {})
+};
 ---
 
-<BaseLayout title={`${post.data.title} | Dare to Break Free`} description={post.data.excerpt} pageClass="article-page">
+<BaseLayout title={`${post.data.title} | Dare to Break Free`} description={post.data.excerpt} pageClass="article-page" schema={articleSchema} ogType="article">
   {post.data.coverImage && (
     <header class={`article-hero${imageOnRight ? " article-hero--image-right" : ""}`}>
       <div class="article-hero__inner">

@@ -4,7 +4,6 @@ const staticPaths = [
   "/",
   "/about/",
   "/book/",
-  "/contact/",
   "/journal/",
   "/speaking/",
   "/work-with-me/"

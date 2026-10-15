@@ -198,7 +198,7 @@
     padding: 1.5rem var(--page-gutter);
     background-color: var(--paper);
     background-image: url("/assets/about-page-hero-phone.jpg?v=1");
-    background-position: left top;
+    background-position: -2rem top;
     background-size: auto 100%;
     background-repeat: no-repeat;
     border-bottom: 1px solid var(--line);

@@ -322,8 +322,16 @@ section.work-section {
   }
 
   .work-hero__photo {
-    min-height: 13rem;
-    aspect-ratio: 2 / 1;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    background-image: url("/assets/work-with-kali-mobile.png?v=1");
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .work-hero__content {
+    width: 64%;
+    padding: 1.25rem var(--page-gutter);
   }
 
   .work-pricing__card,
@@ -332,7 +340,7 @@ section.work-section {
   }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 601px) {
   .work-hero__photo {
     background-size: cover;
     background-position: right 20%;

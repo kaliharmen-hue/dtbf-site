@@ -185,23 +185,20 @@
   }
 }
 
-/* Use the portrait side of the wide hero artwork on phones, with the title
-   below it on a light fade rather than over Kali's face. */
+/* Use the phone-specific wide crop, keeping the title in its open right side. */
 @media (max-width: 479px) {
   .page-hero.about-hero {
     position: relative;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
-    min-height: 29rem;
+    min-height: 32rem;
     margin: 0;
-    padding: 13rem var(--page-gutter) 2rem;
+    padding: 1.5rem var(--page-gutter);
     background-color: var(--paper);
-    background-image:
-      linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.08) 36%, rgba(255, 255, 255, 0.94) 59%, var(--paper) 72%),
-      url("/assets/about-page-hero-mobile.jpg?v=1");
-    background-position: center, left top;
-    background-size: 100% 100%, auto 74%;
+    background-image: url("/assets/about-page-hero-phone.jpg?v=1");
+    background-position: left top;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     border-bottom: 1px solid var(--line);
   }
@@ -220,7 +217,7 @@
   }
 
   .about-hero__intro {
-    width: 100%;
+    width: 52%;
     margin-inline-end: 0;
   }
 

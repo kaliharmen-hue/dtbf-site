@@ -273,6 +273,13 @@ section.work-section {
   }
 }
 
+@media (min-width: 601px) and (max-width: 900px) {
+  .work-intro__image-slot {
+    width: min(70vw, 30rem);
+    justify-self: center;
+  }
+}
+
 @media (max-width: 898px) {
   .work-section__inner,
   .work-areas__grid,

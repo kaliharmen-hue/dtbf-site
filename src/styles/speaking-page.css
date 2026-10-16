@@ -227,12 +227,31 @@
   justify-self: start;
 }
 
+@media (min-width: 701px) and (max-width: 1000px) {
+  .page-hero.speaking-hero {
+    min-height: 0;
+    aspect-ratio: 2 / 1;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+    background-position: center top;
+    background-size: 100% 100%;
+  }
+
+  .speaking-hero__copy {
+    width: 46%;
+  }
+
+  .speaking-hero__copy h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+}
+
 @media (max-width: 700px) {
   .page-hero.speaking-hero {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    min-height: clamp(18rem, 75vw, 34rem);
+    min-height: 0;
+    height: 75vw;
     padding: 1.5rem var(--page-gutter);
     background-image: url("/assets/speaking-page-hero-phone.jpg?v=1");
     background-position: top left;
@@ -281,5 +300,16 @@
   .speaking-enquiry__field--wide,
   .speaking-enquiry__form > .button {
     grid-column: auto;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 700px) {
+  .speaking-hero__copy {
+    width: 48%;
+    margin-top: clamp(4.5rem, 16vw, 7rem);
+  }
+
+  .speaking-hero__copy h1 {
+    font-size: clamp(1.65rem, 5.2vw, 2.2rem);
   }
 }

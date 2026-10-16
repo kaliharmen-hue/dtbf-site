@@ -235,10 +235,16 @@ main {
   background: #f4f6fc;
 }
 
-.home-hero__media {
+.home-hero__picture {
   position: absolute;
   inset: 0;
   z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+
+.home-hero__media {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -246,13 +252,20 @@ main {
 }
 
 @media (min-width: 901px) {
-  .home-hero__media {
+  .home-hero__picture {
     right: auto;
     width: auto;
     max-width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, #000 85%, transparent);
+  }
+
+  .home-hero__media {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
     object-fit: contain;
     object-position: left center;
-    mask-image: linear-gradient(to right, #000 85%, transparent);
   }
 }
 
@@ -800,6 +813,17 @@ main {
   line-height: 1.55;
 }
 
+@media (min-width: 641px) and (max-width: 1300px) {
+  .page-hero.journal-hero {
+    min-height: 0;
+    height: min(50vw, 40rem);
+    aspect-ratio: auto;
+    background-position: center top;
+    background-image: url("/assets/journal-page-hero-tablet.jpg?v=1");
+    background-size: cover;
+  }
+}
+
 .section,
 .form-section,
 .article {
@@ -1175,7 +1199,7 @@ textarea:focus {
     padding: 0;
   }
 
-  .home-hero__media {
+  .home-hero__picture {
     position: relative;
     inset: auto;
     z-index: 0;
@@ -1184,6 +1208,12 @@ textarea:focus {
     width: 100%;
     height: auto;
     aspect-ratio: 2 / 1;
+    overflow: hidden;
+  }
+
+  .home-hero__media {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -1361,6 +1391,10 @@ textarea:focus {
 }
 
 @media (min-width: 480px) and (max-width: 900px) {
+  .home-hero__picture {
+    height: 100%;
+  }
+
   .home-hero__media {
     height: 100%;
     object-position: left top;

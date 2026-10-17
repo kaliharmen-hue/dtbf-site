@@ -126,6 +126,9 @@ const isCurrentNavItem = (href: string) => href === homePath
       };
 
       backToTop?.addEventListener("click", () => {
+        if (window.location.hash === "#top") {
+          window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+        }
         window.scrollTo({
           top: 0,
           behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"

@@ -71,8 +71,8 @@ const getThemeCount = (theme: typeof themes[number]) =>
             aria-controls="journal-results"
             aria-pressed="false"
           >
-            <h3>{theme.name}</h3>
-            <p>{theme.description}</p>
+            <span class="journal-theme-card__title" role="heading" aria-level="3">{theme.name}</span>
+            <span class="journal-theme-card__description">{theme.description}</span>
             <span>{count === 1 ? "1 entry" : `${count} entries`}</span>
           </button>
         );

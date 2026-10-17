@@ -3,7 +3,6 @@ title: "Knowing isn't the same as doing"
 date: 2026-09-30
 excerpt: "But understanding and changing aren't necessarily the same event."
 tags:
-  - writing
   - memoir
   - visibility
   - fear

@@ -7,7 +7,6 @@ tags:
   - self-care
   - healing
   - connection
-  - writing
 coverImage: "/assets/i-just-want-this-day-to-end-article.jpg"
 ---
 

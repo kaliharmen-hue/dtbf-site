@@ -3,14 +3,13 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
   post: CollectionEntry<"blog">;
-  themeTags?: string;
 }
 
-const { post, themeTags } = Astro.props;
+const { post } = Astro.props;
 const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 ---
 
-<article class="post-card" data-theme-tags={themeTags}>
+<article class="post-card">
   {post.data.coverImage && (
     <div class="post-card__media">
       <img

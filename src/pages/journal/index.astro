@@ -40,10 +40,7 @@ const themes = [
   }
 ];
 
-const getThemeCount = (theme: typeof themes[number]) =>
-  posts.filter((post) =>
-    post.data.tags.some((tag) => theme.tags.includes(tag.toLowerCase()))
-  ).length;
+const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path}`;
 ---
 
 <BaseLayout title="Journal | Dare to Break Free" description="Read Kali Harmen’s journal on midlife, ADHD, writing, relationships, recovery, work and ambition, with honest reflections on life as it happens.">
@@ -61,20 +58,32 @@ const getThemeCount = (theme: typeof themes[number]) =>
     </div>
     <div class="journal-theme-grid">
       {themes.map((theme) => {
-        const count = getThemeCount(theme);
+        const themePosts = posts.filter((post) =>
+          post.data.tags.some((tag) => theme.tags.includes(tag.toLowerCase()))
+        );
+        const count = themePosts.length;
         return (
-          <button
-            class="journal-theme-card"
-            type="button"
-            data-theme={theme.tags.map((tag) => tag.toLowerCase()).join("|")}
-            data-theme-label={theme.name}
-            aria-controls="journal-results"
-            aria-pressed="false"
-          >
-            <span class="journal-theme-card__title" role="heading" aria-level="3">{theme.name}</span>
-            <span class="journal-theme-card__description">{theme.description}</span>
-            <span>{count === 1 ? "1 entry" : `${count} entries`}</span>
-          </button>
+          <details class="journal-theme-card">
+            <summary class="journal-theme-card__summary">
+              <span class="journal-theme-card__title" role="heading" aria-level="3">{theme.name}</span>
+              <span class="journal-theme-card__description">{theme.description}</span>
+              <span class="journal-theme-card__count">{count === 1 ? "1 entry" : `${count} entries`}</span>
+            </summary>
+            <div class="journal-theme-card__entries">
+              {themePosts.length > 0 ? (
+                <ul>
+                  {themePosts.map((post) => (
+                    <li>
+                      <a href={withBase(`journal/${post.slug}/`)}>{post.data.title}</a>
+                      <p>{post.data.excerpt}</p>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No entries in this theme yet.</p>
+              )}
+            </div>
+          </details>
         );
       })}
     </div>
@@ -82,14 +91,11 @@ const getThemeCount = (theme: typeof themes[number]) =>
 
   <section class="section journal-index-section">
     <div class="section-heading">
-      <div class="journal-results-heading">
-        <h2 data-results-title>Latest Entries</h2>
-        <button class="journal-filter-reset" type="button" data-theme-reset aria-controls="journal-results" aria-pressed="true">All entries</button>
-      </div>
+      <h2>Latest Entries</h2>
     </div>
-    <div class="post-grid journal-index-grid" id="journal-results" aria-live="polite">
+    <div class="post-grid journal-index-grid">
       {posts.length > 0 ? (
-        posts.map((post) => <PostCard post={post} themeTags={post.data.tags.map((tag) => tag.toLowerCase()).join("|")} />)
+        posts.map((post) => <PostCard post={post} />)
       ) : (
         <article class="post-card journal-empty-card">
           <h3>Journal entries coming soon</h3>
@@ -97,36 +103,5 @@ const getThemeCount = (theme: typeof themes[number]) =>
         </article>
       )}
     </div>
-    <p class="journal-no-results" data-results-empty hidden>No entries in this theme yet.</p>
   </section>
 </BaseLayout>
-
-<script>
-  const themeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>(".journal-theme-card"));
-  const entryCards = Array.from(document.querySelectorAll<HTMLElement>(".journal-index-grid [data-theme-tags]"));
-  const resultsTitle = document.querySelector<HTMLElement>("[data-results-title]");
-  const emptyMessage = document.querySelector<HTMLElement>("[data-results-empty]");
-  const resetButton = document.querySelector<HTMLButtonElement>("[data-theme-reset]");
-
-  const showEntriesFor = (selectedTheme?: HTMLButtonElement) => {
-    const selectedTags = selectedTheme?.dataset.theme?.split("|") ?? [];
-    let visibleCount = 0;
-
-    entryCards.forEach((card) => {
-      const tags = card.dataset.themeTags?.split("|") ?? [];
-      const visible = !selectedTheme || tags.some((tag) => selectedTags.includes(tag));
-      card.hidden = !visible;
-      if (visible) visibleCount += 1;
-    });
-
-    themeButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", String(button === selectedTheme));
-    });
-    resetButton?.setAttribute("aria-pressed", String(!selectedTheme));
-    if (resultsTitle) resultsTitle.textContent = selectedTheme ? `${selectedTheme.dataset.themeLabel} Entries` : "Latest Entries";
-    if (emptyMessage) emptyMessage.hidden = visibleCount > 0;
-  };
-
-  themeButtons.forEach((button) => button.addEventListener("click", () => showEntriesFor(button)));
-  resetButton?.addEventListener("click", () => showEntriesFor());
-</script>

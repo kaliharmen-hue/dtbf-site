@@ -1029,12 +1029,13 @@ main {
 .journal-preview-card {
   align-content: start;
   padding: 1rem;
+  border-left: 3px solid var(--violet);
 }
 
 .journal-entry-image {
   min-height: 13rem;
   margin: -1rem -1rem 0;
-  border: 0;
+  border: 1px solid rgba(85, 73, 113, 0.5);
   border-radius: 0.5rem 0.5rem 0 0;
 }
 

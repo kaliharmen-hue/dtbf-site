@@ -1057,6 +1057,10 @@ main {
   object-position: center;
 }
 
+.journal-preview-card h3 {
+  margin-bottom: 0.25rem;
+}
+
 .journal-preview-card--empty {
   background: rgba(255, 255, 255, 0.58);
 }

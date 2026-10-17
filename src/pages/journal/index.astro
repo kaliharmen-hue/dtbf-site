@@ -63,11 +63,18 @@ const getThemeCount = (theme: typeof themes[number]) =>
       {themes.map((theme) => {
         const count = getThemeCount(theme);
         return (
-          <article class="journal-theme-card">
+          <button
+            class="journal-theme-card"
+            type="button"
+            data-theme={theme.tags.map((tag) => tag.toLowerCase()).join("|")}
+            data-theme-label={theme.name}
+            aria-controls="journal-results"
+            aria-pressed="false"
+          >
             <h3>{theme.name}</h3>
             <p>{theme.description}</p>
             <span>{count === 1 ? "1 entry" : `${count} entries`}</span>
-          </article>
+          </button>
         );
       })}
     </div>
@@ -75,11 +82,14 @@ const getThemeCount = (theme: typeof themes[number]) =>
 
   <section class="section journal-index-section">
     <div class="section-heading">
-      <h2>Latest Entries</h2>
+      <div class="journal-results-heading">
+        <h2 data-results-title>Latest Entries</h2>
+        <button class="journal-filter-reset" type="button" data-theme-reset aria-controls="journal-results" aria-pressed="true">All entries</button>
+      </div>
     </div>
-    <div class="post-grid journal-index-grid">
+    <div class="post-grid journal-index-grid" id="journal-results" aria-live="polite">
       {posts.length > 0 ? (
-        posts.map((post) => <PostCard post={post} />)
+        posts.map((post) => <PostCard post={post} themeTags={post.data.tags.map((tag) => tag.toLowerCase()).join("|")} />)
       ) : (
         <article class="post-card journal-empty-card">
           <h3>Journal entries coming soon</h3>
@@ -87,5 +97,36 @@ const getThemeCount = (theme: typeof themes[number]) =>
         </article>
       )}
     </div>
+    <p class="journal-no-results" data-results-empty hidden>No entries in this theme yet.</p>
   </section>
 </BaseLayout>
+
+<script>
+  const themeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>(".journal-theme-card"));
+  const entryCards = Array.from(document.querySelectorAll<HTMLElement>(".journal-index-grid [data-theme-tags]"));
+  const resultsTitle = document.querySelector<HTMLElement>("[data-results-title]");
+  const emptyMessage = document.querySelector<HTMLElement>("[data-results-empty]");
+  const resetButton = document.querySelector<HTMLButtonElement>("[data-theme-reset]");
+
+  const showEntriesFor = (selectedTheme?: HTMLButtonElement) => {
+    const selectedTags = selectedTheme?.dataset.theme?.split("|") ?? [];
+    let visibleCount = 0;
+
+    entryCards.forEach((card) => {
+      const tags = card.dataset.themeTags?.split("|") ?? [];
+      const visible = !selectedTheme || tags.some((tag) => selectedTags.includes(tag));
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    themeButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", String(button === selectedTheme));
+    });
+    resetButton?.setAttribute("aria-pressed", String(!selectedTheme));
+    if (resultsTitle) resultsTitle.textContent = selectedTheme ? `${selectedTheme.dataset.themeLabel} Entries` : "Latest Entries";
+    if (emptyMessage) emptyMessage.hidden = visibleCount > 0;
+  };
+
+  themeButtons.forEach((button) => button.addEventListener("click", () => showEntriesFor(button)));
+  resetButton?.addEventListener("click", () => showEntriesFor());
+</script>

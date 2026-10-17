@@ -8,7 +8,7 @@ tags:
   - healing
   - connection
   - writing
-coverImage: "/assets/i-just-want-this-day-to-end-article.png"
+coverImage: "/assets/i-just-want-this-day-to-end-article.jpg"
 ---
 
 How many times have I said that in my life? A lot.

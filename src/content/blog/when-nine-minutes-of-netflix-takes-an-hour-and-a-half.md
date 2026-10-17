@@ -25,7 +25,7 @@ It’s funny when it’s Netflix. It’s less funny when you look back and reali
 
 I was diagnosed with ADHD just before my 47th birthday. Dyslexia had only been picked up a few years earlier, halfway through doing my MSc.
 
-That still makes me laugh in a slightly despairing way. I’d dropped out of school with no qualifications, then in my thirties managed to do an access course, go on to get a degree, and make it halfway through a master’s before discovering that one of the reasons I’d spent so much of my earlier education struggling was that my brain actually processed things differently.
+That still makes me laugh in a slightly despairing way. **I’d dropped out of school with no qualifications**, then in my thirties managed to do an access course, go on to get a degree, and make it halfway through a master’s before discovering that one of the reasons I’d spent so much of my earlier education struggling was that my brain actually processed things differently.
 
 School had been a disaster in many ways. I failed things. I had almost no interest in most of what we were supposed to be learning, and there seemed to be this narrative that I was just lazy, didn’t apply myself, was distracted or simply wasn’t very bright.
 
@@ -51,16 +51,16 @@ Because when you don’t know there is another explanation, you make one up from
 
 After enough years of that, it becomes part of how you see yourself.
 
-This is one of the reasons I struggle when people roll their eyes at ADHD diagnoses or say everyone ‘has a bit of ADHD these days’. I understand some of the scepticism. We all get distracted. We all procrastinate. Let’s face it, our phones are vying for our attention from the moment we get up. I was brought up in a time before that though.
+This is one of the reasons **I struggle when people roll their eyes at ADHD diagnoses** or say everyone ‘has a bit of ADHD these days’. I understand some of the scepticism. We all get distracted. We all procrastinate. Let’s face it, our phones are vying for our attention from the moment we get up. I was brought up in a time before that though.
 
-And I’m not talking about just struggling to focus when doing seemingly boring tasks.
+And **I’m not talking about just struggling to focus** when doing seemingly boring tasks.
 
 I’m talking about something that ran through decades of my life before I even knew what I was looking at. It wasn’t just a few annoying habits or being a bit scatty. It affected my education, contributed to a turbulent career path and repeated cycles of overspending and debt, and showed up in my relationships through emotional dysregulation and severe rejection sensitivity. I took dangerous risks because I couldn’t see the longer-term consequences, and then there’s the self-esteem I’ve spent a lifetime trying to pick up off the floor.
 
 Getting diagnosed didn’t magically repair any of that. It didn’t rewrite the past, give me back the years I spent struggling or suddenly make everyday life effortless.
 
-What it did was give me a different way of looking at myself. There was finally an explanation for some of it.
+**What it did was give me a different way of looking at myself.** There was finally an explanation for some of it.
 
 I could start noticing how my brain worked rather than endlessly trying to force it to behave like somebody else’s. I could look back at that child who appeared completely uninterested at school but happily went home and read about Chernobyl and see something other than failure.
 
-That was a relief. It didn’t absolve me of anything, and it wasn’t an excuse. It was simply a missing piece of information about the person I’d been trying to understand for nearly 47 years.
+That was a relief. **It didn’t absolve me of anything, and it wasn’t an excuse.** It was simply a missing piece of information about the person I’d been trying to understand for nearly 47 years.

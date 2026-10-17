@@ -224,5 +224,49 @@ const mobileHero = await getImage({
     <a class="button secondary light-button" href={withBase("journal/")}>See all journal entries</a>
   </section>
 
+  <script>
+    const parallaxImages = Array.from(
+      document.querySelectorAll<HTMLImageElement>(
+        ".editorial-image img, .memoir-section .book-image img, .reflection-image img, .definition-section__image img, .journal-entry-image img"
+      )
+    );
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const croppedImages = new Set(
+      document.querySelectorAll<HTMLImageElement>(
+        ".editorial-image img, .reflection-image img, .journal-entry-image img"
+      )
+    );
+    let frame = 0;
 
+    parallaxImages.forEach((image) => {
+      image.classList.add("home-parallax-image");
+      if (croppedImages.has(image)) image.classList.add("home-parallax-image--cropped");
+    });
+
+    const updateParallax = () => {
+      frame = 0;
+      const maxShift = window.innerWidth <= 680 ? 6 : 12;
+
+      parallaxImages.forEach((image) => {
+        if (reduceMotion.matches) {
+          image.style.removeProperty("--parallax-offset");
+          return;
+        }
+
+        const rect = image.getBoundingClientRect();
+        const distanceFromCenter = window.innerHeight / 2 - (rect.top + rect.height / 2);
+        const offset = Math.max(-maxShift, Math.min(maxShift, distanceFromCenter * 0.025));
+        image.style.setProperty("--parallax-offset", `${offset.toFixed(1)}px`);
+      });
+    };
+
+    const scheduleParallax = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateParallax);
+    };
+
+    window.addEventListener("scroll", scheduleParallax, { passive: true });
+    window.addEventListener("resize", scheduleParallax, { passive: true });
+    reduceMotion.addEventListener("change", scheduleParallax);
+    scheduleParallax();
+  </script>
 </BaseLayout>

@@ -79,7 +79,7 @@ const isCurrentNavItem = (href: string) => href === homePath
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Marcellus&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body class={pageClass}>
-    <div class="site-frame">
+    <div class="site-frame" id="top">
       <a class="skip-link" href="#main-content">Skip to content</a>
       <header class="site-header">
         <a class="brand" href={withBase()} aria-label="Dare to Break Free home">
@@ -102,6 +102,12 @@ const isCurrentNavItem = (href: string) => href === homePath
       </main>
       <footer class="site-footer">
         <p>Dare to Break Free</p>
+        <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 19V5m-7 7 7-7 7 7" />
+          </svg>
+          <span>Back to top</span>
+        </a>
       </footer>
     </div>
     <script>
@@ -113,6 +119,14 @@ const isCurrentNavItem = (href: string) => href === homePath
         menuToggle.setAttribute("aria-expanded", String(!isOpen));
         primaryNav?.classList.toggle("is-open", !isOpen);
       });
+
+      const backToTop = document.querySelector(".back-to-top");
+      const updateBackToTop = () => {
+        backToTop?.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.55);
+      };
+
+      window.addEventListener("scroll", updateBackToTop, { passive: true });
+      updateBackToTop();
     </script>
   </body>
 </html>

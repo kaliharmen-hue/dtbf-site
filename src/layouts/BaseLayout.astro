@@ -102,12 +102,12 @@ const isCurrentNavItem = (href: string) => href === homePath
       </main>
       <footer class="site-footer">
         <p>Dare to Break Free</p>
-        <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">
+        <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M12 19V5m-7 7 7-7 7 7" />
           </svg>
           <span>Back to top</span>
-        </a>
+        </button>
       </footer>
     </div>
     <script>
@@ -125,6 +125,12 @@ const isCurrentNavItem = (href: string) => href === homePath
         backToTop?.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.55);
       };
 
+      backToTop?.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+        });
+      });
       window.addEventListener("scroll", updateBackToTop, { passive: true });
       updateBackToTop();
     </script>

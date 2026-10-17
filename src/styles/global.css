@@ -668,12 +668,17 @@ main {
 }
 
 .home-parallax-image--cropped {
+  transform: translate3d(0, var(--parallax-offset, 0px), 0) scale(1.1);
+}
+
+.home-parallax-image--portrait {
   transform: translate3d(0, var(--parallax-offset, 0px), 0) scale(1.04);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .home-parallax-image,
-  .home-parallax-image--cropped {
+  .home-parallax-image--cropped,
+  .home-parallax-image--portrait {
     transform: none;
     will-change: auto;
   }
@@ -1209,6 +1214,8 @@ textarea:focus {
   color: var(--accent-dark);
   font-weight: 700;
   text-decoration: none;
+  font: inherit;
+  cursor: pointer;
   background: var(--paper);
   box-shadow: 0 0.25rem 1rem rgba(28, 33, 32, 0.15);
   opacity: 0;

@@ -236,16 +236,18 @@ const mobileHero = await getImage({
         ".editorial-image img, .reflection-image img, .journal-entry-image img"
       )
     );
+    const portraitImage = document.querySelector<HTMLImageElement>(".editorial-image img");
     let frame = 0;
 
     parallaxImages.forEach((image) => {
       image.classList.add("home-parallax-image");
       if (croppedImages.has(image)) image.classList.add("home-parallax-image--cropped");
+      if (image === portraitImage) image.classList.add("home-parallax-image--portrait");
     });
 
     const updateParallax = () => {
       frame = 0;
-      const maxShift = window.innerWidth <= 680 ? 6 : 12;
+      const isMobile = window.innerWidth <= 680;
 
       parallaxImages.forEach((image) => {
         if (reduceMotion.matches) {
@@ -254,8 +256,9 @@ const mobileHero = await getImage({
         }
 
         const rect = image.getBoundingClientRect();
+        const maxShift = isMobile ? 6 : Math.min(26, rect.height * 0.05);
         const distanceFromCenter = window.innerHeight / 2 - (rect.top + rect.height / 2);
-        const offset = Math.max(-maxShift, Math.min(maxShift, distanceFromCenter * 0.025));
+        const offset = Math.max(-maxShift, Math.min(maxShift, distanceFromCenter * (isMobile ? 0.025 : 0.07)));
         image.style.setProperty("--parallax-offset", `${offset.toFixed(1)}px`);
       });
     };

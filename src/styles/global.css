@@ -1033,10 +1033,12 @@ main {
 }
 
 .journal-entry-image {
-  min-height: 13rem;
-  margin: -1rem -1rem 0;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  padding: 0;
   border: 1px solid rgba(85, 73, 113, 0.5);
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 0.5rem;
 }
 
 .journal-entry-image::before {

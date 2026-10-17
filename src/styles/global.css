@@ -662,33 +662,6 @@ main {
   box-shadow: 0 1.2rem 2.5rem rgba(28, 33, 32, 0.2);
 }
 
-.home-parallax-image {
-  transform: translate3d(0, var(--parallax-offset, 0px), 0);
-  will-change: transform;
-}
-
-.home-parallax-image--cropped {
-  transform: translate3d(0, var(--parallax-offset, 0px), 0) scale(1.1);
-}
-
-.home-parallax-image--brand-art {
-  transform: translate3d(0, var(--parallax-offset, 0px), 0) scaleY(1.1);
-}
-
-.home-parallax-image--portrait {
-  transform: translate3d(0, var(--parallax-offset, 0px), 0) scale(1.04);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-parallax-image,
-  .home-parallax-image--cropped,
-  .home-parallax-image--brand-art,
-  .home-parallax-image--portrait {
-    transform: none;
-    will-change: auto;
-  }
-}
-
 .page-hero,
 .section,
 .form-section,

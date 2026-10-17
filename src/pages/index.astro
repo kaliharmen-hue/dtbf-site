@@ -233,8 +233,11 @@ const mobileHero = await getImage({
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const croppedImages = new Set(
       document.querySelectorAll<HTMLImageElement>(
-        ".editorial-image img, .reflection-image img, .journal-entry-image img"
+        ".editorial-image img, .journal-entry-image img"
       )
+    );
+    const brandArtImages = new Set(
+      document.querySelectorAll<HTMLImageElement>(".reflection-image img")
     );
     const portraitImage = document.querySelector<HTMLImageElement>(".editorial-image img");
     let frame = 0;
@@ -242,6 +245,7 @@ const mobileHero = await getImage({
     parallaxImages.forEach((image) => {
       image.classList.add("home-parallax-image");
       if (croppedImages.has(image)) image.classList.add("home-parallax-image--cropped");
+      if (brandArtImages.has(image)) image.classList.add("home-parallax-image--brand-art");
       if (image === portraitImage) image.classList.add("home-parallax-image--portrait");
     });
 

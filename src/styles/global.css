@@ -671,6 +671,10 @@ main {
   transform: translate3d(0, var(--parallax-offset, 0px), 0) scale(1.1);
 }
 
+.home-parallax-image--brand-art {
+  transform: translate3d(0, var(--parallax-offset, 0px), 0) scaleY(1.1);
+}
+
 .home-parallax-image--portrait {
   transform: translate3d(0, var(--parallax-offset, 0px), 0) scale(1.04);
 }
@@ -678,6 +682,7 @@ main {
 @media (prefers-reduced-motion: reduce) {
   .home-parallax-image,
   .home-parallax-image--cropped,
+  .home-parallax-image--brand-art,
   .home-parallax-image--portrait {
     transform: none;
     will-change: auto;

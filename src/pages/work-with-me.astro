@@ -30,10 +30,25 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
         <p>If you’re caught up in something you’re trying to create or change in your life, sometimes having another brain in the room is just what you need to get things moving again.</p>
         <p>I don’t have a five-step process or promise transformation. What I do have is years of coaching, business and marketing experience, what I learnt from sticking with a memoir long enough to finish it, and a neurodivergent brain that tends to notice patterns and make connections.</p>
         <p>I’m useful when you need someone to challenge your thinking, spot what you may be missing and help you notice if you’re making yourself smaller (I think I’ve earned a PhD in that area). Of course, nothing changes unless you take some sort of action.</p>
-        <p><a href={`${import.meta.env.BASE_URL}journal/`}>More about that here.</a></p>
+        <p><button class="work-intro__more-trigger" type="button" aria-haspopup="dialog" aria-controls="action-dialog">More about that here.</button></p>
       </div>
     </div>
   </section>
+
+  <dialog class="work-action-dialog" id="action-dialog" aria-labelledby="action-dialog-title">
+    <div class="work-action-dialog__header">
+      <h2 id="action-dialog-title">What happens after we talk</h2>
+      <button class="work-action-dialog__close" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="work-action-dialog__body">
+      <p>Talking something through can be hugely useful. It can also feel like progress when, in reality, nothing has changed. Believe me, I've been there more times than I'd care to admit.</p>
+      <p>That's why, when we work together, we'll look at what you're actually going to do with what we've discussed. It doesn't have to be some grand gesture or an enormous to-do list. Just something that makes sense to you and that you're willing to try. Because ultimately, if nothing changes, nothing changes.</p>
+      <p>And if you don't do it? That's worth exploring too.</p>
+      <p>Perhaps the action wasn't right for you, the timing was wrong, or there's something deeper going on that we haven't yet uncovered. Resistance can tell us quite a lot, and simply pushing harder isn't always the answer.</p>
+      <p>I'd much rather you came back and told me what didn't feel right, challenged the suggestion or offered something you'd be prepared to do instead. That's all part of working together.</p>
+      <p>What happens between our conversations gives us something real to work with next time. We can come up with all sorts of ideas in a session, but it's when you take them into your life, try things out and see what happens that we start learning what works for you.</p>
+    </div>
+  </dialog>
 
   <section class="work-areas work-section" aria-labelledby="work-areas-title">
     <div class="work-section__inner">
@@ -109,4 +124,15 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
       </div>
     </div>
   </section>
+  <script>
+    const actionDialog = document.querySelector<HTMLDialogElement>("#action-dialog");
+    const actionDialogTrigger = document.querySelector<HTMLButtonElement>(".work-intro__more-trigger");
+    const actionDialogClose = document.querySelector<HTMLButtonElement>(".work-action-dialog__close");
+
+    actionDialogTrigger?.addEventListener("click", () => actionDialog?.showModal());
+    actionDialogClose?.addEventListener("click", () => actionDialog?.close());
+    actionDialog?.addEventListener("click", (event) => {
+      if (event.target === actionDialog) actionDialog.close();
+    });
+  </script>
 </BaseLayout>

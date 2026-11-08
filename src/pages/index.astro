@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import JournalPromptGenerator from "../components/JournalPromptGenerator.astro";
 import { getCollection } from "astro:content";
 import { getImage, Image } from "astro:assets";
 import heroImage from "../assets/hi-im-kali.png";
@@ -197,6 +198,8 @@ const mobileHero = await getImage({
       </div>
     </div>
   </section>
+
+  <JournalPromptGenerator />
 
   <section class="section latest-section">
     <div class="section-heading">

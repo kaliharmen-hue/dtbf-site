@@ -1,22 +1,19 @@
 <section class="journal-prompt-section" aria-labelledby="journal-prompt-title">
   <div class="journal-prompt-section__inner">
     <div class="journal-prompt-section__intro">
-      <p class="eyebrow">A moment for you</p>
-      <h2 id="journal-prompt-title">Find a way in.</h2>
-      <p>Bring a feeling, a question or a situation you want to explore. Or leave it blank and see what finds you.</p>
+      <p class="eyebrow">A little experiment</p>
+      <h2 id="journal-prompt-title">See what comes out</h2>
+      <p>I've learnt a surprising amount about myself through writing. Sometimes I didn't even know what I thought until I started putting it into words.</p>
+      <p>You don't need to be writing a memoir to give it a go.</p>
+      <p>Pick a question and spend a few minutes writing whatever comes into your head. You might find yourself going somewhere you hadn't expected. That's part of the fun.</p>
+      <p>Some questions are lighter than others, and if one feels a bit much today, just pick another. There's no right answer, and nobody else needs to read it.</p>
     </div>
 
     <div class="journal-prompt-tool">
       <form class="journal-prompt-form">
-        <label for="journal-intention">What would you like to hold in mind?</label>
-        <p class="journal-prompt-form__hint" id="journal-intention-hint">Optional. A few words is enough.</p>
-        <div class="journal-prompt-form__controls">
-          <input id="journal-intention" name="intention" type="text" maxlength="140" aria-describedby="journal-intention-hint" placeholder="For example, feeling stuck or starting again" />
-          <button class="button secondary light-button" type="submit">Find a prompt</button>
-        </div>
+        <button class="button secondary light-button" type="submit">Give me a question</button>
       </form>
       <div class="journal-prompt-result" aria-live="polite" aria-atomic="true" hidden>
-        <p class="journal-prompt-result__intention" hidden></p>
         <p class="journal-prompt-result__question"></p>
       </div>
     </div>
@@ -85,14 +82,33 @@
     "What do you want to remember when this moment feels bigger than it is?",
     "What is one honest thing you can acknowledge without needing to act on it yet?",
     "If this chapter had a title, what might you call it?",
-    "What would feeling a little more free look like in an ordinary day?"
+    "What would feeling a little more free look like in an ordinary day?",
+    "What's something you used to take terribly seriously that now makes you laugh? What changed?",
+    "If your week had a ridiculous newspaper headline, what would it be? What would the story underneath reveal?",
+    "What's something you've become less bothered about as you've got older? What helped you get there?",
+    "What's something you enjoy but still feel the need to justify? Where do you think that comes from?",
+    "What's something you believed for years before realising it was nonsense? What finally changed your mind?",
+    "What's something good that happened entirely by accident? Would it have happened if you'd stuck to your original plan?",
+    "Think back to something you absolutely loved doing as a child. What happened to that part of you?",
+    "Imagine you've been given an entire afternoon with no responsibilities. What would you genuinely want to do? What's stopping you from making more room for it now?",
+    "Write about something that irritates you far more than it should. See if you can work out why it gets under your skin.",
+    "Imagine introducing a little more mischief into your life. What might you do, and what's holding you back?",
+    "Think of something you're curious about but have never pursued. What draws you to it?",
+    "Imagine your younger self popped round for a cup of tea. What would surprise them most about your life now?",
+    "What's something you used to love before you started worrying whether you were any good at it? What would make it fun again?",
+    "Think of a small risk you took that turned out better than expected. What helped you take it?",
+    "Describe a place where you can properly be yourself. What is it about that place?",
+    "If you could cancel one expectation you put on yourself this week, which one would go? What could you do with the space?",
+    "When have you gone along with something simply because 'that's what people do'? What would you choose now?",
+    "Imagine you were allowed to be a complete beginner at something again. What would you try, and what would you enjoy about not knowing how to do it?",
+    "Think of something silly that makes you disproportionately happy. Why does it matter to you?",
+    "What's something you said 'never' to and later found yourself doing? What changed?",
+    "Write about the last time you laughed so hard you forgot everything else for a while. What made that moment possible?"
   ];
 
   const form = document.querySelector<HTMLFormElement>(".journal-prompt-form");
-  const intentionInput = document.querySelector<HTMLInputElement>("#journal-intention");
   const submitButton = form?.querySelector<HTMLButtonElement>("button[type='submit']");
   const result = document.querySelector<HTMLDivElement>(".journal-prompt-result");
-  const intentionResult = document.querySelector<HTMLParagraphElement>(".journal-prompt-result__intention");
   const questionResult = document.querySelector<HTMLParagraphElement>(".journal-prompt-result__question");
   let remainingPrompts: string[] = [];
   let previousPrompt = "";
@@ -112,13 +128,8 @@
     previousPrompt = remainingPrompts.pop() ?? prompts[0];
     if (questionResult) questionResult.textContent = previousPrompt;
 
-    const intention = intentionInput?.value.trim() ?? "";
-    if (intentionResult) {
-      intentionResult.textContent = intention ? `Holding this intention: ${intention}` : "";
-      intentionResult.hidden = !intention;
-    }
     if (result) result.hidden = false;
-    if (submitButton) submitButton.textContent = "Another prompt";
+    if (submitButton) submitButton.textContent = "Another question";
   }
 
   form?.addEventListener("submit", (event) => {
@@ -160,9 +171,13 @@
     font-size: clamp(2rem, 4vw, 3rem);
   }
 
-  .journal-prompt-section__intro > p:last-child {
-    margin: 0;
+  .journal-prompt-section__intro > p:not(.eyebrow) {
+    margin: 0 0 0.9rem;
     color: var(--muted);
+  }
+
+  .journal-prompt-section__intro > p:last-child {
+    margin-bottom: 0;
   }
 
   .journal-prompt-tool {
@@ -175,44 +190,7 @@
     box-shadow: 0 0.65rem 1.8rem rgba(34, 38, 49, 0.08);
   }
 
-  .journal-prompt-form label {
-    display: block;
-    margin-bottom: 0.2rem;
-    font-weight: 700;
-  }
-
-  .journal-prompt-form__hint {
-    margin: 0 0 0.8rem;
-    color: var(--muted);
-    font-size: 0.88rem;
-  }
-
-  .journal-prompt-form__controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .journal-prompt-form input {
-    flex: 1 1 15rem;
-    min-width: 0;
-    min-height: 3.25rem;
-    padding: 0.7rem 0.9rem;
-    color: var(--ink);
-    background: #fff;
-    border: 1px solid rgba(85, 73, 113, 0.32);
-    border-radius: 0.4rem;
-    font: inherit;
-    font-size: 1rem;
-  }
-
-  .journal-prompt-form input:focus-visible {
-    outline: 3px solid var(--accent-text);
-    outline-offset: 2px;
-  }
-
   .journal-prompt-form .button {
-    flex: 0 0 auto;
     min-height: 3.25rem;
     margin: 0;
     font-size: 1rem;
@@ -222,13 +200,6 @@
     margin-top: 1.5rem;
     padding-top: 1.25rem;
     border-top: 1px solid rgba(85, 73, 113, 0.2);
-  }
-
-  .journal-prompt-result__intention {
-    margin: 0 0 0.65rem;
-    color: var(--muted);
-    font-size: 0.9rem;
-    overflow-wrap: anywhere;
   }
 
   .journal-prompt-result__question {
@@ -251,11 +222,6 @@
       max-width: 42rem;
     }
 
-    .journal-prompt-form__controls {
-      align-items: stretch;
-    }
-
-    .journal-prompt-form input,
     .journal-prompt-form .button {
       width: 100%;
     }

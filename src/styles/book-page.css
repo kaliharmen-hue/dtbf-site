@@ -5,6 +5,30 @@
   background: linear-gradient(90deg, var(--paper) 0 43%, #ffffff 43% 100%);
 }
 
+.book-page__release {
+  width: min(1320px, 100%);
+  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.25rem, 2.8vw, 2.25rem) clamp(1rem, 3vw, 2.5rem);
+  background: var(--plum);
+  color: #fff;
+  text-align: center;
+  border-radius: 0.6rem;
+}
+
+.book-page__release-headline {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 3vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.book-page__release-detail {
+  margin: 0.55rem 0 0;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.45;
+}
+
 .book-page__inner {
   display: grid;
   grid-template-columns: minmax(17rem, 0.78fr) minmax(0, 1.22fr);

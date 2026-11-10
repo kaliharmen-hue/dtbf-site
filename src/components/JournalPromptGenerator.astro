@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import promptImage from "../assets/kali-journaling-prompts.jpg";
+---
+
 <section class="journal-prompt-section" aria-labelledby="journal-prompt-title">
   <div class="journal-prompt-section__inner">
     <div class="journal-prompt-section__intro">
@@ -9,11 +14,22 @@
       <p>Some questions are lighter than others, and if one feels a bit much today, just pick another. There's no right answer, and nobody else needs to read it.</p>
     </div>
 
-    <div class="journal-prompt-tool">
+    <div class="journal-prompt-art">
+      <Image
+        class="journal-prompt-art__image"
+        src={promptImage}
+        alt="An open illustrated book on a dark green textured background"
+        widths={[480, 720, 960, 1200, 1600, 2000]}
+        sizes="(max-width: 760px) calc(100vw - 2 * var(--page-gutter)), 52vw"
+        format="webp"
+        quality={82}
+        loading="lazy"
+        decoding="async"
+      />
       <form class="journal-prompt-form">
-        <button class="button secondary light-button" type="submit">Give me a question</button>
+        <button class="journal-prompt-button" type="submit" aria-controls="journal-prompt-question" aria-expanded="false">Give me a question</button>
       </form>
-      <div class="journal-prompt-result" aria-live="polite" aria-atomic="true" hidden>
+      <div class="journal-prompt-result" id="journal-prompt-question" aria-live="polite" aria-atomic="true" hidden>
         <p class="journal-prompt-result__question"></p>
       </div>
     </div>
@@ -107,7 +123,8 @@
   ];
 
   const form = document.querySelector<HTMLFormElement>(".journal-prompt-form");
-  const submitButton = form?.querySelector<HTMLButtonElement>("button[type='submit']");
+  const promptButton = form?.querySelector<HTMLButtonElement>(".journal-prompt-button");
+  const art = document.querySelector<HTMLDivElement>(".journal-prompt-art");
   const result = document.querySelector<HTMLDivElement>(".journal-prompt-result");
   const questionResult = document.querySelector<HTMLParagraphElement>(".journal-prompt-result__question");
   let remainingPrompts: string[] = [];
@@ -129,13 +146,29 @@
     if (questionResult) questionResult.textContent = previousPrompt;
 
     if (result) result.hidden = false;
-    if (submitButton) submitButton.textContent = "Another question";
+    if (promptButton) {
+      promptButton.textContent = "Another question";
+      promptButton.setAttribute("aria-expanded", "true");
+    }
+    fitQuestionToImage();
+  }
+
+  function fitQuestionToImage() {
+    if (!art || !result || result.hidden) return;
+    art.removeAttribute("data-question-below");
+    if (!window.matchMedia("(max-width: 760px)").matches) return;
+    requestAnimationFrame(() => {
+      if (result.scrollHeight > result.clientHeight + 2) {
+        art.setAttribute("data-question-below", "true");
+      }
+    });
   }
 
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
     drawPrompt();
   });
+  window.addEventListener("resize", fitQuestionToImage, { passive: true });
 </script>
 
 <style>
@@ -180,36 +213,90 @@
     margin-bottom: 0;
   }
 
-  .journal-prompt-tool {
+  .journal-prompt-art {
+    position: relative;
     min-width: 0;
-    padding: clamp(1.25rem, 3vw, 2rem);
-    background: rgba(255, 255, 255, 0.76);
-    border: 1px solid rgba(85, 73, 113, 0.2);
-    border-left: 3px solid var(--accent);
+    line-height: 0;
+    isolation: isolate;
+  }
+
+  .journal-prompt-art__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(85, 73, 113, 0.22);
     border-radius: 0.5rem;
     box-shadow: 0 0.65rem 1.8rem rgba(34, 38, 49, 0.08);
   }
 
-  .journal-prompt-form .button {
-    min-height: 3.25rem;
+  .journal-prompt-form {
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    left: 50%;
     margin: 0;
+    transform: translateX(-50%);
+    line-height: normal;
+  }
+
+  .journal-prompt-button {
+    min-height: 3.25rem;
+    padding: 0.7rem 1.35rem;
+    color: #fff;
+    background: var(--accent-text, #0b6f71);
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    border-radius: 0.45rem;
+    box-shadow: 0 0.25rem 0.85rem rgba(0, 0, 0, 0.35);
+    font: inherit;
     font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  .journal-prompt-button:hover {
+    background: var(--plum, #291528);
+    transform: translateY(-1px);
+  }
+
+  .journal-prompt-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
   }
 
   .journal-prompt-result:not([hidden]) {
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(85, 73, 113, 0.2);
+    position: absolute;
+    z-index: 1;
+    top: 19%;
+    right: 8%;
+    bottom: 52%;
+    left: 8%;
+    display: grid;
+    place-items: center;
+    padding: 0.7rem 1rem;
+    overflow: auto;
+    color: #fff;
+    background: rgba(7, 25, 20, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.24);
+    line-height: normal;
   }
 
   .journal-prompt-result__question {
     margin: 0;
-    color: var(--ink);
+    color: inherit;
     font-family: var(--font-heading);
     font-size: clamp(1.25rem, 2.5vw, 1.8rem);
     font-weight: 700;
     line-height: 1.45;
+    text-align: center;
     overflow-wrap: anywhere;
+  }
+
+  .journal-prompt-result[hidden] {
+    display: none;
   }
 
   @media (max-width: 760px) {
@@ -222,8 +309,46 @@
       max-width: 42rem;
     }
 
-    .journal-prompt-form .button {
-      width: 100%;
+    .journal-prompt-art {
+      width: min(100%, 36rem);
+      margin-inline: auto;
+    }
+
+    .journal-prompt-form {
+      top: 4%;
+    }
+
+    .journal-prompt-button {
+      min-height: 3rem;
+      padding-inline: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .journal-prompt-result:not([hidden]) {
+      top: 25%;
+      right: 6%;
+      bottom: 52%;
+      left: 6%;
+      padding: 0.55rem 0.7rem;
+    }
+
+    .journal-prompt-result__question {
+      font-size: clamp(0.95rem, 4vw, 1.25rem);
+      line-height: 1.35;
+    }
+
+    .journal-prompt-art[data-question-below="true"] .journal-prompt-result:not([hidden]) {
+      position: relative;
+      inset: auto;
+      display: block;
+      max-height: none;
+      margin-top: 0.75rem;
+      padding: 0.85rem 1rem;
+      overflow: visible;
+    }
+
+    .journal-prompt-art[data-question-below="true"] .journal-prompt-result__question {
+      text-align: left;
     }
   }
 </style>

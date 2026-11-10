@@ -10,10 +10,10 @@ import "../styles/book-page.css";
   description="An unflinching memoir of addiction, reinvention, resilience and reckoning."
 >
   <section class="book-page" aria-labelledby="book-title">
-    <aside class="book-page__release" aria-label="Publication update">
+    <div class="book-page__release book-page__release--mobile">
       <p class="book-page__release-headline">Due to be released beginning of 2027</p>
       <p class="book-page__release-detail">More details to come.</p>
-    </aside>
+    </div>
     <div class="book-page__inner">
       <figure class="book-page__cover">
         <Image
@@ -28,6 +28,10 @@ import "../styles/book-page.css";
       </figure>
 
       <div class="book-page__copy">
+        <div class="book-page__release book-page__release--desktop">
+          <p class="book-page__release-headline">Due to be released beginning of 2027</p>
+          <p class="book-page__release-detail">More details to come.</p>
+        </div>
         <p class="book-page__eyebrow">The memoir</p>
         <h1 id="book-title">Dare to Break Free</h1>
 

@@ -10,8 +10,8 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
       <h2 id="journal-prompt-title">See what comes out</h2>
       <p>I've learnt a surprising amount about myself through writing. Sometimes I didn't even know what I thought until I started putting it into words.</p>
       <p>You don't need to be writing a memoir to give it a go.</p>
-      <p>Pick a question and spend a few minutes writing whatever comes into your head. You might find yourself going somewhere you hadn't expected. That's part of the fun.</p>
-      <p>Some questions are lighter than others, and if one feels a bit much today, just pick another. There's no right answer, and nobody else needs to read it.</p>
+      <p>Pick a prompt and spend a few minutes writing whatever comes into your head. You might find yourself going somewhere you hadn't expected. That's part of the fun.</p>
+      <p>Some prompts are lighter than others, and if one feels a bit much today, just pick another. There's no right answer, and nobody else needs to read it.</p>
     </div>
 
     <div class="journal-prompt-art">
@@ -27,8 +27,8 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
         decoding="async"
       />
       <form class="journal-prompt-form">
-        <p class="journal-prompt-form__label">Need a place to start?</p>
-        <button class="journal-prompt-button" type="submit" aria-controls="journal-prompt-question" aria-expanded="false">Give me a question</button>
+        <p class="journal-prompt-form__label">Grab a pen and some paper. Ready?</p>
+        <button class="journal-prompt-button" type="submit" aria-controls="journal-prompt-question" aria-expanded="false">Give me a prompt</button>
       </form>
       <div class="journal-prompt-result" id="journal-prompt-question" aria-live="polite" aria-atomic="true" hidden>
         <p class="journal-prompt-result__question"></p>
@@ -148,7 +148,7 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
 
     if (result) result.hidden = false;
     if (promptButton) {
-      promptButton.textContent = "Another question";
+      promptButton.textContent = "Another prompt";
       promptButton.setAttribute("aria-expanded", "true");
     }
     fitQuestionToImage();
@@ -216,6 +216,8 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
 
   .journal-prompt-art {
     position: relative;
+    width: min(100%, 35rem);
+    margin-inline: auto;
     min-width: 0;
     line-height: 0;
     isolation: isolate;
@@ -233,7 +235,7 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
   .journal-prompt-form {
     position: absolute;
     z-index: 2;
-    top: 3.5%;
+    top: 12%;
     left: 50%;
     display: grid;
     justify-items: center;
@@ -255,15 +257,15 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
   }
 
   .journal-prompt-button {
-    min-height: 3.75rem;
-    padding: 0.85rem 1.8rem;
+    min-height: 4rem;
+    padding: 0.9rem 2rem;
     color: #fff;
     background: var(--accent-text, #0b6f71);
     border: 2px solid #fff;
     border-radius: 0.5rem;
     box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.45);
     font: inherit;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     white-space: nowrap;
     cursor: pointer;
@@ -283,7 +285,7 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
   .journal-prompt-result:not([hidden]) {
     position: absolute;
     z-index: 1;
-    top: 19%;
+    top: 29%;
     right: 8%;
     bottom: 52%;
     left: 8%;
@@ -330,7 +332,7 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
     }
 
     .journal-prompt-form {
-      top: 3%;
+      top: 8%;
       gap: 0.35rem;
     }
 
@@ -339,13 +341,13 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
     }
 
     .journal-prompt-button {
-      min-height: 3.5rem;
-      padding: 0.75rem 1.4rem;
-      font-size: 1rem;
+      min-height: 3.75rem;
+      padding: 0.85rem 1.5rem;
+      font-size: 1.05rem;
     }
 
     .journal-prompt-result:not([hidden]) {
-      top: 34%;
+      top: 39%;
       right: 6%;
       bottom: 52%;
       left: 6%;

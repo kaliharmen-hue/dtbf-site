@@ -27,6 +27,7 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
         decoding="async"
       />
       <form class="journal-prompt-form">
+        <p class="journal-prompt-form__label">Need a place to start?</p>
         <button class="journal-prompt-button" type="submit" aria-controls="journal-prompt-question" aria-expanded="false">Give me a question</button>
       </form>
       <div class="journal-prompt-result" id="journal-prompt-question" aria-live="polite" aria-atomic="true" hidden>
@@ -232,23 +233,37 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
   .journal-prompt-form {
     position: absolute;
     z-index: 2;
-    top: 5%;
+    top: 3.5%;
     left: 50%;
+    display: grid;
+    justify-items: center;
+    gap: 0.55rem;
     margin: 0;
     transform: translateX(-50%);
     line-height: normal;
   }
 
+  .journal-prompt-form__label {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+    white-space: nowrap;
+  }
+
   .journal-prompt-button {
-    min-height: 3.25rem;
-    padding: 0.7rem 1.35rem;
+    min-height: 3.75rem;
+    padding: 0.85rem 1.8rem;
     color: #fff;
     background: var(--accent-text, #0b6f71);
-    border: 1px solid rgba(255, 255, 255, 0.82);
-    border-radius: 0.45rem;
-    box-shadow: 0 0.25rem 0.85rem rgba(0, 0, 0, 0.35);
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.45);
     font: inherit;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     white-space: nowrap;
     cursor: pointer;
@@ -315,17 +330,22 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
     }
 
     .journal-prompt-form {
-      top: 4%;
+      top: 3%;
+      gap: 0.35rem;
     }
 
-    .journal-prompt-button {
-      min-height: 3rem;
-      padding-inline: 1rem;
+    .journal-prompt-form__label {
       font-size: 0.95rem;
     }
 
+    .journal-prompt-button {
+      min-height: 3.5rem;
+      padding: 0.75rem 1.4rem;
+      font-size: 1rem;
+    }
+
     .journal-prompt-result:not([hidden]) {
-      top: 25%;
+      top: 34%;
       right: 6%;
       bottom: 52%;
       left: 6%;

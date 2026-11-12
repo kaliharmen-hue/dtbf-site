@@ -1206,6 +1206,61 @@ textarea:focus {
   margin: 0;
 }
 
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.site-footer__links a,
+.form-privacy-notice a {
+  color: var(--accent-dark);
+  text-underline-offset: 0.16em;
+}
+
+.form-privacy-notice {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.policy-page {
+  width: min(820px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0 5rem;
+}
+
+.policy-page h1 {
+  margin: 0.35rem 0 0.6rem;
+}
+
+.policy-page__updated {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.policy-page h2 {
+  margin: 2rem 0 0.65rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+}
+
+.policy-page p,
+.policy-page li {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.policy-page a {
+  color: var(--accent-dark);
+  text-underline-offset: 0.16em;
+  overflow-wrap: anywhere;
+}
+
+.policy-page ul {
+  padding-left: 1.35rem;
+}
+
 .back-to-top {
   position: fixed;
   right: max(1rem, var(--page-gutter));

@@ -104,6 +104,10 @@ const isCurrentNavItem = (href: string) => href === homePath
       </main>
       <footer class="site-footer">
         <p>Dare to Break Free</p>
+        <nav class="site-footer__links" aria-label="Legal information">
+          <a href={withBase("privacy-policy/")}>Privacy policy</a>
+          <a href={withBase("cookie-policy/")}>Cookie policy</a>
+        </nav>
         <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M12 19V5m-7 7 7-7 7 7" />

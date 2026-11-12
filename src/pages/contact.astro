@@ -35,8 +35,12 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
         <textarea name="message" rows="7" required></textarea>
       </label>
       <input type="hidden" name="form-name" value="contact" />
+      <p class="form-privacy-notice">Dare to Break Free will use your details to handle this enquiry and contact you about your request. The Privacy Policy explains how the information is processed and retained.</p>
+      <div class="form-privacy-acknowledgement">
+        <input id="contact-privacy-acknowledgement" name="privacy_notice_acknowledged" type="checkbox" value="yes" required />
+        <label for="contact-privacy-acknowledgement">I confirm that I have read and understood the <a href="/privacy-policy/">Privacy Policy</a>.</label>
+      </div>
       <button class="button" type="submit">Send message</button>
-      <p class="form-privacy-notice">Your details are used to respond to your message. See the <a href="/privacy-policy/">privacy policy</a>.</p>
     </form>
   </section>
 </BaseLayout>

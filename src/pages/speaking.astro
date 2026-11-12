@@ -87,8 +87,12 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
         <textarea name="additional_information" rows="2"></textarea>
       </label>
       <input type="hidden" name="form-name" value="speaking" />
+      <p class="form-privacy-notice">Dare to Break Free will use your details to handle this enquiry and contact you about your request. The Privacy Policy explains how the information is processed and retained.</p>
+      <div class="form-privacy-acknowledgement">
+        <input id="speaking-privacy-acknowledgement" name="privacy_notice_acknowledged" type="checkbox" value="yes" required />
+        <label for="speaking-privacy-acknowledgement">I confirm that I have read and understood the <a href="/privacy-policy/">Privacy Policy</a>.</label>
+      </div>
       <button class="button" type="submit">Send enquiry</button>
-      <p class="form-privacy-notice">Your details are used to respond to your enquiry. See the <a href="/privacy-policy/">privacy policy</a>.</p>
     </form>
   </section>
 

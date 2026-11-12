@@ -1224,6 +1224,27 @@ textarea:focus {
   font-size: 0.9rem;
 }
 
+.form-privacy-acknowledgement {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0.7rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.form-privacy-acknowledgement input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--accent);
+}
+
+.form-privacy-acknowledgement label {
+  cursor: pointer;
+}
+
 .policy-page {
   width: min(820px, calc(100% - 2rem));
   margin: 0 auto;

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import JournalPromptGenerator from "../components/JournalPromptGenerator.astro";
 import { Image } from "astro:assets";
+import storyHero from "../assets/your-story-hero.jpg";
 import readingNook from "../assets/your-story-reading-nook.png";
 import "../styles/stories-page.css";
 ---
@@ -11,6 +12,18 @@ import "../styles/stories-page.css";
   description="Why our stories matter, what writing can help us discover about ourselves, and a collection of free writing prompts to try."
 >
   <header class="stories-hero">
+    <Image
+      class="stories-hero__image"
+      src={storyHero}
+      alt="A teal copy of Dare to Break Free against a lavender watercolor background"
+      widths={[640, 960, 1280, 1600, 2000, 2400]}
+      sizes="100vw"
+      format="webp"
+      quality={82}
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
     <div class="stories-container">
       <h1>What You Make of Your Story</h1>
       <p class="stories-lede">You have a story about who you are and how you came to be that person. But how much of it have you actually stopped to question?</p>

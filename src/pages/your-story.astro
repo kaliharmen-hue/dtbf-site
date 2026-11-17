@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import JournalPromptGenerator from "../components/JournalPromptGenerator.astro";
+import { Image } from "astro:assets";
+import readingNook from "../assets/your-story-reading-nook.png";
 import "../styles/stories-page.css";
 ---
 
@@ -15,44 +17,66 @@ import "../styles/stories-page.css";
     </div>
   </header>
 
-  <section class="stories-section stories-section--opening" aria-label="Making sense of our stories">
-    <div class="stories-container stories-prose">
-      <p>For a long time, I couldn't make sense of how my life had taken such a destructive turn. Nothing particularly catastrophic had happened in my childhood, at least not that I could recognise. So how had I ended up with so little regard for my own life?</p>
-      <p>That question stayed with me throughout the years I spent writing <em>Dare to Break Free</em>.</p>
-      <p>As I began piecing together my experiences, I started to recognise things I hadn't previously connected. I also began questioning some of the conclusions I'd drawn about myself along the way. It's quite something to discover how much influence those old beliefs can still have, even when you think you've moved on.</p>
-      <p>I don't believe we need to have all the answers about our past to move forward. I'm not even sure that's possible. But I do think there's something valuable in understanding how we've come to see ourselves and whether that understanding is still serving us.</p>
+  <section class="stories-section stories-section--opening" aria-labelledby="stories-opening-heading">
+    <div class="stories-container stories-split stories-opening">
+      <h2 id="stories-opening-heading">Making sense of our stories</h2>
+      <div class="stories-prose">
+        <p>For a long time, I couldn't make sense of how my life had taken such a destructive turn. Nothing particularly catastrophic had happened in my childhood, at least not that I could recognise. So how had I ended up with so little regard for my own life?</p>
+        <p>That question stayed with me throughout the years I spent writing <em>Dare to Break Free</em>.</p>
+        <p>As I began piecing together my experiences, I started to recognise things I hadn't previously connected. I also began questioning some of the conclusions I'd drawn about myself along the way. It's quite something to discover how much influence those old beliefs can still have, even when you think you've moved on.</p>
+        <p>I don't believe we need to have all the answers about our past to move forward. I'm not even sure that's possible. But I do think there's something valuable in understanding how we've come to see ourselves and whether that understanding is still serving us.</p>
+      </div>
     </div>
   </section>
 
   <section class="stories-section stories-section--explore" aria-labelledby="stories-know-heading">
-    <div class="stories-container stories-prose">
-      <h2 id="stories-know-heading">Getting to know ourselves</h2>
-      <p>I've often wondered how much of our struggles come from being disconnected from ourselves. We're so busy getting on with life, responding to what's happening around us and doing what needs to be done that it's surprisingly easy to lose touch with what we actually feel or want.</p>
-      <p>And even when we do have a bit of time to ourselves, how often do we spend it without some sort of distraction?</p>
-      <p>I think we can become quite good at avoiding ourselves without even realising we're doing it.</p>
-      <p>Which brings me to writing.</p>
-
-      <h2>There's more than one way to write</h2>
-      <p>I've journalled on and off for years. Sometimes it's been useful, although looking back, a fair amount of it involved writing down whatever was upsetting or frustrating me at the time.</p>
-      <p>There's a place for that. Sometimes you just need to get the stuff out of your head and onto a page, without worrying whether it makes any sense.</p>
-      <p>I've also written letters I never intended to send. I wrote one to my first dog when I was struggling with the grief of losing him. I wrote another to my mum after she died, although that came from a very different place. There were things I was angry about, and writing gave me somewhere to put them.</p>
-      <p>Writing can serve all sorts of purposes, and it doesn't have to be beautifully constructed or even particularly coherent. Nobody needs to read it.</p>
-      <p>But I've found another way of writing useful, too.</p>
-      <p class="stories-emphasis">Starting with a question.</p>
+    <div class="stories-container stories-split stories-knowing">
+      <div class="stories-prose">
+        <h2 id="stories-know-heading">Getting to know ourselves</h2>
+        <p>I've often wondered how much of our struggles come from being disconnected from ourselves. We're so busy getting on with life, responding to what's happening around us and doing what needs to be done that it's surprisingly easy to lose touch with what we actually feel or want.</p>
+        <p>And even when we do have a bit of time to ourselves, how often do we spend it without some sort of distraction?</p>
+        <p>I think we can become quite good at avoiding ourselves without even realising we're doing it.</p>
+        <p>Which brings me to writing.</p>
+      </div>
+      <figure class="stories-reading-image">
+        <Image
+          src={readingNook}
+          alt="An open notebook and pen in a candlelit reading nook beside a fire"
+          widths={[480, 720, 960, 1200, 1600]}
+          sizes="(max-width: 760px) calc(100vw - 2 * var(--page-gutter)), 44vw"
+          format="webp"
+          quality={82}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
     </div>
   </section>
 
-  <section class="stories-section stories-section--invitation" aria-labelledby="stories-invitation-heading">
-    <div class="stories-container stories-prose">
-      <h2 id="stories-invitation-heading">A little time with yourself</h2>
-      <p>You don't need to be a writer, and you certainly don't need to be planning a memoir.</p>
-      <p>All you need is a bit of curiosity, something to write with and a willingness to see what comes out.</p>
+  <section class="stories-section stories-section--writing" aria-labelledby="stories-writing-heading">
+    <div class="stories-container stories-split stories-writing">
+      <div class="stories-prose">
+        <h2 id="stories-writing-heading">There's more than one way to write</h2>
+        <p>I've journalled on and off for years. Sometimes it's been useful, although looking back, a fair amount of it involved writing down whatever was upsetting or frustrating me at the time.</p>
+        <p>There's a place for that. Sometimes you just need to get the stuff out of your head and onto a page, without worrying whether it makes any sense.</p>
+        <p>I've also written letters I never intended to send. I wrote one to my first dog when I was struggling with the grief of losing him. I wrote another to my mum after she died, although that came from a very different place. There were things I was angry about, and writing gave me somewhere to put them.</p>
+        <p>Writing can serve all sorts of purposes, and it doesn't have to be beautifully constructed or even particularly coherent. Nobody needs to read it.</p>
+        <p>But I've found another way of writing useful, too.</p>
+        <p class="stories-emphasis">Starting with a question.</p>
+      </div>
+      <div class="stories-writing__prompt">
+        <div class="stories-prose stories-writing__invitation">
+          <h2 id="stories-invitation-heading">A little time with yourself</h2>
+          <p>You don't need to be a writer, and you certainly don't need to be planning a memoir.</p>
+          <p>All you need is a bit of curiosity, something to write with and a willingness to see what comes out.</p>
+        </div>
+        <JournalPromptGenerator compact={true} />
+      </div>
     </div>
-    <JournalPromptGenerator compact={true} />
   </section>
 
   <section class="stories-section stories-section--after-prompt">
-    <div class="stories-container stories-prose">
+    <div class="stories-container stories-prose stories-after-prompt">
       <p>A question can take you somewhere you wouldn't necessarily have gone if you'd simply sat down to write about your day. It might challenge an assumption, bring back a memory or get you thinking about something you'd never considered particularly important.</p>
       <p>You might end up writing a load of waffle, but that's OK. It was in your head anyway! And every now and then, you might write something that makes you stop and think, ‘Hang on, where did that come from?’</p>
       <p>That's what gave me the idea for the writing prompt generator.</p>
@@ -62,14 +86,16 @@ import "../styles/stories-page.css";
     </div>
   </section>
 
-    <section class="stories-section stories-section--sharing" aria-labelledby="stories-sharing-heading">
-    <div class="stories-container stories-prose">
+  <section class="stories-section stories-section--sharing" aria-labelledby="stories-sharing-heading">
+    <div class="stories-container stories-split stories-sharing">
       <h2 id="stories-sharing-heading">And what about sharing our stories?</h2>
-      <p>Writing something down and sharing it with another person are two very different things.</p>
-      <p>For years, I carried a lot of shame about my past. Even when I began writing my memoir, I was still leaving things out, sometimes without consciously realising it. Eventually, I came to understand how much energy I'd spent trying to keep certain parts of myself hidden.</p>
-      <p>There's something powerful about being able to tell your story and be met with understanding rather than judgement. But that doesn't mean everyone deserves access to it.</p>
-      <p>It's a subject I want to explore more, particularly how shame influences what we choose to reveal and what we keep to ourselves.</p>
-      <a class="stories-journal-link" href={`${import.meta.env.BASE_URL}journal/`}>Explore the Journal <span aria-hidden="true">→</span></a>
+      <div class="stories-prose">
+        <p>Writing something down and sharing it with another person are two very different things.</p>
+        <p>For years, I carried a lot of shame about my past. Even when I began writing my memoir, I was still leaving things out, sometimes without consciously realising it. Eventually, I came to understand how much energy I'd spent trying to keep certain parts of myself hidden.</p>
+        <p>There's something powerful about being able to tell your story and be met with understanding rather than judgement. But that doesn't mean everyone deserves access to it.</p>
+        <p>It's a subject I want to explore more, particularly how shame influences what we choose to reveal and what we keep to ourselves.</p>
+        <a class="stories-journal-link" href={`${import.meta.env.BASE_URL}journal/`}>Explore the Journal <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 </BaseLayout>

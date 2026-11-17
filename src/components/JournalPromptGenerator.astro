@@ -4,7 +4,7 @@ import promptImage from "../assets/kali-journaling-prompts.jpg";
 const { compact = false } = Astro.props;
 ---
 
-<section class="journal-prompt-section" aria-labelledby="journal-prompt-title">
+<section class="journal-prompt-section" aria-label={compact ? "Writing prompt generator" : undefined} aria-labelledby={!compact ? "journal-prompt-title" : undefined}>
   <div class="journal-prompt-section__inner">
     {!compact && <div class="journal-prompt-section__intro">
       <p class="eyebrow">A little experiment</p>

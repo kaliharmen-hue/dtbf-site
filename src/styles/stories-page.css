@@ -1,1 +1,168 @@
-.stories-container{width:min(920px,calc(100% - 2 * var(--page-gutter)));margin-inline:auto}.stories-hero{padding:clamp(4rem,8vw,7rem) 0 clamp(3rem,6vw,5rem);background:#eeedf4;border-bottom:2px solid var(--accent)}.stories-hero .eyebrow{margin-bottom:1rem}.stories-hero h1{font-size:clamp(2.7rem,6vw,5.4rem);color:var(--plum);line-height:1.12}.stories-lede{max-width:790px;margin-top:1.7rem;font-size:clamp(1.25rem,2.3vw,1.7rem);line-height:1.55}.stories-section{padding:clamp(3.5rem,7vw,6rem) 0}.stories-prose{max-width:850px}.stories-prose p{margin:0 0 1.35rem;line-height:1.75;font-size:clamp(1.05rem,1.45vw,1.24rem)}.stories-prose p:last-child{margin-bottom:0}.stories-prose h2{margin:0 0 1.6rem;font-size:clamp(2rem,4vw,3.3rem);color:var(--plum)}.stories-prose h2:not(:first-child){margin-top:clamp(3rem,6vw,5rem)}.stories-section--explore{background:#eeedf4}.stories-emphasis{font-family:var(--font-heading);font-size:clamp(1.3rem,2.2vw,1.75rem)!important;font-weight:700;color:var(--plum)}.stories-section--invitation{padding-bottom:0}.stories-section--invitation>.stories-container{padding-bottom:clamp(2rem,4vw,3rem)}.stories-section--invitation .journal-prompt-section{border-bottom:0}.stories-section--invitation .journal-prompt-section__inner{display:flex;justify-content:center}.stories-section--invitation .journal-prompt-art{width:min(100%,39rem)}.stories-section--sharing{background:#eeedf4;border-top:1px solid var(--line)}.stories-journal-link{display:inline-flex;gap:.5rem;align-items:center;margin-top:1.2rem;color:var(--accent-text);font-weight:700;text-decoration-thickness:2px}@media(max-width:640px){.stories-hero{padding-block:3.5rem}.stories-section{padding-block:3.25rem}.stories-section--invitation{padding-bottom:0}.stories-prose p{line-height:1.65}}
+.stories-container {
+  width: min(1180px, calc(100% - 2 * var(--page-gutter)));
+  margin-inline: auto;
+}
+
+.stories-hero {
+  width: 100%;
+  margin: 0;
+  padding: clamp(2.25rem, 5vw, 4rem) var(--page-gutter);
+  background: #eeedf4;
+  border-bottom: 1px solid var(--line);
+}
+
+.stories-hero .stories-container {
+  display: grid;
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+}
+
+.stories-hero h1 {
+  max-width: 22ch;
+  color: var(--plum);
+  font-size: var(--site-h1-size);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.stories-lede {
+  max-width: 46rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+}
+
+.stories-section {
+  width: 100%;
+  margin: 0;
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+}
+
+.stories-section--explore {
+  background: #eaf1f5;
+}
+
+.stories-section--writing {
+  background: #fff;
+}
+
+.stories-section--sharing {
+  background: #eeedf4;
+  border-top: 1px solid var(--line);
+}
+
+.stories-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  align-items: start;
+}
+
+.stories-split h2,
+.stories-writing__invitation h2 {
+  max-width: 18ch;
+  margin: 0 0 1rem;
+  color: var(--plum);
+  font-size: var(--site-h2-size);
+  text-wrap: balance;
+}
+
+.stories-prose {
+  min-width: 0;
+}
+
+.stories-prose p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.stories-prose p + p {
+  margin-top: 1rem;
+}
+
+.stories-emphasis {
+  color: var(--plum);
+  font-family: var(--font-heading);
+  font-size: 1.3rem !important;
+  font-weight: 700;
+}
+
+.stories-reading-image {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(85, 73, 113, 0.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.75rem 1.8rem rgba(34, 38, 49, 0.12);
+}
+
+.stories-reading-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.stories-writing {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.stories-writing__prompt {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  min-width: 0;
+}
+
+.stories-writing__prompt .journal-prompt-section {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.stories-writing__prompt .journal-prompt-section__inner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.stories-writing__prompt .journal-prompt-art {
+  width: min(100%, 39rem);
+}
+
+.stories-after-prompt {
+  max-width: 850px;
+}
+
+.stories-journal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  color: var(--accent-text);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+}
+
+@media (max-width: 900px) {
+  .stories-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .stories-reading-image {
+    width: min(100%, 42rem);
+    justify-self: center;
+  }
+
+  .stories-writing__prompt .journal-prompt-art {
+    width: min(100%, 38rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .stories-hero {
+    padding-block: 2rem 2.5rem;
+  }
+
+  .stories-section {
+    padding-block: 2.75rem;
+  }
+}

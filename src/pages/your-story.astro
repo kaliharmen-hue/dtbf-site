@@ -17,7 +17,7 @@ import "../styles/stories-page.css";
       src={storyHero}
       alt="A teal copy of Dare to Break Free against a lavender watercolor background"
       widths={[640, 960, 1280, 1600, 2000, 2400]}
-      sizes="100vw"
+      sizes="(max-width: 1360px) 100vw, 1360px"
       format="webp"
       quality={82}
       loading="eager"
@@ -78,11 +78,6 @@ import "../styles/stories-page.css";
         <p class="stories-emphasis">Starting with a question.</p>
       </div>
       <div class="stories-writing__prompt">
-        <div class="stories-prose stories-writing__invitation">
-          <h2 id="stories-invitation-heading">A little time with yourself</h2>
-          <p>You don't need to be a writer, and you certainly don't need to be planning a memoir.</p>
-          <p>All you need is a bit of curiosity, something to write with and a willingness to see what comes out.</p>
-        </div>
         <JournalPromptGenerator compact={true} />
       </div>
     </div>
@@ -90,6 +85,9 @@ import "../styles/stories-page.css";
 
   <section class="stories-section stories-section--after-prompt">
     <div class="stories-container stories-prose stories-after-prompt">
+      <h2 id="stories-invitation-heading">A little time with yourself</h2>
+      <p>You don't need to be a writer, and you certainly don't need to be planning a memoir.</p>
+      <p>All you need is a bit of curiosity, something to write with and a willingness to see what comes out.</p>
       <p>A question can take you somewhere you wouldn't necessarily have gone if you'd simply sat down to write about your day. It might challenge an assumption, bring back a memory or get you thinking about something you'd never considered particularly important.</p>
       <p>You might end up writing a load of waffle, but that's OK. It was in your head anyway! And every now and then, you might write something that makes you stop and think, ‘Hang on, where did that come from?’</p>
       <p>That's what gave me the idea for the writing prompt generator.</p>

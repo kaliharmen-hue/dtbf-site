@@ -7,7 +7,6 @@
   position: relative;
   width: 100%;
   margin: 0;
-  aspect-ratio: 2 / 1;
   overflow: hidden;
   background: #eeedf4;
   border-bottom: 1px solid var(--line);
@@ -15,8 +14,9 @@
 
 .stories-hero__image {
   display: block;
-  width: 100%;
+  width: min(100%, 1360px);
   height: auto;
+  margin-inline: auto;
 }
 
 .stories-hero .stories-container {
@@ -72,7 +72,7 @@
 }
 
 .stories-split h2,
-.stories-writing__invitation h2 {
+.stories-after-prompt h2 {
   max-width: 18ch;
   margin: 0 0 1rem;
   color: var(--plum);
@@ -147,6 +147,10 @@
   max-width: 850px;
 }
 
+.stories-after-prompt h2 {
+  margin: 0 0 1rem;
+}
+
 .stories-journal-link {
   display: inline-flex;
   align-items: center;
@@ -174,10 +178,6 @@
 }
 
 @media (max-width: 600px) {
-  .stories-hero {
-    aspect-ratio: 2 / 1;
-  }
-
   .stories-hero .stories-container {
     gap: 0.55rem;
   }

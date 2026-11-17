@@ -147,6 +147,10 @@
   width: min(100%, 39rem);
 }
 
+.stories-writing__prompt .journal-prompt-form {
+  top: 25%;
+}
+
 .stories-after-prompt {
   max-width: 850px;
 }
@@ -187,6 +191,10 @@
 
   .stories-writing__prompt .journal-prompt-art {
     width: min(100%, 38rem);
+  }
+
+  .stories-writing__prompt .journal-prompt-form {
+    top: 17%;
   }
 }
 

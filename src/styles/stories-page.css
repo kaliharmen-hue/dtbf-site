@@ -220,7 +220,8 @@
   }
 
   .stories-hero__image {
-    object-fit: contain;
+    object-fit: cover;
+    object-position: right center;
   }
 
   .stories-hero .stories-container {

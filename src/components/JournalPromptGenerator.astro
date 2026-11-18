@@ -10,7 +10,6 @@ const { compact = false } = Astro.props;
       <p class="eyebrow">A little experiment</p>
       <h2 id="journal-prompt-title">See what comes out</h2>
       <p>I've learnt a surprising amount about myself through writing. Sometimes I didn't even know what I thought until I started putting it into words.</p>
-      <p>You don't need to be writing a memoir to give it a go.</p>
       <p>Pick a prompt and spend a few minutes writing whatever comes into your head. You might find yourself going somewhere you hadn't expected. That's part of the fun.</p>
       <p>Some prompts are lighter than others, and if one feels a bit much today, just pick another. There's no right answer, and nobody else needs to read it.</p>
     </div>
@@ -183,7 +182,7 @@ const { compact = false } = Astro.props;
 
   .journal-prompt-section__inner {
     display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(2rem, 6vw, 6rem);
     align-items: center;
     width: min(100%, var(--site-content-max, 1680px));
@@ -191,13 +190,7 @@ const { compact = false } = Astro.props;
   }
 
   .journal-prompt-section__intro {
-    max-width: 34rem;
-  }
-
-  @media (min-width: 1101px) {
-    .journal-prompt-section__intro {
-      padding-inline-start: clamp(3rem, 8vw, 8.5rem);
-    }
+    max-width: 48rem;
   }
 
   .journal-prompt-section__intro .eyebrow {
@@ -224,7 +217,7 @@ const { compact = false } = Astro.props;
 
   .journal-prompt-art {
     position: relative;
-    width: min(100%, 35rem);
+    width: 100%;
     margin-inline: auto;
     min-width: 0;
     line-height: 0;
@@ -243,7 +236,7 @@ const { compact = false } = Astro.props;
   .journal-prompt-form {
     position: absolute;
     z-index: 2;
-    top: 18%;
+    top: 25%;
     left: 50%;
     display: grid;
     justify-items: center;

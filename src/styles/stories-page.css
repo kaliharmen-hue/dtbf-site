@@ -166,6 +166,18 @@
   text-decoration-thickness: 2px;
 }
 
+@media (min-width: 1101px) {
+  .stories-knowing .stories-prose,
+  .stories-sharing .stories-prose {
+    padding-inline-end: clamp(2rem, 5vw, 5.25rem);
+  }
+
+  .stories-invitation .stories-prose,
+  .stories-sharing > h2 {
+    padding-inline-start: clamp(2rem, 5vw, 5.25rem);
+  }
+}
+
 @media (min-width: 641px) and (max-width: 1300px) {
   .stories-hero {
     height: min(50vw, 40rem);

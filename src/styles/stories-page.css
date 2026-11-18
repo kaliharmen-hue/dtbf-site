@@ -63,11 +63,6 @@
   background: #fff;
 }
 
-.stories-section--sharing {
-  background: #eeedf4;
-  border-top: 1px solid var(--line);
-}
-
 .stories-split {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -156,24 +151,12 @@
   top: 25%;
 }
 
-.stories-journal-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.2rem;
-  color: var(--accent-text);
-  font-weight: 700;
-  text-decoration-thickness: 2px;
-}
-
 @media (min-width: 1101px) {
-  .stories-knowing .stories-prose,
-  .stories-sharing .stories-prose {
+  .stories-knowing .stories-prose {
     padding-inline-end: clamp(2rem, 5vw, 5.25rem);
   }
 
-  .stories-invitation .stories-prose,
-  .stories-sharing > h2 {
+  .stories-invitation .stories-prose {
     padding-inline-start: clamp(2rem, 5vw, 5.25rem);
   }
 }

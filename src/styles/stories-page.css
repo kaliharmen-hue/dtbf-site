@@ -87,8 +87,7 @@
   grid-area: image;
 }
 
-.stories-split h2,
-.stories-after-prompt h2 {
+.stories-split h2 {
   max-width: 18ch;
   margin: 0 0 1rem;
   color: var(--plum);
@@ -110,13 +109,6 @@
   margin-top: 1rem;
 }
 
-.stories-emphasis {
-  color: var(--plum);
-  font-family: var(--font-heading);
-  font-size: 1.3rem !important;
-  font-weight: 700;
-}
-
 .stories-reading-image {
   width: 100%;
   margin: 0;
@@ -132,7 +124,7 @@
   height: auto;
 }
 
-.stories-writing {
+.stories-invitation {
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
 }
 
@@ -162,14 +154,6 @@
 
 .stories-writing__prompt .journal-prompt-form {
   top: 25%;
-}
-
-.stories-after-prompt {
-  max-width: 850px;
-}
-
-.stories-after-prompt h2 {
-  margin: 0 0 1rem;
 }
 
 .stories-journal-link {

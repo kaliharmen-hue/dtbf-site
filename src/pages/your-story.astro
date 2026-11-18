@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import JournalPromptGenerator from "../components/JournalPromptGenerator.astro";
 import { Image } from "astro:assets";
 import storyHero from "../assets/your-story-hero.jpg";
-import readingNook from "../assets/your-story-reading-nook.png";
+import journalSetting from "../assets/your-story-journal-setting.jpg";
 import "../styles/stories-page.css";
 ---
 
@@ -32,25 +32,25 @@ import "../styles/stories-page.css";
 
   <section class="stories-section stories-section--explore" aria-labelledby="stories-know-heading">
     <div class="stories-container stories-split stories-knowing">
-      <div class="stories-prose">
-        <h2 id="stories-know-heading">Getting to know ourselves</h2>
-        <p>I've often wondered how much of our struggles come from being disconnected from ourselves. We're so busy getting on with life, responding to what's happening around us and doing what needs to be done that it's surprisingly easy to lose touch with what we actually feel or want.</p>
-        <p>And even when we do have a bit of time to ourselves, how often do we spend it without some sort of distraction?</p>
-        <p>I think we can become quite good at avoiding ourselves without even realising we're doing it.</p>
-        <p>Which brings me to writing.</p>
-      </div>
       <figure class="stories-reading-image">
         <Image
-          src={readingNook}
-          alt="An open notebook and pen in a candlelit reading nook beside a fire"
+          src={journalSetting}
+          alt="A journal and pen ready for a few minutes of writing"
           widths={[480, 720, 960, 1200, 1600]}
-          sizes="(max-width: 760px) calc(100vw - 2 * var(--page-gutter)), 44vw"
+          sizes="(max-width: 600px) calc(100vw - 2 * var(--page-gutter)), (max-width: 900px) min(70vw, 30rem), 45vw"
           format="webp"
           quality={82}
           loading="lazy"
           decoding="async"
         />
       </figure>
+      <div class="stories-prose">
+        <h2 id="stories-know-heading">Getting to know ourselves</h2>
+        <p>I've often wondered how much of our struggles come from being disconnected from ourselves. We're so busy getting on with life, responding to what's happening around us and doing what needs to be done that it's surprisingly easy to lose touch with what we actually feel or want.</p>
+        <p>And even when we do have a bit of time to ourselves, how often do we spend it without some sort of distraction?</p>
+        <p>I think we can become quite good at avoiding ourselves without even realising we're doing it.</p>
+        <p>Which brings me to writing as a way in.</p>
+      </div>
     </div>
   </section>
 

@@ -193,6 +193,12 @@ const { compact = false } = Astro.props;
     max-width: 48rem;
   }
 
+  @media (min-width: 1101px) {
+    .journal-prompt-section__intro {
+      padding-inline-start: clamp(3rem, 8vw, 8.5rem);
+    }
+  }
+
   .journal-prompt-section__intro .eyebrow {
     margin: 0 0 0.75rem;
     color: var(--accent-text);
@@ -217,8 +223,9 @@ const { compact = false } = Astro.props;
 
   .journal-prompt-art {
     position: relative;
-    width: 100%;
-    margin-inline: auto;
+    width: min(100%, 39rem);
+    justify-self: end;
+    margin-inline: 0;
     min-width: 0;
     line-height: 0;
     isolation: isolate;

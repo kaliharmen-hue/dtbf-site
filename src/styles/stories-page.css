@@ -1,5 +1,5 @@
 .stories-container {
-  width: min(var(--site-content-max), calc(100% - 2 * var(--page-gutter)));
+  width: min(1480px, calc(100% - 2 * var(--page-gutter)));
   margin-inline: auto;
 }
 

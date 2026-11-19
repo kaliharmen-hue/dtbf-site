@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import JournalPromptGenerator from "../components/JournalPromptGenerator.astro";
 import { Image } from "astro:assets";
 import storyHero from "../assets/your-story-write-hero-quill.jpg";
-import journalSetting from "../assets/your-story-try-writing-prompt.jpg";
+import journalSetting from "../assets/your-story-journaling.jpg";
 import "../styles/stories-page.css";
 ---
 
@@ -35,7 +35,7 @@ import "../styles/stories-page.css";
       <figure class="stories-reading-image">
         <Image
           src={journalSetting}
-          alt="A notebook and pen ready for writing beside a warm fireplace"
+          alt="Kali writing in a notebook at home"
           widths={[480, 720, 960, 1200, 1600]}
           sizes="(max-width: 600px) calc(100vw - 2 * var(--page-gutter)), (max-width: 900px) min(70vw, 30rem), 45vw"
           format="webp"

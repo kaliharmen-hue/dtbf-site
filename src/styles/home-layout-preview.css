@@ -1,6 +1,6 @@
 /* Layout experiment only; the production homepage keeps its current rules. */
 .home-layout-preview {
-  --preview-rail: min(1440px, calc(100% - 2 * var(--page-gutter)));
+  --preview-rail: min(1480px, calc(100% - 2 * var(--page-gutter)));
   --preview-rail-inset: clamp(1.5rem, 4vw, 4rem);
 }
 
@@ -17,7 +17,7 @@
 }
 
 .home-layout-preview .editorial-section.intro-panel {
-  padding-inline: max(var(--page-gutter), calc((100% - 1440px) / 2));
+  padding-inline: max(var(--page-gutter), calc((100% - 1480px) / 2));
 }
 
 .home-layout-preview .intro-panel__text {
@@ -25,18 +25,21 @@
 }
 
 .home-layout-preview .healing-section {
-  padding-inline: max(var(--page-gutter), calc((100% - 1440px) / 2));
+  padding-inline: max(var(--page-gutter), calc((100% - 1480px) / 2));
 }
 
-.home-layout-preview .pathways-heading {
+.home-layout-preview .healing-section > .pathways-heading {
   justify-items: start;
+  width: 100%;
+  margin-inline: 0;
   padding-inline: var(--preview-rail-inset) 0;
   text-align: left;
 }
 
 .home-layout-preview .reflection-grid {
   width: 100%;
-  margin-inline: 0;
+  max-width: 1480px;
+  margin-inline: auto;
 }
 
 .home-layout-preview .memoir-section {
@@ -50,8 +53,15 @@
   }
 }
 
-.home-layout-preview .definition-section__inner {
-  max-width: 1440px;
+.home-layout-preview .definition-section {
+  padding-inline: max(var(--page-gutter), calc((100% - 1480px) / 2));
+}
+
+@media (min-width: 981px) {
+  .home-layout-preview .definition-section__inner {
+    width: 100%;
+    max-width: 1480px;
+  }
 }
 
 .home-layout-preview .journal-prompt-section__inner {

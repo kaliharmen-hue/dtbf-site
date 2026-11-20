@@ -11,6 +11,7 @@ tags:
   - dyslexia
   - memoir
 coverImage: "/assets/when-nine-minutes-of-netflix-takes-an-hour-and-a-half.jpg"
+coverAlt: "Woman folding laundry on a floor strewn with clothes, notebooks and books"
 ---
 
 You know you have an ADHD-wired brain when you sit down to watch Netflix and an hour and a half later you pause the TV, only to realise you’re nine minutes into the programme.

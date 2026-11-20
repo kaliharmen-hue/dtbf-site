@@ -185,7 +185,7 @@
   .home-hero-mobile h1 {
     color: var(--paper);
     font-family: "Merriweather", Georgia, serif;
-    font-size: var(--site-h1-size);
+    font-size: clamp(1.2rem, 7.4vw, 1.55rem);
     line-height: 1.15;
     text-align: center;
     margin: 0;
@@ -193,6 +193,7 @@
 
   .home-hero-mobile h1 span {
     display: block;
+    white-space: nowrap;
   }
 
   .home-hero-mobile__panel p {

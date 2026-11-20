@@ -34,6 +34,7 @@ This is the shared reference for page layout decisions. Journal article pages ar
 - Stack multi-column text/image sections into one column when the desktop columns no longer have comfortable reading width. Keep the intended content order and image placement sensible after stacking.
 - Keep the shared page gutter, prevent horizontal scrolling, and let text and cards use the available content width. The Journal listing may use a slightly wider mobile rail (12px side inset) so entry cards do not feel cramped.
 - Keep the memoir copy and book-update note on the same mobile text rail as the sections above. Stack the memoir feature vertically on phones; do not force its three desktop columns into a narrow three-column phone layout.
+- Use the intro section's H2 scale and editorial-copy size/line-height for both memoir headings and both memoir text blocks, including the book-update note.
 - Keep buttons comfortably separated from surrounding text and large enough to tap.
 - Keep images responsive and uncropped unless the component explicitly uses a designed crop.
 - Validate narrow phones as well as tablet and desktop widths; do not rely on a single breakpoint screenshot.

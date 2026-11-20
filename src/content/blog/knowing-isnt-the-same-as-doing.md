@@ -2,6 +2,7 @@
 title: "Knowing isn't the same as doing"
 date: 2026-09-30
 excerpt: "But understanding and changing aren't necessarily the same event."
+metaDescription: "To get her memoir noticed, Kali Harmen needs to become more visible. So why is she still tinkering with her website? On fear, self-doubt and doing it anyway."
 tags:
   - memoir
   - visibility

@@ -132,6 +132,10 @@
   .home-layout-preview .journal-prompt-section__intro {
     padding-inline-start: var(--preview-rail-inset);
   }
+
+  .home-layout-preview .journal-prompt-art {
+    width: min(100%, 31rem);
+  }
 }
 
 .home-layout-preview .section.latest-section {

@@ -65,6 +65,13 @@
   overflow-wrap: normal;
 }
 
+.work-hero__subtitle {
+  max-width: 46ch;
+  margin: clamp(0.75rem, 1.8vw, 1.25rem) 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  line-height: 1.45;
+}
+
 section.work-section {
   width: 100%;
   margin: 0;
@@ -423,6 +430,11 @@ section.work-section {
   .work-hero__content {
     width: 64%;
     padding: 1.25rem var(--page-gutter);
+  }
+
+  .work-hero__subtitle {
+    font-size: clamp(0.875rem, 3.2vw, 1rem);
+    line-height: 1.35;
   }
 
   .work-pricing__card,

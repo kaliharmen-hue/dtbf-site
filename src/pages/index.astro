@@ -48,7 +48,7 @@ const mobileHero = await getImage({
         src={desktopHero.src}
         srcset={desktopHero.srcSet.attribute}
         sizes="100vw"
-        alt=""
+        alt="Portrait of Kali Harmen"
         width={mainHeroImage.width}
         height={mainHeroImage.height}
         loading="eager"
@@ -211,7 +211,7 @@ const mobileHero = await getImage({
           <article class="post-card journal-preview-card">
             <div class="image-placeholder journal-entry-image">
               {post.data.coverImage ? (
-                <img class="journal-entry-image__cover" src={withBase(post.data.coverImage.replace(/^\/+/, ""))} alt="" loading="lazy" decoding="async" />
+                <img class="journal-entry-image__cover" src={withBase(post.data.coverImage.replace(/^\/+/, ""))} alt={post.data.coverAlt ?? ""} loading="lazy" decoding="async" />
               ) : (
                 <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
               )}

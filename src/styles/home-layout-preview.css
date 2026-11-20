@@ -1,0 +1,103 @@
+/* Layout experiment only; the production homepage keeps its current rules. */
+.home-layout-preview {
+  --preview-rail: min(1440px, calc(100% - 2 * var(--page-gutter)));
+  --preview-rail-inset: clamp(1.5rem, 4vw, 4rem);
+}
+
+@media (min-width: 901px) {
+  .home-layout-preview .home-hero {
+    padding-inline: var(--page-gutter);
+  }
+
+  .home-layout-preview .home-hero__copy {
+    width: var(--preview-rail);
+    padding-inline-start: 40%;
+    margin-inline: auto;
+  }
+}
+
+.home-layout-preview .editorial-section.intro-panel {
+  padding-inline: max(var(--page-gutter), calc((100% - 1440px) / 2));
+}
+
+.home-layout-preview .intro-panel__text {
+  padding-inline-start: var(--preview-rail-inset);
+}
+
+.home-layout-preview .healing-section {
+  padding-inline: max(var(--page-gutter), calc((100% - 1440px) / 2));
+}
+
+.home-layout-preview .pathways-heading {
+  justify-items: start;
+  padding-inline: var(--preview-rail-inset) 0;
+  text-align: left;
+}
+
+.home-layout-preview .reflection-grid {
+  width: 100%;
+  margin-inline: 0;
+}
+
+.home-layout-preview .memoir-section {
+  width: var(--preview-rail);
+  margin-inline: auto;
+}
+
+@media (min-width: 901px) {
+  .home-layout-preview .memoir-section__copy {
+    padding-inline: var(--preview-rail-inset) 0;
+  }
+}
+
+.home-layout-preview .definition-section__inner {
+  max-width: 1440px;
+}
+
+.home-layout-preview .journal-prompt-section__inner {
+  width: var(--preview-rail);
+}
+
+@media (min-width: 1101px) {
+  .home-layout-preview .journal-prompt-section__intro {
+    padding-inline-start: var(--preview-rail-inset);
+  }
+}
+
+.home-layout-preview .section.latest-section {
+  width: min(1680px, calc(100% - 2 * var(--page-gutter)));
+}
+
+.home-layout-preview .latest-section > .section-heading,
+.home-layout-preview .latest-section > .post-grid {
+  width: var(--preview-rail);
+  margin-inline: auto;
+}
+
+.home-layout-preview .latest-section > .section-heading {
+  padding-inline: var(--preview-rail-inset) 0;
+  text-align: left;
+}
+
+.home-layout-preview .latest-section > .light-button {
+  display: block;
+  width: fit-content;
+  margin-inline: max(var(--page-gutter), calc((100% - 1440px) / 2));
+}
+
+@media (max-width: 900px) {
+  .home-layout-preview .pathways-heading,
+  .home-layout-preview .latest-section > .section-heading {
+    padding-inline: 0;
+  }
+
+  .home-layout-preview .intro-panel__text,
+  .home-layout-preview .memoir-section__copy,
+  .home-layout-preview .journal-prompt-section__intro {
+    padding-inline: 0;
+  }
+
+  .home-layout-preview .latest-section > .light-button {
+    margin-inline: var(--page-gutter);
+  }
+}

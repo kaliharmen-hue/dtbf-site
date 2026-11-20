@@ -112,6 +112,10 @@
     grid-template-areas: "copy" "update" "book";
   }
 
+  .home-layout-preview .memoir-section__copy > .light-button {
+    margin-block: 0.5rem;
+  }
+
   .home-layout-preview .memoir-section__update {
     grid-area: update;
   }

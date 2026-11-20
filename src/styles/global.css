@@ -1384,6 +1384,10 @@ textarea:focus {
 }
 
 @media (max-width: 640px) {
+  .journal-index-section {
+    width: calc(100% - 1.5rem);
+  }
+
   .page-hero.journal-hero {
     min-height: 0;
     aspect-ratio: 4 / 3;

@@ -1,7 +1,9 @@
 /* Layout experiment only; the production homepage keeps its current rules. */
 .home-layout-preview {
   --preview-rail: min(1480px, calc(100% - 2 * var(--page-gutter)));
+  --preview-outer-gutter: max(var(--page-gutter), calc((100% - 1480px) / 2));
   --preview-rail-inset: clamp(1.5rem, 4vw, 4rem);
+  --preview-text-gutter: calc(var(--preview-outer-gutter) + var(--preview-rail-inset));
 }
 
 @media (min-width: 901px) {
@@ -25,14 +27,14 @@
 }
 
 .home-layout-preview .healing-section {
-  padding-inline: max(var(--page-gutter), calc((100% - 1480px) / 2));
+  padding-inline: var(--preview-text-gutter);
 }
 
 .home-layout-preview .healing-section > .pathways-heading {
   justify-items: start;
   width: 100%;
   margin-inline: 0;
-  padding-inline: var(--preview-rail-inset) 0;
+  padding-inline: 0;
   text-align: left;
 }
 
@@ -54,7 +56,7 @@
 }
 
 .home-layout-preview .definition-section {
-  padding-inline: max(var(--page-gutter), calc((100% - 1480px) / 2));
+  padding-inline: var(--preview-text-gutter);
 }
 
 @media (min-width: 981px) {
@@ -96,6 +98,11 @@
 }
 
 @media (max-width: 900px) {
+  .home-layout-preview .healing-section,
+  .home-layout-preview .definition-section {
+    padding-inline: var(--preview-outer-gutter);
+  }
+
   .home-layout-preview .pathways-heading,
   .home-layout-preview .latest-section > .section-heading {
     padding-inline: 0;

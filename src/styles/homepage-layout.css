@@ -1,0 +1,257 @@
+/* Shared homepage layout rules. Hero artwork and mobile hero composition stay page-specific. */
+.home-page {
+  --home-editorial-copy-size: clamp(1.08rem, 1.55vw, 1.225rem);
+  --home-content-rail: min(
+    var(--site-content-max),
+    calc(100% - 2 * var(--site-content-outer-gutter))
+  );
+  --home-text-rail: calc(var(--home-content-rail) - 2 * var(--site-content-inset));
+  --home-text-gutter: calc(var(--site-content-outer-gutter) + var(--site-content-inset));
+}
+
+.home-page .editorial-section {
+  padding-inline: var(--site-content-outer-gutter);
+}
+
+.home-page .intro-panel__text {
+  padding-inline-start: var(--site-content-inset);
+}
+
+.home-page .intro-panel .editorial-copy {
+  font-size: var(--home-editorial-copy-size);
+}
+
+.home-page .healing-section {
+  padding-inline: var(--home-text-gutter);
+}
+
+.home-page .healing-section > .pathways-heading,
+.home-page .healing-section > .reflection-grid {
+  width: 100%;
+  max-width: var(--home-text-rail);
+  margin-inline: auto;
+}
+
+.home-page .healing-section > .pathways-heading {
+  justify-items: start;
+  padding-inline: 0;
+  text-align: left;
+}
+
+.home-page .memoir-section {
+  width: var(--home-content-rail);
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+.home-page .memoir-section__copy {
+  padding-inline: var(--site-content-inset) 0;
+}
+
+.home-page .memoir-section__copy .stack {
+  font-size: var(--home-editorial-copy-size);
+  line-height: 1.65;
+}
+
+.home-page .memoir-section__update {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+}
+
+.home-page .memoir-section__update h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--site-h2-size);
+  line-height: 1.2;
+}
+
+.home-page .memoir-section__update p {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--home-editorial-copy-size);
+  line-height: 1.65;
+}
+
+.home-page .definition-section {
+  margin-block: 0;
+  padding-inline: var(--home-text-gutter);
+}
+
+.home-page .definition-section__inner {
+  width: 100%;
+  max-width: var(--home-text-rail);
+}
+
+body.home-page .journal-prompt-section {
+  padding-block: var(--site-section-space-desktop);
+}
+
+body.home-page .journal-prompt-section__inner {
+  width: var(--home-content-rail);
+}
+
+body.home-page .journal-prompt-section__intro {
+  padding-inline-start: var(--site-content-inset);
+}
+
+body.home-page .journal-prompt-art {
+  width: min(100%, 31rem);
+}
+
+.home-page .section.latest-section {
+  width: var(--home-content-rail);
+  padding-block: var(--site-section-space-desktop);
+}
+
+.home-page .latest-section > .section-heading,
+.home-page .latest-section > .post-grid {
+  width: var(--home-text-rail);
+  margin-inline: auto;
+}
+
+.home-page .latest-section > .section-heading {
+  padding-inline: 0;
+  text-align: left;
+}
+
+.home-page .latest-section > .light-button {
+  display: block;
+  width: fit-content;
+  margin-inline-start: calc((100% - var(--home-text-rail)) / 2);
+  margin-inline-end: 0;
+}
+
+@media (min-width: 901px) {
+  .home-page .editorial-section,
+  .home-page .memoir-section,
+  .home-page .healing-section,
+  .home-page .definition-section,
+  .home-page .section.latest-section {
+    padding-block: var(--site-section-space-desktop);
+  }
+
+  body.home-page .journal-prompt-section {
+    padding-block: var(--site-section-space-desktop);
+  }
+
+  .home-page .healing-section > .pathways-heading {
+    padding-block-start: 0;
+  }
+
+  .home-page .memoir-section .book-image {
+    top: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .home-page {
+    --home-editorial-copy-size: clamp(1.08rem, 1.55vw, 1.1875rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-page .memoir-section {
+    grid-template-columns: 240px minmax(0, 1.5fr) minmax(14rem, 0.72fr);
+    gap: clamp(2rem, 3.5vw, 3.5rem);
+  }
+
+  .home-page .memoir-section__copy {
+    padding-inline: 0;
+  }
+
+  .home-page .memoir-section__update {
+    align-self: center;
+    padding-inline-start: clamp(1.25rem, 2vw, 2rem);
+    border-inline-start: 1px solid var(--line);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .home-page .memoir-section {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .home-page .memoir-section__copy {
+    padding-inline: 0;
+  }
+
+  .home-page .memoir-section__update {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-page .editorial-section,
+  .home-page .memoir-section,
+  .home-page .healing-section,
+  .home-page .definition-section,
+  .home-page .section.latest-section {
+    padding-block: var(--site-section-space-mobile);
+  }
+
+  body.home-page .journal-prompt-section {
+    padding-block: var(--site-section-space-mobile);
+  }
+
+  .home-page .memoir-section {
+    width: calc(100% - 2 * var(--page-gutter));
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "update" "book";
+    gap: 1rem;
+  }
+
+  .home-page .memoir-section__copy {
+    grid-area: copy;
+    gap: 0.75rem;
+  }
+
+  .home-page .memoir-section__copy > .light-button {
+    margin-block: 0.5rem;
+  }
+
+  .home-page .memoir-section__update {
+    grid-area: update;
+  }
+
+  .home-page .memoir-section .book-image {
+    grid-area: book;
+    min-height: 0;
+  }
+
+  .home-page .memoir-section__copy,
+  .home-page .intro-panel__text,
+  body.home-page .journal-prompt-section__intro {
+    padding-inline: 0;
+  }
+
+  .home-page .healing-section,
+  .home-page .definition-section,
+  .home-page .section.latest-section {
+    padding-inline: var(--page-gutter);
+  }
+
+  .home-page .section.latest-section {
+    width: 100%;
+  }
+
+  .home-page .healing-section > .pathways-heading,
+  .home-page .healing-section > .reflection-grid,
+  .home-page .definition-section__inner,
+  .home-page .latest-section > .section-heading,
+  .home-page .latest-section > .post-grid,
+  body.home-page .journal-prompt-section__inner {
+    width: 100%;
+    max-width: none;
+  }
+
+  .home-page .latest-section > .light-button {
+    margin-inline: 0;
+  }
+
+  .home-page .home-hero-mobile {
+    padding-bottom: var(--site-section-space-mobile);
+  }
+}

@@ -1,16 +1,26 @@
-/* One outer gutter across Home, About and future pages. Full-bleed section
-   backgrounds and intentionally narrow reading/panel widths are separate. */
+/* Shared page edges, a wider header span and the regular content rail stay distinct. */
 :root {
-  --site-content-max: 1680px;
-  --page-gutter: max(clamp(1.25rem, 3vw, 2.5rem), calc((100vw - var(--site-content-max)) / 2));
+  --site-content-max: 1480px;
+  --site-header-content-max: 1680px;
+  --page-gutter: max(clamp(1.25rem, 3vw, 2.5rem), calc((100vw - var(--site-header-content-max)) / 2));
+  --site-content-outer-gutter: max(var(--page-gutter), calc((100vw - var(--site-content-max)) / 2));
+  --site-content-inset: clamp(1.5rem, 4vw, 4rem);
+  --site-section-space-desktop: 4rem;
+  --site-section-space-mobile: clamp(1.5rem, 4vw, 1.75rem);
 }
 
 /* Wide navigation and multi-card sections use the same outer edge. */
-.site-header,
+.site-header {
+  width: min(
+    var(--site-header-content-max),
+    calc(100% - var(--page-gutter) - var(--page-gutter))
+  );
+}
+
 .section.latest-section {
   width: min(
     var(--site-content-max),
-    calc(100% - var(--page-gutter) - var(--page-gutter))
+    calc(100% - var(--site-content-outer-gutter) - var(--site-content-outer-gutter))
   );
 }
 

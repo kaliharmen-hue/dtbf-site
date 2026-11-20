@@ -1,13 +1,13 @@
-/* Layout experiment only; the production homepage keeps its current rules. */
+/* Preview-only refinements use the same shared rail and spacing tokens as Home. */
 .home-layout-preview {
-  --preview-rail: min(1480px, calc(100% - 2 * var(--page-gutter)));
-  --preview-outer-gutter: max(var(--page-gutter), calc((100% - 1480px) / 2));
-  --preview-rail-inset: clamp(1.5rem, 4vw, 4rem);
+  --preview-rail: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
+  --preview-outer-gutter: var(--site-content-outer-gutter);
+  --preview-rail-inset: var(--site-content-inset);
   --preview-text-gutter: calc(var(--preview-outer-gutter) + var(--preview-rail-inset));
   --preview-text-rail: calc(var(--preview-rail) - 2 * var(--preview-rail-inset));
   --preview-card-inset: clamp(1rem, 3vw, 3rem);
-  --preview-desktop-section-space: 4rem;
-  --preview-mobile-section-space: clamp(1.5rem, 4vw, 1.75rem);
+  --preview-desktop-section-space: var(--site-section-space-desktop);
+  --preview-mobile-section-space: var(--site-section-space-mobile);
 }
 
 @media (min-width: 901px) {
@@ -201,7 +201,7 @@
 }
 
 .home-layout-preview .section.latest-section {
-  width: min(1680px, calc(100% - 2 * var(--page-gutter)));
+  width: var(--preview-rail);
 }
 
 .home-layout-preview .latest-section > .section-heading,

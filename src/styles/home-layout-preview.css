@@ -181,6 +181,11 @@
     padding-inline: var(--preview-outer-gutter);
   }
 
+  .home-layout-preview .section.latest-section {
+    width: 100%;
+    padding-inline: var(--preview-outer-gutter);
+  }
+
   .home-layout-preview .pathways-heading,
   .home-layout-preview .latest-section > .section-heading {
     padding-inline: 0;
@@ -198,6 +203,6 @@
   }
 
   .home-layout-preview .latest-section > .light-button {
-    margin-inline: var(--page-gutter);
+    margin-inline: 0;
   }
 }

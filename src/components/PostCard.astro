@@ -15,7 +15,7 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
       <img
         class="post-card__image"
         src={withBase(post.data.coverImage.replace(/^\/+/, ""))}
-        alt=""
+        alt={post.data.coverAlt ?? ""}
         loading="lazy"
         decoding="async"
       />

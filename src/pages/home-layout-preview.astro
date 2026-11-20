@@ -37,7 +37,7 @@ const mobileHero = await getImage({
 
 <BaseLayout
   title="Homepage Layout Preview | Dare to Break Free"
-  description="When playing it safe starts to feel risky. Honest writing about midlife, neurodiversity and the bits in between. Kali works one-to-one with people ready to create change."
+  description="Meet Kali Harmen, author of Dare to Break Free. Read her journal, explore writing for self-discovery and find out about her one-to-one sessions."
   ogImage={socialHeroImage}
   ogImageAlt="Portrait of Kali Harmen"
   noindex={true}
@@ -51,7 +51,7 @@ const mobileHero = await getImage({
         src={desktopHero.src}
         srcset={desktopHero.srcSet.attribute}
         sizes="100vw"
-        alt=""
+        alt="Portrait of Kali Harmen"
         width={mainHeroImage.width}
         height={mainHeroImage.height}
         loading="eager"
@@ -140,7 +140,7 @@ const mobileHero = await getImage({
         <p>Dare to Break Free started as an idea in 2009 and took seventeen years to finish. Two degrees, a few businesses and a lot of life happened in between.</p>
         <p>It isn’t a polished redemption story. It’s my story.</p>
       </div>
-      <a class="button secondary light-button" href={withBase("book/")}>About the book</a>
+      <a class="button secondary light-button" href={withBase("memoir/")}>About the book</a>
     </div>
   </section>
 
@@ -214,7 +214,7 @@ const mobileHero = await getImage({
           <article class="post-card journal-preview-card">
             <div class="image-placeholder journal-entry-image">
               {post.data.coverImage ? (
-                <img class="journal-entry-image__cover" src={withBase(post.data.coverImage.replace(/^\/+/, ""))} alt="" loading="lazy" decoding="async" />
+                <img class="journal-entry-image__cover" src={withBase(post.data.coverImage.replace(/^\/+/, ""))} alt={post.data.coverAlt ?? ""} loading="lazy" decoding="async" />
               ) : (
                 <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
               )}

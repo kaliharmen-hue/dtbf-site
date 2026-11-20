@@ -1,9 +1,11 @@
 /* Shared page edges, a wider header span and the regular content rail stay distinct. */
 :root {
   --site-content-max: 1480px;
+  --site-content-half-max: 740px;
   --site-header-content-max: 1680px;
-  --page-gutter: max(clamp(1.25rem, 3vw, 2.5rem), calc((100vw - var(--site-header-content-max)) / 2));
-  --site-content-outer-gutter: max(var(--page-gutter), calc((100vw - var(--site-content-max)) / 2));
+  --site-header-content-half-max: 840px;
+  --page-gutter: max(clamp(1.25rem, 3vw, 2.5rem), calc(50vw - var(--site-header-content-half-max)));
+  --site-content-outer-gutter: max(var(--page-gutter), calc(50vw - var(--site-content-half-max)));
   --site-content-inset: clamp(1.5rem, 4vw, 4rem);
   --site-section-space-desktop: 4rem;
   --site-section-space-mobile: clamp(1.5rem, 4vw, 1.75rem);

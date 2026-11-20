@@ -10,12 +10,14 @@ This is the shared reference for page layout decisions. Journal article pages ar
 
 ## Gutters And Margins
 
-- Regular page content uses a centered content rail capped at 1480px (`--site-content-max`). Do not stretch regular copy or card grids beyond it.
+- Regular page content uses a centered content rail capped at 1480px (`--site-content-max`). Keep its paired half-width token (`--site-content-half-max`) at exactly half that value. Do not stretch regular copy or card grids beyond it.
 - The page-edge gutter (`--page-gutter`) is the minimum breathing room from the viewport edge. On wide screens, the content rail creates a larger centered outer gutter as needed (`--site-content-outer-gutter`).
 - Where copy should sit inside that content rail, use the shared text inset `--site-content-inset: clamp(24px, 4vw, 64px)`. This is an inset from the rail edge, not a second page gutter.
+- Calculate shared rail widths from viewport-based lengths, not percentages inherited through nested containers. A section uses either the outer gutter with a centered text-rail child, or an already-inset content box; never subtract/apply the text inset a second time.
+- Keep sibling sections on one explicit left edge: regular copy, grid headings/cards, definition content, and journal cards should use the same text-rail start. Do not give each section a separately centered or intrinsically sized rail.
 - Align regular section headings and their grids/cards to the same text rail. A grid may have internal card padding; that does not widen its outer rail.
 - Full-width colour/background bands can extend beyond the content rail. Keep their inner content aligned to the rail or text inset described above.
-- The site header has its own wider 1680px maximum (`--site-header-content-max`). Hero artwork can also use page-specific alignment. Hero headings and copy still align with the regular text rail; do not resize or recrop the artwork to achieve that.
+- The site header has its own wider 1680px maximum (`--site-header-content-max`), paired with a half-width token exactly half as large. Hero artwork can also use page-specific alignment. Hero headings and copy still align with the regular text rail when the image composition permits; do not resize or recrop the artwork to achieve that.
 
 ## Grids And Cards
 

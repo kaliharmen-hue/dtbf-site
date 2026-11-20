@@ -150,6 +150,14 @@
   .home-layout-preview .definition-section {
     margin-block: 0;
   }
+
+  .home-layout-preview .healing-section > .pathways-heading {
+    padding-block-start: 0;
+  }
+
+  .home-layout-preview .memoir-section .book-image {
+    top: 0;
+  }
 }
 
 @media (max-width: 598px) {

@@ -27,6 +27,7 @@ This is the shared reference for page layout decisions. Journal article pages ar
 
 - Preserve generous, consistent vertical space between sections; use each section's established spacing rather than adding one-off offsets to align unrelated blocks.
 - On regular desktop marketing-page sections, use 64px of vertical padding at each section edge. Remove extra outer margins that would stack on top of this spacing. Keep hero composition and Journal article templates page-specific.
+- Let the section's outer padding set the distance to its first heading. Do not add another top inset inside a heading wrapper; keep any intentional space below the heading separate.
 - Within a text block, keep headings, paragraphs, buttons, and related notes visually grouped but distinct. Buttons need clear breathing room from nearby copy.
 - When changing one component, adjust its local gap or margin rather than changing the page rail or neighboring sections.
 

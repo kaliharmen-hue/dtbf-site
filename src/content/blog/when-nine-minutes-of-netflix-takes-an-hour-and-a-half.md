@@ -2,6 +2,7 @@
 title: "When nine minutes of Netflix takes an hour and a half"
 date: 2026-10-16
 excerpt: "An hour and a half into Netflix, I realised I’d watched only nine minutes. A funny moment that points to a lifetime of ADHD clues, self-blame and finally understanding how my brain works."
+metaDescription: "Nine minutes of Netflix in an hour and a half. Kali Harmen looks back at the ADHD clues she missed for decades and the relief of finally understanding why."
 tags:
   - ADHD
   - neurodiversity

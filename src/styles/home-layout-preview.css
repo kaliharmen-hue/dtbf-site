@@ -107,6 +107,12 @@
   }
 }
 
+@media (max-width: 900px) {
+  .home-layout-preview .memoir-section {
+    width: var(--preview-rail);
+  }
+}
+
 @media (max-width: 598px) {
   .home-layout-preview .memoir-section {
     grid-template-areas: "copy" "update" "book";
@@ -118,6 +124,11 @@
 
   .home-layout-preview .memoir-section__update {
     grid-area: update;
+  }
+
+  .home-layout-preview .memoir-section__update h3 {
+    font-size: var(--site-h2-size);
+    line-height: 1.2;
   }
 }
 

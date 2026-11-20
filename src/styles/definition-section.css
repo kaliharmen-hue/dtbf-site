@@ -52,15 +52,6 @@
   font-weight: 700;
 }
 
-.definition-section__copy .definition-section__closing {
-  margin-top: 0.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(244, 246, 252, 0.35);
-  font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
-  line-height: 1.45;
-}
-
 @media (min-width: 981px) {
   .definition-section__inner {
     grid-template-columns: 388px minmax(0, 1fr);

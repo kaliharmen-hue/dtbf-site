@@ -9,7 +9,8 @@ const blog = defineCollection({
     metaDescription: z.string().optional(),
     seoTitle: z.string().optional(),
     tags: z.array(z.string()).default([]),
-    coverImage: z.string().optional()
+    coverImage: z.string().optional(),
+    coverAlt: z.string().optional()
   })
 });
 

@@ -6,6 +6,7 @@
   --preview-text-gutter: calc(var(--preview-outer-gutter) + var(--preview-rail-inset));
   --preview-text-rail: calc(var(--preview-rail) - 2 * var(--preview-rail-inset));
   --preview-card-inset: clamp(1rem, 3vw, 3rem);
+  --preview-desktop-section-space: 4rem;
   --preview-mobile-section-space: clamp(1.5rem, 4vw, 1.75rem);
 }
 
@@ -133,6 +134,21 @@
 @media (max-width: 900px) {
   .home-layout-preview .memoir-section {
     width: var(--preview-rail);
+  }
+}
+
+@media (min-width: 901px) {
+  .home-layout-preview .editorial-section.intro-panel,
+  .home-layout-preview .memoir-section,
+  .home-layout-preview .healing-section,
+  .home-layout-preview .definition-section,
+  .home-layout-preview .journal-prompt-section,
+  .home-layout-preview .section.latest-section {
+    padding-block: var(--preview-desktop-section-space);
+  }
+
+  .home-layout-preview .definition-section {
+    margin-block: 0;
   }
 }
 

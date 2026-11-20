@@ -531,6 +531,17 @@ main {
   margin-top: auto;
 }
 
+.home-page .healing-section > .reflection-grid > .reflection-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+}
+
+.home-page .healing-section > .reflection-grid > .reflection-card > .button {
+  align-self: center;
+  margin-top: auto;
+}
+
 .healing-section h2,
 .memoir-section h2 {
   color: var(--ink);

@@ -40,7 +40,7 @@
 }
 
 .home-page .memoir-section {
-  width: var(--home-content-rail);
+  width: var(--home-text-rail);
   margin-inline: auto;
   padding-inline: 0;
 }
@@ -99,6 +99,21 @@ body.home-page .journal-prompt-section__intro {
 
 body.home-page .journal-prompt-art {
   width: min(100%, 31rem);
+}
+
+@media (min-width: 901px) {
+  .home-page .memoir-section__copy {
+    padding-inline: 0;
+  }
+
+  .home-page .memoir-section .book-image {
+    top: 0;
+    align-self: end;
+  }
+
+  body.home-page .journal-prompt-art {
+    translate: calc(-1 * var(--site-content-inset)) 0;
+  }
 }
 
 .home-page .section.latest-section {

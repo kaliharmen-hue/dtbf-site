@@ -8,6 +8,7 @@ tags:
   - healing
   - connection
 coverImage: "/assets/i-just-want-this-day-to-end-article.jpg"
+coverAlt: "Person sitting with their head in one hand at a cluttered desk facing three computer monitors"
 ---
 
 How many times have I said that in my life? A lot.

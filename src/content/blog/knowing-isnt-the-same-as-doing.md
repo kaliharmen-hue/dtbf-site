@@ -9,6 +9,7 @@ tags:
   - fear
   - action
 coverImage: "/assets/knowing-isnt-the-same-as-doing-article.jpg"
+coverAlt: "Collage of Kali Harmen’s previous business logos, programmes and business cards"
 ---
 
 I always knew once I’d published my memoir it’d sit on Amazon fading into obscurity unless I came out of my hobbit hole and was prepared to make myself more visible. You know, go back on social media, that thing I do for other companies. So what do I do? Get settled into building my website, that’s what.

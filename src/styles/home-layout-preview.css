@@ -5,9 +5,21 @@
   --preview-rail-inset: clamp(1.5rem, 4vw, 4rem);
   --preview-text-gutter: calc(var(--preview-outer-gutter) + var(--preview-rail-inset));
   --preview-text-rail: calc(var(--preview-rail) - 2 * var(--preview-rail-inset));
+  --preview-card-inset: clamp(1rem, 3vw, 3rem);
 }
 
 @media (min-width: 901px) {
+  .home-layout-preview .intro-panel .hero-image--photo,
+  .home-layout-preview .journal-prompt-art {
+    translate: calc(-1 * var(--preview-rail-inset)) 0;
+  }
+
+  .home-layout-preview .reflection-card > .reflection-image,
+  .home-layout-preview .journal-preview-card > .journal-entry-image {
+    width: calc(100% - var(--preview-card-inset));
+    margin-inline-start: var(--preview-card-inset);
+  }
+
   .home-layout-preview .home-hero {
     padding-inline: var(--page-gutter);
   }
@@ -46,14 +58,58 @@
 }
 
 .home-layout-preview .memoir-section {
-  width: var(--preview-rail);
+  width: var(--preview-text-rail);
   margin-inline: auto;
 }
 
-@media (min-width: 901px) {
+@media (min-width: 1200px) {
+  .home-layout-preview .memoir-section {
+    grid-template-columns: 240px minmax(0, 1.35fr) minmax(15rem, 0.9fr);
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
   .home-layout-preview .memoir-section__copy {
-    width: min(100%, 52rem);
+    width: auto;
+    max-width: none;
     padding-inline: 0;
+  }
+
+  .home-layout-preview .memoir-section__update {
+    align-self: center;
+    padding-inline-start: clamp(1.25rem, 2vw, 2rem);
+    border-inline-start: 1px solid var(--line);
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .home-layout-preview .memoir-section {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .home-layout-preview .memoir-section__copy {
+    width: auto;
+    padding-inline: 0;
+  }
+
+  .home-layout-preview .memoir-section__update {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 599px) and (max-width: 900px) {
+  .home-layout-preview .memoir-section__update {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 598px) {
+  .home-layout-preview .memoir-section {
+    grid-template-areas: "copy" "update" "book";
+  }
+
+  .home-layout-preview .memoir-section__update {
+    grid-area: update;
   }
 }
 

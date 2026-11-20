@@ -186,6 +186,11 @@
     padding-inline: 0;
   }
 
+  .home-layout-preview .latest-section > .section-heading,
+  .home-layout-preview .latest-section > .post-grid {
+    width: 100%;
+  }
+
   .home-layout-preview .intro-panel__text,
   .home-layout-preview .memoir-section__copy,
   .home-layout-preview .journal-prompt-section__intro {

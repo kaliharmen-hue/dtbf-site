@@ -34,7 +34,7 @@
 
 .about-intro__copy {
   display: grid;
-  gap: clamp(0.5rem, 1vw, 0.75rem);
+  gap: clamp(1rem, 2vw, 1.5rem);
   align-content: center;
   min-width: 0;
 }

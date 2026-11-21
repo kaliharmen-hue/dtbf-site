@@ -30,6 +30,12 @@
   align-content: center;
 }
 
+@media (min-width: 761px) {
+  .book-page__visual {
+    padding-top: 1.75rem;
+  }
+}
+
 .book-page__inner {
   display: grid;
   grid-template-columns: minmax(17rem, 0.78fr) minmax(0, 1.22fr);

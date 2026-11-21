@@ -1,6 +1,7 @@
 .stories-container {
-  width: min(1480px, calc(100% - 2 * var(--page-gutter)));
+  width: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
   margin-inline: auto;
+  padding-inline: var(--site-content-inset);
 }
 
 .stories-hero {
@@ -27,7 +28,6 @@
   top: 50%;
   left: 50%;
   display: grid;
-  width: min(var(--site-content-max), calc(100% - 2 * var(--page-gutter)));
   gap: clamp(0.85rem, 2vw, 1.25rem);
   transform: translate(-50%, -50%);
 }
@@ -52,7 +52,7 @@
 .stories-section {
   width: 100%;
   margin: 0;
-  padding: clamp(3rem, 6vw, 5.5rem) 0;
+  padding-block: var(--site-section-space-desktop);
 }
 
 .stories-section--explore {
@@ -83,7 +83,7 @@
 }
 
 .stories-split h2 {
-  max-width: 18ch;
+  max-width: none;
   margin: 0 0 1rem;
   color: var(--plum);
   font-size: var(--site-h2-size);
@@ -96,8 +96,8 @@
 
 .stories-prose p {
   margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: clamp(1.125rem, 1.2vw, 1.25rem);
+  line-height: 1.65;
 }
 
 .stories-prose p + p {
@@ -151,16 +151,6 @@
   top: 25%;
 }
 
-@media (min-width: 1101px) {
-  .stories-knowing .stories-prose {
-    padding-inline-end: clamp(2rem, 5vw, 5.25rem);
-  }
-
-  .stories-invitation .stories-prose {
-    padding-inline-start: clamp(2rem, 5vw, 5.25rem);
-  }
-}
-
 @media (min-width: 641px) and (max-width: 1300px) {
   .stories-hero {
     height: min(50vw, 40rem);
@@ -176,6 +166,10 @@
 }
 
 @media (max-width: 900px) {
+  .stories-section {
+    padding-block: var(--site-section-space-mobile);
+  }
+
   .stories-hero {
     height: min(50vw, 40rem);
   }
@@ -246,6 +240,6 @@
   }
 
   .stories-section {
-    padding-block: 2.75rem;
+    padding-block: var(--site-section-space-mobile);
   }
 }

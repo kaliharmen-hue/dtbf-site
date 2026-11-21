@@ -15,6 +15,7 @@ This is the shared reference for page layout decisions. Journal article pages ar
 - Where copy should sit inside that content rail, use the shared text inset `--site-content-inset: clamp(24px, 4vw, 64px)`. This is an inset from the rail edge, not a second page gutter.
 - Calculate shared rail widths from viewport-based lengths, not percentages inherited through nested containers. A section uses either the outer gutter with a centered text-rail child, or an already-inset content box; never subtract/apply the text inset a second time.
 - Keep sibling sections on one explicit left edge: regular copy, grid headings/cards, definition content, and journal cards should use the same text-rail start. Do not give each section a separately centered or intrinsically sized rail.
+- Images in regular image-and-copy sections follow the same content rail as the adjacent copy: keep the image frame inside the shared rail, not flush to the outer page gutter while text is inset. Align the image and copy columns within one inset content wrapper. Only use a wider or full-bleed image when that treatment is explicitly designed; hero artwork remains governed by the hero rules above.
 - Align regular section headings and their grids/cards to the same text rail. A grid may have internal card padding; that does not widen its outer rail.
 - Full-width colour/background bands can extend beyond the content rail. Keep their inner content aligned to the rail or text inset described above.
 - The site header has its own wider 1680px maximum (`--site-header-content-max`), paired with a half-width token exactly half as large. Hero artwork can also use page-specific alignment. Hero headings and copy still align with the regular text rail when the image composition permits; do not resize or recrop the artwork to achieve that.
@@ -45,6 +46,7 @@ This is the shared reference for page layout decisions. Journal article pages ar
 - On desktop, the memoir cover stays aligned to the content rail while its copy uses the inner text inset. Keep its approved 16px downward image adjustment; do not alter the cover artwork or crop.
 - Keep buttons comfortably separated from surrounding text and large enough to tap.
 - Keep images responsive and uncropped unless the component explicitly uses a designed crop.
+- In regular two-column sections, align both the image frame and text column to the same inset content rail. Do not treat images as exempt from the rail simply because they are media; only card-contained images and explicitly designed full-bleed/hero artwork follow their stated exceptions.
 - Validate narrow phones as well as tablet and desktop widths; do not rely on a single breakpoint screenshot.
 
 ## Journal Article Template

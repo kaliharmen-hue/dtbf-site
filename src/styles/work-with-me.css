@@ -100,10 +100,12 @@ section.work-section {
 }
 
 .work-intro__inner {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
+  padding-inline: var(--site-content-inset);
 }
 
 .work-intro__image-slot {
@@ -332,6 +334,10 @@ section.work-section {
 .work-start__form > .form-privacy-acknowledgement,
 .work-start__form > .button {
   grid-column: 1 / -1;
+}
+
+.work-start__form .form-privacy-acknowledgement label {
+  display: block;
 }
 
 .work-start__form input,

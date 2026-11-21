@@ -33,7 +33,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
   gap: clamp(2.5rem, 4vw, 4rem);
   align-items: center;
-  width: min(1480px, calc(100% - 2 * var(--page-gutter)));
+  width: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
   margin: clamp(1rem, 2vw, 1.75rem) auto;
 }
 
@@ -97,7 +97,7 @@
   }
 
   .about-intro {
-    width: min(1480px, calc(100% - 2 * var(--page-gutter)));
+    width: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
   }
 }
 
@@ -113,7 +113,7 @@
   }
 
   .about-intro {
-    width: min(1480px, calc(100% - 2 * var(--page-gutter)));
+    width: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
   }
 
   .about-intro .about-copy {

@@ -37,6 +37,10 @@
   margin: clamp(1rem, 2vw, 1.75rem) auto;
 }
 
+.about-intro__copy h2 {
+  margin: 0;
+}
+
 .about-intro__copy {
   display: grid;
   gap: clamp(0.5rem, 1vw, 0.75rem);

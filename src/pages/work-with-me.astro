@@ -109,23 +109,29 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
         <p>If the stars align, we’ll agree what to work on and book our first session.</p>
       </div>
         <div class="work-start__form-wrap">
-        <h3>Tell me what you’re working on</h3>
+          <h3>Send me a message</h3>
           <form class="contact-form work-start__form" action={formAction} method="POST">
             <div class="contact-form__honeypot" aria-hidden="true">
               <label for="work-website">Leave this field empty</label>
               <input id="work-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
             </div>
-            <label for="work-name">Name</label>
-            <input id="work-name" type="text" name="name" autocomplete="name" required />
-            <label for="work-email">Email</label>
-            <input id="work-email" type="email" name="email" autocomplete="email" required />
-            <label for="work-message">What are you working on, and where are you getting stuck?</label>
-            <textarea id="work-message" name="message" rows="5" required></textarea>
+            <div class="work-start__field">
+              <label for="work-name">Name</label>
+              <input id="work-name" type="text" name="name" autocomplete="name" required />
+            </div>
+            <div class="work-start__field">
+              <label for="work-email">Email</label>
+              <input id="work-email" type="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="work-start__field work-start__field--message">
+              <label for="work-message">What are you working on, and where are you getting stuck?</label>
+              <textarea id="work-message" name="message" rows="4" required></textarea>
+            </div>
             <input type="hidden" name="form-name" value="work-with-me" />
             <p class="form-privacy-notice">Dare to Break Free will use your details to handle this enquiry and contact you about your request. The Privacy Policy explains how the information is processed and retained.</p>
             <div class="form-privacy-acknowledgement">
               <input id="work-privacy-acknowledgement" name="privacy_notice_acknowledged" type="checkbox" value="yes" required />
-              <label for="work-privacy-acknowledgement">I confirm that I have read and understood the <a href="/privacy-policy/">Privacy Policy</a>.</label>
+              <label for="work-privacy-acknowledgement">I confirm that I have read and understood the <a href="/privacy-policy/">Privacy Policy</a></label>
             </div>
             <button class="button" type="submit">Send enquiry</button>
           </form>

@@ -1,4 +1,4 @@
-/* Keep the About title and its lede together in a responsive text column. */
+/* About page hero and intro layout. */
 .about-hero__intro {
   display: grid;
   gap: 0.5rem;
@@ -19,18 +19,9 @@
   display: block;
 }
 
-.about-hero__lede {
-  width: 100%;
-  margin: 0;
-  color: var(--ink);
-  font-size: clamp(1rem, 2vw, 30px);
-  font-weight: 400;
-  line-height: 1.35;
-}
-
 .about-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
   gap: clamp(2.5rem, 4vw, 4rem);
   align-items: center;
   width: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
@@ -49,7 +40,7 @@
 }
 
 .about-intro .about-copy {
-  max-width: 780px;
+  max-width: 940px;
   margin: 0;
 }
 
@@ -61,7 +52,7 @@
 
 .about-intro__image img {
   display: block;
-  width: min(100%, 24rem);
+  width: min(100%, 20rem);
   height: auto;
   box-shadow: 0 1.2rem 2.5rem rgba(28, 33, 32, 0.2);
 }
@@ -121,7 +112,7 @@
   }
 
   .about-intro .about-copy {
-    max-width: 780px;
+    max-width: 940px;
   }
 
   .about-intro__image {
@@ -133,7 +124,7 @@
   }
 
   .about-intro__copy {
-    padding-inline-start: clamp(2rem, 5vw, 5.25rem);
+    padding-inline-start: clamp(1.5rem, 3vw, 3rem);
   }
 }
 
@@ -235,10 +226,6 @@
 
   .page-hero.about-hero h1 span {
     display: inline;
-  }
-
-  .about-hero__lede {
-    font-size: 1rem;
   }
 
   .about-intro__image img {

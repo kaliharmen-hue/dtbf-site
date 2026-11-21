@@ -851,6 +851,10 @@ main {
   font-size: clamp(2.2rem, 4vw, 4rem);
 }
 
+.journal-themes-section .section-heading {
+  justify-items: start;
+}
+
 .journal-theme-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

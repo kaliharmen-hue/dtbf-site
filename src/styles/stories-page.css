@@ -34,7 +34,7 @@
 
 .stories-hero .stories-container > * {
   width: min(58%, 46rem);
-  margin-inline-start: calc(50vw - min(44vw, 640px) - var(--page-gutter));
+  margin-inline-start: 0;
 }
 
 .stories-hero h1 {

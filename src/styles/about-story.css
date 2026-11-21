@@ -29,7 +29,7 @@
 
 .about-story__inner {
   width: 100%;
-  max-width: var(--site-content-max, 1680px);
+  max-width: var(--site-content-max);
   margin-inline: auto;
 }
 
@@ -89,9 +89,9 @@
 /* Keep the portrait aligned with the heading, but don't let the tall portrait
    stretch the heading's row and push the right-hand copy far below it. */
 .section.two-column.about-section--final {
-  width: 100%;
-  margin: 0;
-  padding-inline: var(--page-gutter);
+  width: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
+  margin: 0 auto;
+  padding-inline: 0;
   grid-template-areas:
     "portrait heading"
     "portrait copy";

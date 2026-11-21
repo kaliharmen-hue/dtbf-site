@@ -331,13 +331,8 @@ section.work-section {
 
 .work-start__field--message,
 .work-start__form > .form-privacy-notice,
-.work-start__form > .form-privacy-acknowledgement,
 .work-start__form > .button {
   grid-column: 1 / -1;
-}
-
-.work-start__form .form-privacy-acknowledgement label {
-  display: block;
 }
 
 .work-start__form input,
@@ -352,6 +347,13 @@ section.work-section {
 
 .work-start__form .form-privacy-notice {
   margin: 0.15rem 0 0;
+}
+
+.work-start__field-note {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .work-start__form .button {
@@ -487,7 +489,6 @@ section.work-section {
 
   .work-start__field--message,
   .work-start__form > .form-privacy-notice,
-  .work-start__form > .form-privacy-acknowledgement,
   .work-start__form > .button {
     grid-column: 1;
   }

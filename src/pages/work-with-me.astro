@@ -125,14 +125,11 @@ const formAction = "https://formspree.io/f/xwlpaqpg";
             </div>
             <div class="work-start__field work-start__field--message">
               <label for="work-message">What are you working on, and where are you getting stuck?</label>
-              <textarea id="work-message" name="message" rows="3" required></textarea>
+              <small id="work-message-guidance" class="work-start__field-note">Do not include sensitive details in your first enquiry.</small>
+              <textarea id="work-message" name="message" rows="3" aria-describedby="work-message-guidance" required></textarea>
             </div>
             <input type="hidden" name="form-name" value="work-with-me" />
-            <p class="form-privacy-notice">Dare to Break Free will use your details to handle this enquiry and contact you about your request. The Privacy Policy explains how the information is processed and retained.</p>
-            <div class="form-privacy-acknowledgement">
-              <input id="work-privacy-acknowledgement" name="privacy_notice_acknowledged" type="checkbox" value="yes" required />
-              <label for="work-privacy-acknowledgement">I confirm that I have read and understood the <a href="/privacy-policy/">Privacy Policy</a></label>
-            </div>
+            <p class="form-privacy-notice">I’ll use your details to respond to your enquiry. Read the <a href="/privacy-policy/">Privacy Policy</a> for how your information is handled.</p>
             <button class="button" type="submit">Send enquiry</button>
           </form>
       </div>

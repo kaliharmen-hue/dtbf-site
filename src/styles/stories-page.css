@@ -65,8 +65,8 @@
 
 .stories-split {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: start;
 }
 
@@ -96,8 +96,8 @@
 
 .stories-prose p {
   margin: 0;
-  font-size: clamp(1.125rem, 1.2vw, 1.25rem);
-  line-height: 1.65;
+  font-size: 1.25rem;
+  line-height: 1.6;
 }
 
 .stories-prose p + p {
@@ -120,7 +120,7 @@
 }
 
 .stories-invitation {
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
 }
 
 .stories-writing__prompt {

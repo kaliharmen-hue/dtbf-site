@@ -1,12 +1,12 @@
 .book-page {
   width: 100%;
   min-height: min(48rem, calc(100svh - 8rem));
-  padding: clamp(3rem, 7vw, 6rem) var(--page-gutter);
+  padding: clamp(2rem, 4vw, 3.5rem) var(--page-gutter);
   background: linear-gradient(90deg, var(--paper) 0 43%, #ffffff 43% 100%);
 }
 
 .book-page__release {
-  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
   color: var(--plum);
   text-align: left;
 }
@@ -34,17 +34,17 @@
   grid-template-columns: minmax(17rem, 0.78fr) minmax(0, 1.22fr);
   align-items: center;
   gap: clamp(3rem, 8vw, 8rem);
-  width: min(1320px, 100%);
+  width: min(var(--site-content-max), 100%);
   min-height: 34rem;
   margin-inline: auto;
 }
 
 .book-page__cover {
   display: grid;
-  place-items: center;
+  place-items: center start;
   min-height: 31rem;
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .book-page__cover img {
@@ -69,7 +69,7 @@
 }
 
 .book-page__copy h1 {
-  max-width: 12ch;
+  max-width: none;
   margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
   color: var(--plum);
   line-height: 1.06;
@@ -85,8 +85,8 @@
 
 .book-page__bio p {
   margin: 0;
-  font-size: clamp(1rem, 1.15vw, 1.2rem);
-  line-height: 1.65;
+  font-size: clamp(1.08rem, 1.55vw, 1.1875rem);
+  line-height: 1.6;
 }
 
 .book-page__bio em {
@@ -105,7 +105,7 @@
 
   .book-page {
     min-height: 0;
-    padding: 2.5rem var(--page-gutter) 3.5rem;
+    padding: 1.75rem var(--page-gutter) 3.5rem;
     background: linear-gradient(180deg, var(--paper) 0 23rem, #ffffff 23rem 100%);
   }
 
@@ -131,5 +131,12 @@
 
   .book-page__copy h1 {
     margin-bottom: 1.25rem;
+  }
+}
+
+
+@media (min-width: 901px) {
+  .book-page__copy h1 {
+    text-wrap: nowrap;
   }
 }

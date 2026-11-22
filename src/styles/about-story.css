@@ -74,9 +74,12 @@
   border-radius: 0.625rem;
 }
 
-.about-story__row--reverse .about-story__media--second {
-  width: min(100%, 35rem);
-  justify-self: end;
+/* Keep the desk photo a little narrower to balance its shorter copy on desktop. */
+@media (min-width: 1081px) {
+  .about-story__row--reverse .about-story__media--second {
+    width: min(100%, 35rem);
+    justify-self: end;
+  }
 }
 
 .about-story__media img {

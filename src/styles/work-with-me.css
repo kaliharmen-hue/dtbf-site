@@ -459,6 +459,30 @@ section.work-section {
   .work-pricing__grid {
     grid-template-columns: minmax(0, 1fr);
   }
+  section.work-section {
+    padding-inline: var(--page-gutter);
+  }
+
+  .work-intro__inner,
+  .work-areas .work-section__inner,
+  .work-pricing .work-section__inner,
+  .work-start .work-section__inner {
+    padding-inline: 0;
+  }
+
+  .work-hero__content {
+    width: 100%;
+    margin-inline: 0;
+    padding-inline: var(--page-gutter);
+  }
+
+  .work-hero__text {
+    width: min(72%, 18rem);
+  }
+
+  .work-hero h1 {
+    max-width: 14ch;
+  }
 
   .work-hero__photo {
     min-height: 0;

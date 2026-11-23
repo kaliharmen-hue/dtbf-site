@@ -123,9 +123,6 @@
     margin-top: -6rem;
   }
 
-  .about-intro__copy {
-    padding-inline-start: clamp(1.5rem, 3vw, 3rem);
-  }
 }
 
 @media (min-width: 480px) and (max-width: 900px) {

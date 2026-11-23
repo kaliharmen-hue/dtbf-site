@@ -228,7 +228,7 @@
   }
 
   .page-hero.about-hero h1 span {
-    display: inline;
+    display: block;
   }
 
   .about-intro__image img {

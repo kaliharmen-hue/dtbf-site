@@ -477,11 +477,11 @@ section.work-section {
   }
 
   .work-hero__text {
-    width: min(72%, 18rem);
+    width: min(76%, 20rem);
   }
 
   .work-hero h1 {
-    max-width: 14ch;
+    max-width: none;
   }
 
   .work-hero__photo {
@@ -493,7 +493,8 @@ section.work-section {
   }
 
   .work-hero__content {
-    width: 64%;
+    box-sizing: border-box;
+    width: 100%;
     padding: 1.25rem var(--page-gutter);
   }
 

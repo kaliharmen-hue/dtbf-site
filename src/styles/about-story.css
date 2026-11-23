@@ -39,6 +39,17 @@
   text-align: center;
 }
 
+/* Keep the memoir title balanced on phones without changing desktop wrapping. */
+.about-story__mobile-break {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .about-story__mobile-break {
+    display: block;
+  }
+}
+
 /* Follow the site's standard image-and-copy split rather than equal columns.
    The proportions reverse with the second row so the image remains the
    slightly narrower column on both sides. */

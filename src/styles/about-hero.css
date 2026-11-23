@@ -178,6 +178,12 @@
 }
 
 /* Use the phone-specific wide crop, keeping the title in its open right side. */
+@media (max-width: 600px) {
+  .about-intro__image {
+    display: none;
+  }
+}
+
 @media (max-width: 479px) {
   .page-hero.about-hero {
     position: relative;
@@ -210,7 +216,7 @@
   }
 
   .about-hero__intro {
-    width: 58%;
+    width: min(68%, 20rem);
     align-self: flex-start;
     margin-top: 2rem;
     margin-inline-end: 0;

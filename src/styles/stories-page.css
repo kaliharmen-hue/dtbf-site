@@ -170,6 +170,10 @@
     padding-block: var(--site-section-space-mobile);
   }
 
+  .stories-container {
+    padding-inline: 0;
+  }
+
   .stories-hero {
     height: min(50vw, 40rem);
   }
@@ -225,7 +229,7 @@
   }
 
   .stories-hero .stories-container > * {
-    width: 52%;
+    width: min(72%, 18rem);
     margin: 0;
   }
 

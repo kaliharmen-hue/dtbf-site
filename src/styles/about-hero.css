@@ -187,16 +187,16 @@
   .page-hero.about-hero {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     width: 100%;
     min-height: 0;
     aspect-ratio: 4 / 3;
     margin: 0;
-    padding: 1.5rem var(--page-gutter) 12%;
+    padding: calc(8.5vw - 0.2rem) var(--page-gutter) 1.5rem;
     background-color: var(--paper);
     background-image: url("/assets/about-page-hero-mobile.jpg?v=1");
-    background-position: left bottom;
+    background-position: left -5vw bottom;
     background-size: cover;
     background-repeat: no-repeat;
     border-bottom: 1px solid var(--line);
@@ -217,7 +217,6 @@
 
   .about-hero__intro {
     width: 52%;
-    align-self: flex-end;
     margin-inline-end: 0;
     transform: none;
   }

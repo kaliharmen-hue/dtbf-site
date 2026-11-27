@@ -193,10 +193,10 @@
     min-height: 0;
     aspect-ratio: 4 / 3;
     margin: 0;
-    padding: calc(8.5vw - 0.2rem) var(--page-gutter) 1.5rem;
+    padding: 12% var(--page-gutter) 1.5rem;
     background-color: var(--paper);
     background-image: url("/assets/about-page-hero-mobile.jpg?v=1");
-    background-position: left -5vw bottom;
+    background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
     border-bottom: 1px solid var(--line);

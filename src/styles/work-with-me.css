@@ -490,7 +490,7 @@ section.work-section {
     min-height: clamp(12rem, 52vw, 15rem);
     background-image: url("/assets/work-with-kali-mobile.png?v=1");
     background-position: right -4vw top;
-    background-size: auto 100%;
+    background-size: 100% auto;
     mask-image: linear-gradient(to right, transparent 52%, black 71%);
   }
 

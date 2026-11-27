@@ -471,13 +471,15 @@ section.work-section {
   }
 
   .work-hero__content {
+    box-sizing: border-box;
+    align-items: flex-start;
     width: 100%;
     margin-inline: 0;
-    padding-inline: var(--page-gutter);
+    padding: 1.25rem var(--page-gutter);
   }
 
   .work-hero__text {
-    width: min(76%, 20rem);
+    width: min(61%, 20rem);
   }
 
   .work-hero h1 {
@@ -487,15 +489,11 @@ section.work-section {
   .work-hero__photo {
     min-height: 0;
     aspect-ratio: 4 / 3;
-    background-image: url("/assets/work-with-kali-mobile.png?v=1");
-    background-position: center top;
+    background-image:
+      linear-gradient(to right, var(--paper) 0%, color-mix(in srgb, var(--paper) 90%, transparent) 24%, transparent 61%),
+      url("/assets/work-with-kali-mobile.png?v=1");
+    background-position: right top;
     background-size: cover;
-  }
-
-  .work-hero__content {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1.25rem var(--page-gutter);
   }
 
   .work-hero__subtitle {

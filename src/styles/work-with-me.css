@@ -489,7 +489,7 @@ section.work-section {
   .work-hero__photo {
     min-height: clamp(12rem, 52vw, 15rem);
     background-image: url("/assets/work-with-kali-mobile.png?v=1");
-    background-position: right -4vw top calc(1.5rem - 8.3vw);
+    background-position: right -4vw top calc(1.25rem - 8.3vw);
     background-size: 100% auto;
     mask-image: linear-gradient(to right, transparent 52%, black 71%);
   }

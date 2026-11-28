@@ -1,10 +1,5 @@
 body.article-page {
-  --frame-gutter: #d4f1f1;
-  background: var(--frame-gutter);
-}
-
-body.article-page[data-gutter="plum"] {
-  --frame-gutter: #291528;
+  background: #d4f1f1;
 }
 
 body.article-page .site-frame {

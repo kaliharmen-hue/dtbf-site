@@ -84,10 +84,3 @@ const articleSchema = {
     </div>
   </section>
 </BaseLayout>
-
-<script is:inline>
-  const requestedGutter = new URLSearchParams(window.location.search).get("gutter");
-  if (requestedGutter === "plum" || requestedGutter === "teal") {
-    document.body.dataset.gutter = requestedGutter;
-  }
-</script>

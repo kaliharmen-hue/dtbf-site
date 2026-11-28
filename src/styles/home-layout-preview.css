@@ -37,7 +37,7 @@
 }
 
 .home-layout-preview .editorial-section.intro-panel {
-  padding-inline: max(var(--page-gutter), calc((100% - 1480px) / 2));
+  padding-inline: max(var(--page-gutter), calc((100% - var(--site-content-max)) / 2));
 }
 
 .home-layout-preview .intro-panel__text {
@@ -58,7 +58,7 @@
 
 .home-layout-preview .reflection-grid {
   width: 100%;
-  max-width: 1480px;
+  max-width: var(--site-content-max);
   margin-inline: auto;
 }
 
@@ -189,7 +189,7 @@
 @media (min-width: 981px) {
   .home-layout-preview .definition-section__inner {
     width: 100%;
-    max-width: 1480px;
+    max-width: var(--site-content-max);
   }
 }
 

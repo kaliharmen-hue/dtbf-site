@@ -60,6 +60,12 @@ body {
   line-height: 1.6;
 }
 
+@media (min-width: 480px) {
+  body {
+    font-size: 19px;
+  }
+}
+
 a {
   color: inherit;
   text-decoration-color: rgba(15, 139, 141, 0.52);
@@ -267,18 +273,6 @@ main {
     object-fit: contain;
     object-position: left center;
   }
-}
-
-.home-hero::before {
-  content: none;
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: 100%;
-  background:
-    linear-gradient(90deg, rgba(244, 246, 252, 0.92), rgba(244, 246, 252, 0.62) 48%, rgba(244, 246, 252, 0.06) 76%),
-    radial-gradient(circle at 18% 50%, rgba(15, 139, 141, 0.1), transparent 28rem);
-  pointer-events: none;
 }
 
 .home-hero::after {
@@ -685,14 +679,6 @@ main {
   max-width: 720px;
   color: var(--muted);
   font-size: clamp(1.15rem, 2vw, 1.45rem);
-}
-
-.intro-copy {
-  display: grid;
-  gap: 1rem;
-  max-width: 760px;
-  color: var(--muted);
-  font-size: 1.08rem;
 }
 
 .button-row {
@@ -1479,10 +1465,6 @@ textarea:focus {
     height: 100%;
     object-fit: cover;
     object-position: center;
-  }
-
-  .home-hero::before {
-    display: none;
   }
 
   .home-hero__copy {

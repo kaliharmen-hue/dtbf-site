@@ -60,6 +60,12 @@ body {
   line-height: 1.6;
 }
 
+@media (min-width: 480px) {
+  body {
+    font-size: 19px;
+  }
+}
+
 a {
   color: inherit;
   text-decoration-color: rgba(15, 139, 141, 0.52);
@@ -110,7 +116,6 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: clamp(1.5rem, 4vw, 4rem);
-  width: min(1680px, calc(100% - 5rem));
   margin: 0 auto;
   padding: 1.25rem 0;
   color: var(--ink);
@@ -267,18 +272,6 @@ main {
     object-fit: contain;
     object-position: left center;
   }
-}
-
-.home-hero::before {
-  content: none;
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: 100%;
-  background:
-    linear-gradient(90deg, rgba(244, 246, 252, 0.92), rgba(244, 246, 252, 0.62) 48%, rgba(244, 246, 252, 0.06) 76%),
-    radial-gradient(circle at 18% 50%, rgba(15, 139, 141, 0.1), transparent 28rem);
-  pointer-events: none;
 }
 
 .home-hero::after {
@@ -603,7 +596,6 @@ main {
 }
 
 .section.latest-section {
-  width: min(1680px, calc(100% - 5rem));
   margin: 0 auto;
   padding-block: clamp(4rem, 8vw, 7rem);
   background: #f4f6fc;
@@ -675,9 +667,7 @@ main {
 
 .page-hero,
 .section,
-.form-section,
-.article {
-  width: min(1180px, calc(100% - 2rem));
+.form-section {
   margin: 0 auto;
 }
 
@@ -685,14 +675,6 @@ main {
   max-width: 720px;
   color: var(--muted);
   font-size: clamp(1.15rem, 2vw, 1.45rem);
-}
-
-.intro-copy {
-  display: grid;
-  gap: 1rem;
-  max-width: 760px;
-  color: var(--muted);
-  font-size: 1.08rem;
 }
 
 .button-row {
@@ -836,8 +818,7 @@ main {
 }
 
 .section,
-.form-section,
-.article {
+.form-section {
   padding: 4rem 0;
 }
 
@@ -968,8 +949,6 @@ main {
 
 .section.journal-themes-section,
 .section.journal-index-section {
-  width: min(var(--site-content-max), calc(100% - 2 * var(--site-content-outer-gutter)));
-  margin-inline: auto;
   padding-block: var(--site-section-space-desktop);
 }
 
@@ -1146,74 +1125,11 @@ textarea:focus {
   border-color: var(--accent);
 }
 
-.article {
-  max-width: 820px;
-}
-
-.article h1 {
-  margin: 0.5rem 0 1rem;
-}
-
-.article-hero {
-  display: grid;
-  align-items: center;
-  min-height: clamp(28rem, 48vw, 42rem);
-  background-color: var(--paper);
-  background-image:
-    linear-gradient(90deg, rgba(244, 246, 252, 0.96) 0%, rgba(244, 246, 252, 0.84) 34%, rgba(244, 246, 252, 0.12) 62%, transparent 76%),
-    var(--article-hero-image);
-  background-position: center;
-  background-size: cover;
-}
-
-.article-hero__content {
-  width: min(
-    var(--site-content-max, 1180px),
-    calc(100% - var(--page-gutter, 1rem) - var(--page-gutter, 1rem))
-  );
-  margin: 0 auto;
-  padding-block: clamp(3rem, 7vw, 6rem);
-}
-
-.article-hero__content h1 {
-  max-width: 12ch;
-  margin: 0.5rem 0 1rem;
-  color: var(--ink);
-  text-wrap: balance;
-}
-
-.article-hero__content .lede {
-  max-width: 34rem;
-}
-
-@media (max-width: 640px) {
-  .article-hero {
-    min-height: 34rem;
-    background-image:
-      linear-gradient(90deg, rgba(244, 246, 252, 0.97) 0%, rgba(244, 246, 252, 0.9) 52%, rgba(244, 246, 252, 0.42) 100%),
-      var(--article-hero-image);
-    background-position: 68% center;
-  }
-
-  .article-hero__content h1 {
-    max-width: 10ch;
-  }
-}
-
-.prose {
-  display: grid;
-  gap: 1rem;
-  margin-top: 2rem;
-  color: var(--ink);
-  font-size: 1.08rem;
-}
-
 .site-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 2rem 0;
   border-top: 1px solid var(--line);
@@ -1425,13 +1341,6 @@ textarea:focus {
   }
 }
 
-@media (max-width: 640px) {
-  .section.journal-themes-section,
-  .section.journal-index-section {
-    width: calc(100% - 1.5rem);
-  }
-}
-
 @media (max-width: 980px) {
   .definition-section__inner,
   .reflection-grid,
@@ -1479,10 +1388,6 @@ textarea:focus {
     height: 100%;
     object-fit: cover;
     object-position: center;
-  }
-
-  .home-hero::before {
-    display: none;
   }
 
   .home-hero__copy {
@@ -1573,17 +1478,12 @@ textarea:focus {
   }
 
   .site-header {
-    width: min(100% - 1.25rem, 1520px);
     padding: 0.8rem 0;
   }
 
   .brand img {
     width: min(67vw, 24rem);
     max-height: 5rem;
-  }
-
-  .section.latest-section {
-    width: calc(100% - 2.5rem);
   }
 
   .home-hero__copy {

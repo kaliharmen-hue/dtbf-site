@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/homepage-layout.css";
 import JournalPromptGenerator from "../components/JournalPromptGenerator.astro";
 import { getCollection } from "astro:content";
 import { getImage, Image } from "astro:assets";
@@ -219,7 +220,7 @@ const mobileHero = await getImage({
                 <Image src={journalImage} alt="" widths={[480, 720, 960]} sizes="(max-width: 980px) 100vw, 31vw" format="webp" quality={78} loading="lazy" decoding="async" />
               )}
             </div>
-            <h3><a href={withBase(`journal/${post.slug}/`)}>{post.data.title}</a></h3>
+            <h3><a href={withBase(`journal/${post.id}/`)}>{post.data.title}</a></h3>
             <p>{post.data.excerpt}</p>
           </article>
         ) : (

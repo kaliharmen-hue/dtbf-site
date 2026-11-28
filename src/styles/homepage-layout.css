@@ -148,16 +148,8 @@ body.home-page .journal-prompt-art {
     padding-block: var(--site-section-space-desktop);
   }
 
-  body.home-page .journal-prompt-section {
-    padding-block: var(--site-section-space-desktop);
-  }
-
   .home-page .healing-section > .pathways-heading {
     padding-block-start: 0;
-  }
-
-  .home-page .memoir-section .book-image {
-    top: 0;
   }
 }
 

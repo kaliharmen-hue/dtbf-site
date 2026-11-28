@@ -74,7 +74,7 @@ const withBase = (path = "") => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/
                 <ul>
                   {themePosts.map((post) => (
                     <li>
-                      <a href={withBase(`journal/${post.slug}/`)}>{post.data.title}</a>
+                      <a href={withBase(`journal/${post.id}/`)}>{post.data.title}</a>
                       <p>{post.data.excerpt}</p>
                     </li>
                   ))}

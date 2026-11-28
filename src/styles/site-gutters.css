@@ -11,7 +11,6 @@
   --site-section-space-mobile: clamp(1.5rem, 4vw, 1.75rem);
 }
 
-/* Wide navigation and multi-card sections use the same outer edge. */
 .site-header {
   width: min(
     var(--site-header-content-max),
@@ -19,11 +18,20 @@
   );
 }
 
-.section.latest-section {
+.section.latest-section,
+.section.journal-themes-section,
+.section.journal-index-section {
   width: min(
     var(--site-content-max),
     calc(100% - var(--site-content-outer-gutter) - var(--site-content-outer-gutter))
   );
+}
+
+@media (max-width: 640px) {
+  .section.journal-themes-section,
+  .section.journal-index-section {
+    width: calc(100% - 1.5rem);
+  }
 }
 
 /* Existing constrained content retains its own maximum, but never uses a
@@ -32,18 +40,9 @@
 .page-hero,
 .section,
 .form-section,
-.article,
 .site-footer {
   width: min(
     1180px,
     calc(100% - var(--page-gutter) - var(--page-gutter))
   );
-}
-
-.article {
-  width: min(
-    var(--site-content-max),
-    calc(100% - var(--page-gutter) - var(--page-gutter))
-  );
-  max-width: none;
 }

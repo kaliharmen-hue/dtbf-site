@@ -23,12 +23,14 @@ export async function GET({ site }: { site: URL | undefined }) {
     throw new Error("Set `site` in astro.config.mjs to generate the sitemap.");
   }
 
-  const posts = await getCollection("blog");
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+  );
   const entries: { loc: string; lastmod?: string }[] = [
     ...staticPaths.map((path) => ({ loc: new URL(path, site).href })),
     ...posts.map((post) => ({
       loc: new URL(
-        `journal/${post.slug.split("/").map(encodeURIComponent).join("/")}/`,
+        `journal/${post.id.split("/").map(encodeURIComponent).join("/")}/`,
         site
       ).href,
       lastmod: post.data.date.toISOString().slice(0, 10)
